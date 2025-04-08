@@ -37,10 +37,6 @@ def download_plugin_zip(plugin_url, download_dir="plugins-wp"):
         print(f"{Colors.OKBLUE}[+] Downloading {plugin_slug}...{Colors.RESET}")
         response = requests.get(zip_url)
         if response.status_code == 200:
-            content_type = response.headers.get("Content-Type", "")
-            if "application/zip" not in content_type:
-                print(f"{Colors.FAIL}[X] {plugin_slug} is not a valid zip file (Content-Type: {content_type}). Skipping...{Colors.RESET}")
-                return
             with open(zip_path, "wb") as f:
                 f.write(response.content)
             print(f"{Colors.OKGREEN}[OK] Saved to: {zip_path}{Colors.RESET}")
