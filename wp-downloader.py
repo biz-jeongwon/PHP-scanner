@@ -13,9 +13,9 @@ class Colors:
     RESET = '\033[0m'
     BOLD = '\033[1m'
 
-def search_wordpress_plugins(keyword, pages, max_plugins=20):
+def search_wordpress_plugins(keyword, start_page, end_page, max_plugins=20):
     plugin_links = []
-    for page in range(1, int(pages) + 1):
+    for page in range(int(start_page), int(end_page) + 1):
         search_url = f"https://wordpress.org/plugins/search/{keyword}/page/{page}"
         response = requests.get(search_url)
         soup = BeautifulSoup(response.text, "html.parser")
@@ -65,13 +65,14 @@ def extract_and_cleanup_zip_files(directory="plugins-wp"):
 
 def main():
     keyword_input = input(f"{Colors.BOLD}[?] Enter plugin keywords (space-separated): {Colors.RESET}")
-    pages = input(f"{Colors.BOLD}[?] Enter number of pages to search per keyword: {Colors.RESET}")
+    start_page = input(f"{Colors.BOLD}[?] Enter start page number to search per keyword: {Colors.RESET}")
+    end_page = input(f"{Colors.BOLD}[?] Enter end page number to search per keyword: {Colors.RESET}")
 
     keywords = keyword_input.strip().split()
 
     for keyword in keywords:
         print(f"\n{Colors.HEADER}[*] Searching for keyword: '{keyword}'...{Colors.RESET}")
-        plugin_urls = search_wordpress_plugins(keyword, pages)
+        plugin_urls = search_wordpress_plugins(keyword, start_page, end_page)
 
         if not plugin_urls:
             print(f"{Colors.WARNING}[X] No plugins found for '{keyword}'.{Colors.RESET}")
