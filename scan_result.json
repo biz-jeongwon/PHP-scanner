@@ -1,2076 +1,726 @@
 {
-  "plugins-wp\\agile-store-locator\\agile-store-locator\\admin\\partials\\manage_store.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\add-search-to-menu\\add-search-to-menu\\admin\\class-is-editor.php": {
+    "XSS": [
       [
-        36,
-        "echo ' (' . \\AgileStoreLocator\\Helper::get_category_name($_GET['categories']) . ')';"
+        901,
+        "echo '<a style=\"font-size: 20px;font-weight: 800; padding: 25px 0;display: block;text-align: center;box-shadow:none;\"class=\"is-customize-link\" href=\"' . esc_url( $customizer_url ) . '\">' . __( \"Search Form Customizer\", \"add-search-to-menu\" ) . '</a>';"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\agile-store-locator\\agile-store-locator\\includes\\admin\\category.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        308,
-        "$sOrder .= \"`\".$acolumns[ intval( $_REQUEST['iSortCol_'.$i] )  ].\"` \".$sort_dir;"
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\backwpup\\backwpup\\inc\\class-destination-rsc.php": {
-    "sqli": [],
-    "xss": [
-      [
-        159,
-        "BackWPup_Admin::message( sprintf( __( 'Rackspace Cloud container \"%s\" created.', 'backwpup' ), esc_html( sanitize_text_field( $_POST['newrsccontainer'] ) ) ) );"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\backwpup\\backwpup\\inc\\class-page-editjob.php": {
-    "sqli": [],
-    "xss": [
-      [
-        356,
-        "echo '<input readonly disabled type=\"hidden\" name=\"tab\" value=\"' . esc_attr( $_GET['tab'] ) . '\" />';"
-      ],
-      [
-        357,
-        "echo '<input readonly disabled type=\"hidden\" name=\"nexttab\" value=\"' . esc_attr( $_GET['tab'] ) . '\" />';"
-      ],
-      [
-        838,
-        "echo '<div class=\"table\" id=\"info-tab-' . $_GET['tab'] . '\">';"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\backwpup\\backwpup\\inc\\class-page-settings.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        445,
-        "if ( isset( $_POST['jobmaxexecutiontime'] ) && is_numeric( $_POST['jobmaxexecutiontime'] ) && $_POST['jobmaxexecutiontime'] <= 300 ) {"
-      ],
-      [
-        446,
-        "$new_options['backwpup_cfg_jobmaxexecutiontime'] = absint( $_POST['jobmaxexecutiontime'] );"
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\classes\\class-mvx-vendor-dashboard.php": {
-    "sqli": [],
-    "xss": [
-      [
-        905,
-        "<?php if(isset($_GET['zone_id'])) submit_button(); ?>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\shortcode\\vendor_registration.php": {
-    "sqli": [],
-    "xss": [
-      [
-        16,
-        "<input type=\"text\"  name=\"username\" id=\"reg_username\" value=\"<?php if (!empty($_POST['username'])) echo esc_attr($_POST['username']); ?>\" required=\"required\" />"
-      ],
-      [
-        21,
-        "<input type=\"email\" required=\"required\"  name=\"email\" id=\"reg_email\" value=\"<?php if (!empty($_POST['email'])) echo esc_attr($_POST['email']); ?>\" />"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\vendor-orders.php": {
-    "sqli": [],
-    "xss": [
-      [
-        37,
-        "<input type=\"date\" name=\"mvx_start_date_order\" class=\"pickdate gap1 mvx_start_date_order form-control\" placeholder=\"<?php esc_attr_e('from', 'multivendorx'); ?>\" value=\"<?php echo isset($_POST['mvx_start_date_order']) ? wc_clean($_POST['mvx_start_date_order']) : date('Y-m-01'); ?>\" />"
-      ],
-      [
-        41,
-        "<input type=\"date\" name=\"mvx_end_date_order\" class=\"pickdate mvx_end_date_order form-control\" placeholder=\"<?php esc_attr_e('to', 'multivendorx'); ?>\" value=\"<?php echo isset($_POST['mvx_end_date_order']) ? wc_clean($_POST['mvx_end_date_order']) : date('Y-m-d'); ?>\" />"
-      ],
-      [
-        102,
-        "<?php if (isset($_POST['mvx_start_date_order'])) : ?>"
-      ],
-      [
-        103,
-        "<input type=\"hidden\" name=\"mvx_start_date_order\" value=\"<?php echo isset($_POST['mvx_start_date_order']) ? wc_clean($_POST['mvx_start_date_order']) : date('Y-m-d'); ?>\" />"
-      ],
-      [
-        105,
-        "<?php if (isset($_POST['mvx_end_date_order'])) : ?>"
-      ],
-      [
-        106,
-        "<input type=\"hidden\" name=\"mvx_end_date_order\" value=\"<?php echo isset($_POST['mvx_end_date_order']) ? wc_clean($_POST['mvx_end_date_order']) : date('Y-m-d'); ?>\" />"
-      ],
-      [
-        134,
-        "<?php if (isset($_POST['mvx_start_date_order'])) : ?>"
-      ],
-      [
-        135,
-        "<input type=\"hidden\" name=\"mvx_start_date_order\" value=\"<?php echo wc_clean($_POST['mvx_start_date_order']); ?>\" />"
-      ],
-      [
-        137,
-        "<?php if (isset($_POST['mvx_end_date_order'])) : ?>"
-      ],
-      [
-        138,
-        "<input type=\"hidden\" name=\"mvx_end_date_order\" value=\"<?php echo wc_clean($_POST['mvx_end_date_order']); ?>\" />"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\vendor-report.php": {
-    "sqli": [],
-    "xss": [
-      [
-        21,
-        "<input type=\"date\" name=\"mvx_stat_start_dt\" value=\"<?php echo isset($_POST['mvx_stat_start_dt']) ? wc_clean($_POST['mvx_stat_start_dt']) : date('Y-m-01'); ?>\" class=\"pickdate gap1 mvx_stat_start_dt form-control\">"
-      ],
-      [
-        24,
-        "<input type=\"date\" name=\"mvx_stat_end_dt\" value=\"<?php echo isset($_POST['mvx_stat_end_dt']) ? wc_clean($_POST['mvx_stat_end_dt']) : date('Y-m-d'); ?>\" class=\"pickdate mvx_stat_end_dt form-control\">"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\coupon-manager\\views\\html-coupon-data-general.php": {
-    "sqli": [],
-    "xss": [
-      [
-        46,
-        "<input id=\"coupon_amount\" name=\"coupon_amount\" value=\"<?php echo isset($_POST['coupon_amount']) ? wc_clean($_POST['coupon_amount']) : esc_attr( $coupon->get_amount( 'edit' ) ); ?>\" type=\"text\" placeholder=\"<?php echo esc_attr( wc_format_localized_price( 0 ) ); ?>\" class=\"form-control\">"
-      ],
-      [
-        56,
-        "<input id=\"free_shipping\" name=\"free_shipping\" type=\"checkbox\" class=\"form-control\" value=\"yes\" <?php checked( wc_bool_to_string( isset($_POST['free_shipping']) ? 'yes' : $coupon->get_free_shipping( 'edit' ) ), 'yes' ); ?>>"
-      ],
-      [
-        68,
-        "<input class=\"form-control\" id=\"expiry_date\" name=\"expiry_date\" value=\"<?php echo isset($_POST['expiry_date']) ? wc_clean($_POST['expiry_date']) : esc_attr( $expiry_date ); ?>\" type=\"date\" placeholder=\"<?php esc_attr_e( 'YYYY-MM-DD', 'multivendorx' ); ?>\" pattern=\"<?php echo esc_attr( apply_filters( 'woocommerce_date_input_html_pattern', '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])' ) ); ?>\">"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\coupon-manager\\views\\html-coupon-data-usage-limit.php": {
-    "sqli": [],
-    "xss": [
-      [
-        32,
-        "<input type=\"number\" id=\"usage_limit\" name=\"usage_limit\" class=\"form-control\" value=\"<?php echo isset($_POST['usage_limit']) ? absint($_POST['usage_limit']) : esc_attr( $coupon->get_usage_limit( 'edit' ) ? $coupon->get_usage_limit( 'edit' ) : '' ); ?>\" placeholder=\"<?php esc_attr_e( 'Unlimited usage', 'multivendorx' ); ?>\" step=\"1\" min=\"0\">"
-      ],
-      [
-        41,
-        "<input type=\"number\" id=\"limit_usage_to_x_items\" name=\"limit_usage_to_x_items\" class=\"form-control\" value=\"<?php echo isset($_POST['limit_usage_to_x_items']) ? esc_attr($_POST['limit_usage_to_x_items']) : (esc_attr( $coupon->get_limit_usage_to_x_items( 'edit' ) ? $coupon->get_limit_usage_to_x_items( 'edit' ) : '' )); ?>\" placeholder=\"<?php esc_attr_e( 'Apply to all qualifying items in cart', 'multivendorx' ); ?>\" step=\"1\" min=\"0\">"
-      ],
-      [
-        50,
-        "<input type=\"number\" id=\"usage_limit_per_user\" name=\"usage_limit_per_user\" class=\"form-control\" value=\"<?php echo isset($_POST['usage_limit_per_user']) ? absint($_POST['usage_limit_per_user']) : (esc_attr( $coupon->get_usage_limit_per_user( 'edit' ) ? $coupon->get_usage_limit_per_user( 'edit' ) : '' )); ?>\" placeholder=\"<?php esc_attr_e( 'Unlimited usage', 'multivendorx' ); ?>\" step=\"1\" min=\"0\">"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\coupon-manager\\views\\html-coupon-data-usage-restriction.php": {
-    "sqli": [],
-    "xss": [
-      [
-        34,
-        "<input type=\"text\" id=\"minimum_amount\" name=\"minimum_amount\" class=\"form-control\" value=\"<?php echo isset($_POST['minimum_amount']) ? absint($_POST['minimum_amount']) : esc_attr( $coupon->get_minimum_amount( 'edit' ) ); ?>\" placeholder=\"<?php esc_attr_e( 'No minimum', 'multivendorx' ); ?>\">"
-      ],
-      [
-        43,
-        "<input type=\"text\" id=\"maximum_amount\" name=\"maximum_amount\" class=\"form-control\" value=\"<?php echo isset($_POST['maximum_amount']) ? absint($_POST['maximum_amount']) : esc_attr( $coupon->get_maximum_amount( 'edit' ) ); ?>\" placeholder=\"<?php esc_attr_e( 'No maximum', 'multivendorx' ); ?>\">"
-      ],
-      [
-        51,
-        "<input type=\"checkbox\" id=\"individual_use\" name=\"individual_use\" class=\"form-control\" value=\"yes\" <?php checked( wc_bool_to_string( isset($_POST['individual_use']) ? wc_clean($_POST['individual_use']) : $coupon->get_individual_use( 'edit' ) ), 'yes' ); ?>>"
-      ],
-      [
-        60,
-        "<input type=\"checkbox\" id=\"exclude_sale_items\" name=\"exclude_sale_items\" class=\"form-control\" value=\"yes\" <?php checked( wc_bool_to_string( isset($_POST['exclude_sale_items']) ? wc_clean($_POST['exclude_sale_items']) : $coupon->get_exclude_sale_items( 'edit' ) ), 'yes' ); ?>>"
-      ],
-      [
-        164,
-        "<input type=\"email\" id=\"customer_email\" name=\"customer_email\" class=\"form-control\" value=\"<?php echo isset($_POST['customer_email']) ? wc_clean($_POST['customer_email']) : esc_attr( implode( ', ', (array) $coupon->get_email_restrictions( 'edit' ) ) ); ?>\" placeholder=\"<?php esc_attr_e( 'No restrictions', 'multivendorx' ); ?>\" multiple=\"multiple\">"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\dashboard-widgets\\mvx-vendor-pending-shipping.php": {
-    "sqli": [],
-    "xss": [
-      [
-        56,
-        "<?php if (isset($_POST['mvx_start_date_order'])) : ?>"
-      ],
-      [
-        57,
-        "<input type=\"hidden\" name=\"mvx_start_date_order\" value=\"<?php echo isset($_POST['mvx_start_date_order']) ? wc_clean($_POST['mvx_start_date_order']) : date('Y-m-01'); ?>\" />"
-      ],
-      [
-        59,
-        "<?php if (isset($_POST['mvx_end_date_order'])) : ?>"
-      ],
-      [
-        60,
-        "<input type=\"hidden\" name=\"mvx_end_date_order\" value=\"<?php echo isset($_POST['mvx_end_date_order']) ? wc_clean($_POST['mvx_end_date_order']) : date('Y-m-d'); ?>\" />"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\product-manager\\edit-product.php": {
-    "sqli": [],
-    "xss": [
-      [
-        101,
-        "<div class=\"featured-img upload_image\"><?php $featured_img = isset($_POST['featured_img']) ? wc_clean($_POST['featured_img']) : ($product_object->get_image_id( 'edit' ) ? $product_object->get_image_id( 'edit' ) : ''); ?>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\product-manager\\products.php": {
-    "sqli": [],
-    "xss": [
-      [
-        223,
-        "data.post_status = \"<?php echo isset($_GET['post_status']) ? esc_attr(trim($_GET['post_status'])) : 'all' ?>\";"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\product-manager\\views\\html-product-data-advanced.php": {
-    "sqli": [],
-    "xss": [
-      [
-        20,
-        "<textarea id=\"_purchase_note\" name=\"_purchase_note\" class=\"form-control\"><?php echo isset($_POST['_purchase_note']) ? wc_clean($_POST['_purchase_note']) : esc_html( $product_object->get_purchase_note( 'edit' ) ); ?></textarea>"
-      ],
-      [
-        27,
-        "<input id=\"menu_order\" name=\"menu_order\" type=\"number\" class=\"form-control\" value=\"<?php echo isset($_POST['menu_order']) ? absint($_POST['menu_order']) : esc_attr( $product_object->get_menu_order( 'edit' ) ); ?>\" step=\"1\">"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\product-manager\\views\\html-product-data-general.php": {
-    "sqli": [],
-    "xss": [
-      [
-        47,
-        "<input type=\"text\" id=\"_regular_price\" name=\"_regular_price\" value=\"<?php echo isset($_POST['_regular_price']) ? wc_clean($_POST['_regular_price']) : ($product_object->get_regular_price( 'edit' ) ? $product_object->get_regular_price( 'edit' ) : ''); ?>\" class=\"form-control\">"
-      ],
-      [
-        53,
-        "<input type=\"text\" id=\"_sale_price\" name=\"_sale_price\" value=\"<?php echo isset($_POST['_sale_price']) ? wc_clean($_POST['_sale_price']) : ($product_object->get_sale_price( 'edit' ) ? $product_object->get_sale_price( 'edit' ) : ''); ?>\" class=\"form-control\">"
-      ],
-      [
-        67,
-        "<input type=\"date\" class=\"form-control sale_price_dates_from\" name=\"_sale_price_dates_from\" id=\"_sale_price_dates_from\" value=\"<?php echo isset($_POST['_sale_price_dates_from']) ? wc_clean($_POST['_sale_price_dates_from']) : ($sale_price_dates_from ? esc_attr( $sale_price_dates_from ) : ''); ?>\" placeholder=\"<?php echo esc_html( _x( 'From&hellip;', 'placeholder', 'multivendorx' ) ) . ' YYYY-MM-DD'; ?>\" maxlength=\"10\" pattern=\"<?php echo esc_attr( apply_filters( 'woocommerce_date_input_html_pattern', '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])' ) ); ?>\" />"
-      ],
-      [
-        72,
-        "<input type=\"date\" class=\"form-control sale_price_dates_to\" name=\"_sale_price_dates_to\" id=\"_sale_price_dates_to\" value=\"<?php echo isset($_POST['_sale_price_dates_to']) ? wc_clean($_POST['_sale_price_dates_to']) : ($sale_price_dates_to ? esc_attr( $sale_price_dates_to ) : ''); ?>\" placeholder=\"<?php echo esc_html( _x( 'To&hellip;', 'placeholder', 'multivendorx' ) ) . '  YYYY-MM-DD'; ?>\" maxlength=\"10\" pattern=\"<?php echo esc_attr( apply_filters( 'woocommerce_date_input_html_pattern', '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])' ) ); ?>\" />"
-      ],
-      [
-        135,
-        "<input class=\"form-control\" type=\"text\" id=\"_download_limit\" placeholder=\"<?php esc_attr_e( 'Unlimited', 'multivendorx' ); ?>\" name=\"_download_limit\" value=\"<?php echo -1 === $product_object->get_download_limit( 'edit' ) ? '' : (isset($_POST['_download_limit']) ? absint($_POST['_download_limit']) : $product_object->get_download_limit( 'edit' )); ?>\" />"
-      ],
-      [
-        144,
-        "<input class=\"form-control\" type=\"text\" placeholder=\"<?php esc_attr_e( 'Never', 'multivendorx' ); ?>\" id=\"_download_expiry\" name=\"_download_expiry\" value=\"<?php echo -1 === $product_object->get_download_expiry( 'edit' ) ? '' : (isset($_POST['_download_expiry']) ? wc_clean($_POST['_download_expiry']) : $product_object->get_download_expiry( 'edit' )); ?>\" />"
-      ],
-      [
-        160,
-        "<option value=\"taxable\" <?php selected( isset($_POST['_tax_status']) ? wc_clean($_POST['_tax_status']) : ($product_object->get_tax_status( 'edit' ) ?  $product_object->get_tax_status( 'edit' ) : ''), 'taxable' ); ?>><?php esc_html_e( 'Taxable', 'multivendorx' ); ?></option>"
-      ],
-      [
-        161,
-        "<option value=\"shipping\" <?php selected( isset($_POST['_tax_status']) ? wc_clean($_POST['_tax_status']) : ($product_object->get_tax_status( 'edit' ) ?  $product_object->get_tax_status( 'edit' ) : ''), 'shipping' ); ?>><?php esc_html_e( 'Shipping only', 'multivendorx' ); ?></option>"
-      ],
-      [
-        162,
-        "<option value=\"none\" <?php selected( isset($_POST['_tax_status']) ? wc_clean($_POST['_tax_status']) : ($product_object->get_tax_status( 'edit' ) ?  $product_object->get_tax_status( 'edit' ) : ''), 'none' ); ?>><?php esc_html_e( 'None', 'multivendorx' ); ?></option>"
-      ],
-      [
-        171,
-        "<option value=\"<?php echo $class; ?>\" <?php selected( isset($_POST['_tax_class']) ? wc_clean($_POST['_tax_class']) : ($product_object->get_tax_class( 'edit' ) ? $product_object->get_tax_class( 'edit' ) : ''), $class ); ?>><?php echo esc_html($class_label); ?></option>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\product-manager\\views\\html-product-data-inventory.php": {
-    "sqli": [],
-    "xss": [
-      [
-        23,
-        "<input class=\"form-control\" type=\"text\" id=\"_sku\" name=\"_sku\" value=\"<?php echo isset($_POST['_sku']) ? wc_clean($_POST['_sku']) : $product_object->get_sku( 'edit' ); ?>\" />"
-      ],
-      [
-        41,
-        "<input class=\"form-control\" type=\"checkbox\" id=\"_manage_stock\" name=\"_manage_stock\" value=\"yes\"<?php checked( isset($_POST['_manage_stock']) && $_POST['_manage_stock'] == 'yes' ? true : $product_object->get_manage_stock( 'edit' ), true ); ?>/>"
-      ],
-      [
-        59,
-        "<input class=\"form-control\" type=\"text\" id=\"_stock\" name=\"_stock\" value=\"<?php echo isset($_POST['_stock']) ? absint($_POST['_stock']) : wc_stock_amount( $product_object->get_stock_quantity( 'edit' ) ); ?>\" />"
-      ],
-      [
-        71,
-        "<option value=\"<?php echo $key; ?>\" <?php selected( isset($_POST['_backorders']) ? wc_clean($_POST['_backorders']) : $product_object->get_backorders( 'edit' ), $key ); ?>><?php echo $option; ?></option>"
-      ],
-      [
-        82,
-        "<input class=\"form-control\" type=\"text\" id=\"_low_stock_amount\" name=\"_low_stock_amount\" value=\"<?php echo isset($_POST['_low_stock_amount']) ? absint($_POST['_low_stock_amount']) : $product_object->get_low_stock_amount( 'edit' ); ?>\" placeholder=\"<?php echo esc_attr(get_option( 'woocommerce_notify_low_stock_amount') ); ?>\" />"
-      ],
-      [
-        101,
-        "<option value=\"<?php echo $key; ?>\" <?php selected( isset($_POST['_stock_status']) ? wc_clean($_POST['_stock_status']) : $product_object->get_stock_status( 'edit' ), $key ); ?>><?php echo $option; ?></option>"
-      ],
-      [
-        119,
-        "<input class=\"form-control\" type=\"checkbox\" id=\"_sold_individually\" name=\"_sold_individually\" value=\"yes\"<?php checked( isset($_POST['_sold_individually']) && $_POST['_sold_individually'] == 'yes' ? true : $product_object->get_sold_individually( 'edit' ), true ); ?>/>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\product-manager\\views\\html-product-data-shipping.php": {
-    "sqli": [],
-    "xss": [
-      [
-        22,
-        "<input class=\"form-control\" type=\"text\" id=\"_weight\" name=\"_weight\" value=\"<?php echo isset($_POST['_weight']) ? absint($_POST['_weight']) : $product_object->get_weight( 'edit' ); ?>\" placeholder=\"<?php echo wc_format_localized_decimal( 0 ); ?>\" />"
-      ],
-      [
-        32,
-        "<input class=\"form-control col-md-4\" id=\"product_length\" placeholder=\"<?php esc_attr_e( 'Length', 'multivendorx' ); ?>\" class=\"input-text wc_input_decimal\" size=\"6\" type=\"text\" name=\"_length\" value=\"<?php echo isset($_POST['_length']) ? absint($_POST['_length']) : esc_attr( wc_format_localized_decimal( $product_object->get_length( 'edit' ) ) ); ?>\" />"
-      ],
-      [
-        35,
-        "<input class=\"form-control col-md-4\" placeholder=\"<?php esc_attr_e( 'Width', 'multivendorx' ); ?>\" class=\"input-text wc_input_decimal\" size=\"6\" type=\"text\" name=\"_width\" value=\"<?php echo isset($_POST['_width']) ? absint($_POST['_width']) : esc_attr( wc_format_localized_decimal( $product_object->get_width( 'edit' ) ) ); ?>\" />"
-      ],
-      [
-        38,
-        "<input class=\"form-control col-md-4\" placeholder=\"<?php esc_attr_e( 'Height', 'multivendorx' ); ?>\" class=\"input-text wc_input_decimal last\" size=\"6\" type=\"text\" name=\"_height\" value=\"<?php echo isset($_POST['_height']) ? absint($_POST['_height']) : esc_attr( wc_format_localized_decimal( $product_object->get_height( 'edit' ) ) ); ?>\" />"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\dc-woocommerce-multi-vendor\\dc-woocommerce-multi-vendor\\templates\\vendor-dashboard\\product-manager\\views\\html-product-highlights.php": {
-    "sqli": [],
-    "xss": [
-      [
-        122,
-        "<strong class=\"editable-content\"><?php echo isset($_POST['post_title']) ? wc_clean($_POST['post_title']) : htmlspecialchars($product_object->get_title( 'edit' )); ?></strong>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\ebook-store\\ebook-store\\ebook_options.php": {
-    "sqli": [],
-    "xss": [
-      [
-        351,
-        "<?php if ((defined('WP_DEBUG') && WP_DEBUG === true) || $_GET['debug'] == 1): ?>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\ebook-store\\ebook-store\\ebook_store.php": {
-    "sqli": [],
-    "xss": [
-      [
-        130,
-        "//wp_mail('deian@motov.net','Debug IPN',print_r($_REQUEST,true));"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\ebook-store\\ebook-store\\ebook_store_add_issue_page_callback.php": {
-    "sqli": [],
-    "xss": [
-      [
-        25,
-        "//print_r($_REQUEST);"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\ebook-store\\ebook-store\\functions.php": {
-    "sqli": [],
-    "xss": [
-      [
-        546,
-        "//die(print_r($_POST['ebook'],true));"
-      ],
-      [
-        624,
-        "//wp_die(print_r($_REQUEST));"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\google-listings-and-ads\\google-listings-and-ads\\src\\ConnectionTest.php": {
-    "sqli": [],
-    "xss": [
-      [
-        299,
-        "<input name=\"merchant_id\" type=\"text\" value=\"<?php echo ! empty( $_GET['merchant_id'] ) ? intval( $_GET['merchant_id'] ) : ''; ?>\" />"
-      ],
-      [
-        317,
-        "Site URL <input name=\"site_url\" type=\"text\" style=\"width:14em; font-size:.9em\" value=\"<?php echo esc_url( ! empty( $_GET['site_url'] ) ? $_GET['site_url'] : $this->get_site_url() ); ?>\" />"
-      ],
-      [
-        320,
-        "MC ID <input name=\"account_id\" type=\"text\" style=\"width:8em; font-size:.9em\" value=\"<?php echo ! empty( $_GET['account_id'] ) ? intval( $_GET['account_id'] ) : ''; ?>\" />"
-      ],
-      [
-        382,
-        "); ?>\" <?php echo ( ($_GET['account_id'] ?? false) || $merchant_id ) ? '' : 'disabled=\"disabled\" title=\"Missing account ID\"' ?>>Claim Overwrite</a>"
-      ],
-      [
-        400,
-        ") ); ?>\" <?php echo ( ($_GET['account_id'] ?? false) || $merchant_id ) ? '' : 'disabled=\"disabled\" title=\"Missing account ID\"' ?>>Switch URL</a>"
-      ],
-      [
-        461,
-        "Customer ID <input name=\"customer_id\" type=\"text\" value=\"<?php echo ! empty( $_GET['customer_id'] ) ? intval( $_GET['customer_id'] ) : ''; ?>\" />"
-      ],
-      [
-        583,
-        "Product ID <input name=\"product_id\" type=\"text\" value=\"<?php echo ! empty( $_GET['product_id'] ) ? intval( $_GET['product_id'] ) : ''; ?>\" />"
-      ],
-      [
-        586,
-        "<input id=\"async-sync-product\" name=\"async\" value=1 type=\"checkbox\" <?php echo ! empty( $_GET['async'] ) ? 'checked' : ''; ?> />"
-      ],
-      [
-        593,
-        "<input name=\"merchant_id\" type=\"hidden\" value=\"<?php echo ! empty( $_GET['merchant_id'] ) ? intval( $_GET['merchant_id'] ) : ''; ?>\" />"
-      ],
-      [
-        604,
-        "<input id=\"async-sync-all-products\" name=\"async\" value=1 type=\"checkbox\" <?php echo ! empty( $_GET['async'] ) ? 'checked' : ''; ?> />"
-      ],
-      [
-        611,
-        "<input name=\"merchant_id\" type=\"hidden\" value=\"<?php echo ! empty( $_GET['merchant_id'] ) ? intval( $_GET['merchant_id'] ) : ''; ?>\" />"
-      ],
-      [
-        622,
-        "<input id=\"async-delete-synced-products\" name=\"async\" value=1 type=\"checkbox\" <?php echo ! empty( $_GET['async'] ) ? 'checked' : ''; ?> />"
-      ],
-      [
-        630,
-        "<input name=\"merchant_id\" type=\"hidden\" value=\"<?php echo ! empty( $_GET['merchant_id'] ) ? intval( $_GET['merchant_id'] ) : ''; ?>\" />"
-      ],
-      [
-        641,
-        "<input id=\"async-cleanup-products\" name=\"async\" value=1 type=\"checkbox\" <?php echo ! empty( $_GET['async'] ) ? 'checked' : ''; ?> />"
-      ],
-      [
-        649,
-        "<input name=\"merchant_id\" type=\"hidden\" value=\"<?php echo ! empty( $_GET['merchant_id'] ) ? intval( $_GET['merchant_id'] ) : ''; ?>\" />"
-      ],
-      [
-        712,
-        "Product/Coupon ID <input name=\"item_id\" type=\"text\" value=\"<?php echo ! empty( $_GET['item_id'] ) ? intval( $_GET['item_id'] ) : ''; ?>\" />"
-      ],
-      [
-        719,
-        "<option value=\"product.create\" <?php echo (! isset( $_GET['topic'] ) || $_GET['topic'] === 'product.create') ? \"selected\" : \"\" ?>>product.create</option>"
-      ],
-      [
-        720,
-        "<option value=\"product.delete\" <?php echo isset( $_GET['topic'] ) && $_GET['topic'] === 'product.delete' ? \"selected\" : \"\"?>>product.delete</option>"
-      ],
-      [
-        721,
-        "<option value=\"product.update\" <?php echo isset( $_GET['topic'] ) && $_GET['topic'] === 'product.update' ? \"selected\" : \"\"?>>product.update</option>"
-      ],
-      [
-        722,
-        "<option value=\"coupon.create\" <?php echo isset( $_GET['topic'] ) && $_GET['topic'] === 'coupon.create' ? \"selected\" : \"\"?>>coupon.create</option>"
-      ],
-      [
-        723,
-        "<option value=\"coupon.delete\" <?php echo isset( $_GET['topic'] ) && $_GET['topic'] === 'coupon.delete' ? \"selected\" : \"\"?>>coupon.delete</option>"
-      ],
-      [
-        724,
-        "<option value=\"coupon.update\" <?php echo isset( $_GET['topic'] ) && $_GET['topic'] === 'coupon.update' ? \"selected\" : \"\"?>>coupon.update</option>"
-      ],
-      [
-        725,
-        "<option value=\"shipping.update\" <?php echo isset( $_GET['topic'] ) && $_GET['topic'] === 'shipping.update' ? \"selected\" : \"\"?>>shipping.update</option>"
-      ],
-      [
-        726,
-        "<option value=\"settings.update\" <?php echo isset( $_GET['topic'] ) && $_GET['topic'] === 'settings.update' ? \"selected\" : \"\"?>>settings.update</option>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\jetpack\\jetpack\\class.jetpack.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        4956,
-        "* @since 4.6.0 Method was updated to use `$_REQUEST` instead of `$_GET` and `$_POST`. Method also updated to allow"
-      ],
-      [
-        4957,
-        "* passing in an `$environment` argument that overrides `$_REQUEST`. This was useful for integrating with SSO."
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\jetpack\\jetpack\\jetpack_vendor\\automattic\\jetpack-connection\\src\\class-authorize-json-api.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        34,
-        "* @since jetpack-4.6.0 Method was updated to use `$_REQUEST` instead of `$_GET` and `$_POST`. Method also updated to allow"
-      ],
-      [
-        35,
-        "* passing in an `$environment` argument that overrides `$_REQUEST`. This was useful for integrating with SSO."
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\jetpack\\jetpack\\jetpack_vendor\\automattic\\jetpack-connection\\src\\sso\\class-helpers.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        267,
-        "* This method returns an environment array that is meant to simulate `$_REQUEST` when the initial"
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\jetpack\\jetpack\\jetpack_vendor\\automattic\\jetpack-forms\\src\\contact-form\\class-form-view.php": {
-    "sqli": [],
-    "xss": [
-      [
-        74,
-        "var postId = <?php echo isset( $_GET['post_id'] ) ? absint( $_GET['post_id'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- not making a site change. ?>;"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\jetpack\\jetpack\\jetpack_vendor\\automattic\\jetpack-waf\\src\\class-waf-runtime.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        546,
-        "*           For example, ARGS_GET:id|ARGS_GET:/^name/ will only return the values for `$_GET['id']` and any key in `$_GET` that starts with `name`"
-      ],
-      [
-        548,
-        "*           For example, ARGS_GET|!ARGS_GET:z will return every value from `$_GET` except for `$_GET['z']`."
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\jetpack\\jetpack\\modules\\sharedaddy\\sharing.php": {
-    "sqli": [],
-    "xss": [
-      [
-        396,
-        "jQuery( '#new_sharing_name' ).val( '<?php echo esc_js( sanitize_text_field( wp_unslash( $_GET['name'] ) ) ); ?>' );"
-      ],
-      [
-        397,
-        "jQuery( '#new_sharing_url' ).val( '<?php echo esc_js( sanitize_text_field( wp_unslash( $_GET['url'] ) ) ); ?>' );"
-      ],
-      [
-        398,
-        "jQuery( '#new_sharing_icon' ).val( '<?php echo esc_js( sanitize_text_field( wp_unslash( $_GET['icon'] ) ) ); ?>' );"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\jetpack\\jetpack\\modules\\widget-visibility\\widget-conditions.php": {
-    "sqli": [],
-    "xss": [
-      [
-        530,
-        "echo esc_attr( filter_var( wp_unslash( $_POST['widget-conditions-visible'] ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\litespeed-cache\\litespeed-cache\\src\\cloud.cls.php": {
-    "sqli": [],
-    "xss": [
-      [
-        511,
-        "self::debug('Parsing echo', $_POST);"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\litespeed-cache\\litespeed-cache\\tpl\\crawler\\map.tpl.php": {
-    "sqli": [],
-    "xss": [
-      [
-        45,
-        "<input type=\"text\" name=\"kw\" value=\"<?php echo !empty($_POST['kw']) ? esc_html($_POST['kw']) : ''; ?>\" placeholder=\"<?php echo __('URL Search'); ?>\" style=\"width: 600px;\" />"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\store-locator-widget\\store-locator-widget\\admin_page.php": {
-    "sqli": [],
-    "xss": [
-      [
-        43,
-        "// \tif (isset($_REQUEST['admin_post_nonce_field']) && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['admin_post_nonce_field'])), 'admin_post_action')) echo '<div class=\"updated\"><p>Settings updated successfully.</p></div>';"
-      ],
-      [
-        44,
-        "// if (isset($_GET['settings-saved']) && !empty(sanitize_text_field(wp_unslash($_GET['settings-saved'])))) echo '<div class=\"updated\"><p>Settings updated successfully.</p></div>';"
-      ],
-      [
-        45,
-        "if ( isset( $_GET['nonce'] ) && wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['nonce'])), 'settings-saved-nonce' )) echo '<div class=\"updated\"><p>Settings updated successfully.</p></div>';"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\updraftplus\\updraftplus\\admin.php": {
-    "sqli": [],
-    "xss": [
-      [
-        1862,
-        "echo json_encode($this->get_activejobs_list(UpdraftPlus_Manipulation_Functions::wp_unslash($_GET)));"
-      ],
-      [
-        1884,
-        "echo $this->http_get(UpdraftPlus_Manipulation_Functions::wp_unslash($_REQUEST['uri']), $curl);"
-      ],
-      [
-        3044,
-        "// if (2 == $_GET['updraft_restore_success']) echo ' '.__('Your old (themes, uploads, plugins, whatever) directories have been retained with \"-old\" appended to their name. Remove them when you are satisfied that the backup worked properly.');"
-      ],
-      [
-        3052,
-        "if (isset($_GET['updraft_restore_success'])) echo '</div>';"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [
-      [
-        5122,
-        "// If the filesystem credentials are not empty then we now need to load these back into $_POST so that WP_Filesystem can access them"
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\updraftplus\\updraftplus\\central\\bootstrap.php": {
-    "sqli": [],
-    "xss": [
-      [
-        172,
-        "* Receive a new public key in $_GET, and echo a response. Will die() if called."
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\updraftplus\\updraftplus\\central\\commands.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        200,
-        "// Put them into $_POST, which is where request_filesystem_credentials() checks for them."
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\updraftplus\\updraftplus\\central\\modules\\core.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        179,
-        "// Put them into $_POST, which is where request_filesystem_credentials() checks for them."
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\updraftplus\\updraftplus\\central\\modules\\plugin.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        242,
-        "// Put them into $_POST, which is where request_filesystem_credentials() checks for them."
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\updraftplus\\updraftplus\\central\\modules\\theme.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        288,
-        "// Put them into $_POST, which is where request_filesystem_credentials() checks for them."
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\updraftplus\\updraftplus\\central\\modules\\updates.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        26,
-        "// Put them into $_POST, which is where request_filesystem_credentials() checks for them."
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\updraftplus\\updraftplus\\includes\\migrator-lite.php": {
-    "sqli": [],
-    "xss": [
-      [
-        245,
-        "echo '<strong>'.esc_html__('Search for', 'updraftplus').':</strong> '.esc_html(stripslashes($_POST['search'])).\"<br>\";"
-      ],
-      [
-        246,
-        "echo '<strong>'.esc_html__('Replace with', 'updraftplus').':</strong> '.esc_html(stripslashes($_POST['replace'])).\"<br>\";"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wordpress-seo\\wordpress-seo\\admin\\class-yoast-notification-center.php": {
-    "sqli": [],
-    "xss": [
-      [
-        540,
-        "$echo = wp_unslash( $_POST['version'] ) === '2';"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\wpeasycart.php": {
-    "sqli": [],
-    "xss": [
-      [
-        436,
-        "$db->insert_response( (int) $_GET['order_id'], 1, \"Dwolla Third Party\", print_r( $_GET, true ) );"
-      ],
-      [
-        476,
-        "$db->insert_response( (int) $_GET['order_id'], 1, \"Dwolla Third Party\", print_r( $_GET, true ) );"
-      ],
-      [
-        558,
-        "} else if ( isset( $_GET['ec_page'] ) && $_GET['ec_page'] == \"print_receipt\" ) {"
-      ],
-      [
-        1600,
-        "echo '<div id=\"wpeasycart_cart_holder\" style=\"position:relative; width:100%; min-height:350px;\" data-cart-page=\"' . esc_js( $cart_page ) . '\" data-success-code=\"' . ( ( isset( $_GET['ec_cart_success'] ) && sanitize_text_field( $_GET['ec_cart_success'] ) == 'account_created' ) ? 'account_created' : '' ) . '\" data-error-code=\"' . ( ( isset( $_GET['ec_cart_error'] ) && in_array( $_GET['ec_cart_error'], $error_codes ) ) ? esc_js( sanitize_text_field( $_GET['ec_cart_error'] ) ) : '' ) . '\" data-language=\"' . esc_attr( sanitize_text_field( $language ) ) . '\" data-nonce=\"' . esc_attr( wp_create_nonce( 'wp-easycart-get-dynamic-cart-page' ) ) . '\"><style>"
-      ],
-      [
-        8005,
-        "$response_string = print_r( $_POST, true );"
-      ],
-      [
-        8167,
-        "} else if ( isset( $_GET['wpeasycarthook'] ) && $_GET['wpeasycarthook'] == 'print-giftcard' ) {"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\inc\\wp_easycart_admin_api_routes.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        185,
-        "$sql .= $wpdb->prepare( ' AND ec_manufacturer.`name` LIKE %s', '%' . sanitize_text_field( wp_unslash( $_GET['s'] ) ) . '%' );"
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\inc\\wp_easycart_admin_orders.php": {
-    "sqli": [],
-    "xss": [
-      [
-        187,
-        "if ( isset( $_GET['ec_admin_form_action'] ) && 'print-receipt' == $_GET['ec_admin_form_action'] ) {"
-      ],
-      [
-        200,
-        "if ( isset( $_GET['ec_admin_form_action'] ) && 'print-packing-slip' == $_GET['ec_admin_form_action'] ) {"
-      ],
-      [
-        632,
-        "$this->print_receipt( (int) $_GET['bulk'][ $i ] );"
-      ],
-      [
-        635,
-        "$this->print_receipt( (int) $_GET['bulk'] );"
-      ],
-      [
-        637,
-        "$this->print_receipt( (int) $_GET['order_id'] );"
-      ],
-      [
-        771,
-        "$this->print_packing_slip( (int) $_GET['bulk'][ $i ] );"
-      ],
-      [
-        774,
-        "$this->print_packing_slip( (int) $_GET['bulk'] );"
-      ],
-      [
-        776,
-        "$this->print_packing_slip( (int) $_GET['order_id'] );"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\inc\\wp_easycart_admin_products.php": {
-    "sqli": [],
-    "xss": [
-      [
-        3369,
-        "echo '<div id=\"ec_admin_add_new_optionitem_quantity_row\"><h3>' . esc_attr__( 'Add New Quantity Item', 'wp-easycart' ) . ' <a href=\"admin.php?page=wp-easycart-products&subpage=products&product_id=' . esc_attr( (int) $_POST['product_id'] ) . '&ec_admin_form_action=export-option-item-quantities\" target=\"_blank\"' . wp_easycart_escape_html( apply_filters( 'wp_easycart_admin_lock_icon', ' onclick=\"return show_pro_required();\"' ) ) . '>' . esc_attr__( 'Export', 'wp-easycart' ) . wp_easycart_escape_html( apply_filters( 'wp_easycart_admin_lock_icon', ' <span class=\"dashicons dashicons-lock\" style=\"color:#FC0; margin-top:8px;\"></span>' ) ) . '</a><form action=\"\" method=\"POST\" enctype=\"multipart/form-data\" style=\"float:right; border:1px solid #CCC; padding:5px;\"><input type=\"hidden\" name=\"ec_admin_form_action\" value=\"import-option-item-quantities\" /><input type=\"hidden\" name=\"product_id\" id=\"product_id\" value=\"' . esc_attr( (int) $_POST['product_id'] ) . '\" /><input type=\"file\" placeholder=\"' . esc_attr__( 'Choose Quantity File', 'wp-easycart' ) . '\" name=\"import_file\" /><input type=\"submit\" value=\"' . esc_attr__( 'Import Quantities', 'wp-easycart' ) . '\"' . wp_easycart_escape_html( apply_filters( 'wp_easycart_admin_lock_icon', ' onclick=\"return show_pro_required();\"' ) ) . ' />' . wp_easycart_escape_html( apply_filters( 'wp_easycart_admin_lock_icon', ' <span class=\"dashicons dashicons-lock\" style=\"float:right; color:#FC0; margin-top:8px;\"></span>' ) ) . '</form></h3>';"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\inc\\wp_easycart_admin_shipping.php": {
-    "sqli": [],
-    "xss": [
-      [
-        780,
-        "echo esc_attr( (int) $_POST['id'] );"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\inc\\wp_easycart_admin_table.php": {
-    "sqli": [],
-    "xss": [
-      [
-        249,
-        "echo '<a onclick=\"ec_admin_importer_open_close(\\'' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_importer\\');\" class=\"ec_page_title_button\">' . esc_attr( $this->importer_button ) . '</a>';"
-      ],
-      [
-        250,
-        "echo '<div id=\"' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_importer\" class=\"ec_importer_form\">';"
-      ],
-      [
-        251,
-        "echo '<a href=\"' . esc_url_raw( wp_easycart_admin()->helpsystem->print_docs_url( $this->docs_guide, $this->docs_link, 'importer' ) ) . '\" target=\"_blank\" class=\"ec_admin_importer_help_link\">' . esc_attr__( 'Need Help?', 'wp-easycart' ) . '</a> <input type=\"hidden\" name=\"' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_import_file\" id=\"' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_import_file\"  class=\"wpec-admin-upload-input\" />';"
-      ],
-      [
-        252,
-        "echo '<input type=\"button\" class=\"ec_page_title_button\" value=\"' . esc_attr__( 'Browse', 'wp-easycart' ) . '\" id=\"' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_browse_button\" onclick=\"ec_admin_import_file_upload( \\'' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_import_file\\', \\'' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_import_button\\', \\'' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_importer_status\\', \\'' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_browse_button\\', \\'' . esc_attr__( 'Browse', 'wp-easycart' ) . '\\');\" />';"
-      ],
-      [
-        253,
-        "echo '<input type=\"button\" class=\"ec_page_title_button ec_import_button\" value=\"' . esc_attr__( 'Import File', 'wp-easycart' ) . '\" id=\"' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_import_button\" onclick=\"ec_admin_start_importer( \\'' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_import_file\\', \\'' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_importer_status\\', \\'' . esc_attr( wp_create_nonce( 'wp-easycart-start-import' ) ) . '\\' );\" />';"
-      ],
-      [
-        255,
-        "echo '<div id=\"' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_importer_status\" class=\"ec_importer_status\">';"
-      ],
-      [
-        260,
-        "wp_easycart_admin_verification()->print_nonce_field( 'wp_easycart_nonce', 'wp-easycart-bulk-' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : '' ) ) );"
-      ],
-      [
-        262,
-        "echo '<input type=\"hidden\" name=\"page\" value=\"' . esc_attr( sanitize_key( $_GET['page'] ) ) . '\" />';"
-      ],
-      [
-        264,
-        "echo '<input type=\"hidden\" name=\"subpage\" value=\"' . esc_attr( sanitize_key( $_GET['subpage'] ) ) . '\" />';"
-      ],
-      [
-        269,
-        "echo '<input type=\"hidden\" name=\"' . esc_attr( $this->get_vars[$i] ) . '\" id=\"' . esc_attr( $this->get_vars[$i] ) . '\" value=\"' . esc_attr( sanitize_text_field( wp_unslash( $_GET[ $this->get_vars[ $i ] ] ) ) ) . '\" />';"
-      ],
-      [
-        352,
-        "echo '<input type=\"text\" name=\"filter_' . esc_attr( $i ) . '\" style=\"max-width:200px;\" value=\"' . ( ( isset( $_GET[ 'filter_' . $i ] ) ) ? esc_attr( sanitize_text_field( wp_unslash( $_GET[ 'filter_' . $i ] ) ) ) : '' ) . '\" placeholder=\"' . esc_attr( $this->filters[ $i ]['label'] ) . '\" />';"
-      ],
-      [
-        458,
-        "echo esc_attr( sanitize_text_field( wp_unslash( $_GET['s'] ) ) );"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [
-      [
-        251,
-        "echo '<a href=\"' . esc_url_raw( wp_easycart_admin()->helpsystem->print_docs_url( $this->docs_guide, $this->docs_link, 'importer' ) ) . '\" target=\"_blank\" class=\"ec_admin_importer_help_link\">' . esc_attr__( 'Need Help?', 'wp-easycart' ) . '</a> <input type=\"hidden\" name=\"' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_import_file\" id=\"' . esc_attr( ( ( isset( $_GET['subpage'] ) ) ? sanitize_key( $_GET['subpage'] ) : 'products' ) ) . '_import_file\"  class=\"wpec-admin-upload-input\" />';"
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\left_nav.php": {
-    "sqli": [],
-    "xss": [
-      [
-        28,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-dashboard\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        37,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-license-status\" ) { ?> ec_admin_left_nav_selected<?php }?>\" style=\"background:#d43636 !important;\">"
-      ],
-      [
-        43,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-license-status\" ) { ?> ec_admin_left_nav_selected<?php }?>\" style=\"background:#dd9d22 !important;\">"
-      ],
-      [
-        49,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-license-status\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        55,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-license-status\" ) { ?> ec_admin_left_nav_selected<?php }?>\" style=\"background:#d43636 !important;\">"
-      ],
-      [
-        61,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-license-status\" ) { ?> ec_admin_left_nav_selected<?php }?>\" style=\"background:#e03333 !important;\">"
-      ],
-      [
-        67,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-license-status\" ) { ?> ec_admin_left_nav_selected<?php }?>\" style=\"background:#dd9d22 !important;\">"
-      ],
-      [
-        73,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-license-status\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        82,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-products\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        87,
-        "<div class=\"ec_admin_left_submenu<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-products\" ) { ?> ec_admin_left_submenu_open<?php }?>\" id=\"ec_admin_products_submenu\">"
-      ],
-      [
-        88,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-products\" && ( ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"products\" ) || !isset( $_GET['subpage'] ) ) ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_products_submenu_item\">"
-      ],
-      [
-        91,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"inventory\" ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_options_submenu_item\">"
-      ],
-      [
-        94,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && ( $_GET['subpage'] == \"option\" || $_GET['subpage'] == \"optionitems\" ) ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_options_submenu_item\">"
-      ],
-      [
-        97,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && ( $_GET['subpage'] == \"category\" || $_GET['subpage'] == \"category-products\" || $_GET['subpage'] == \"category-products-manage\" ) ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_categories_submenu_item\">"
-      ],
-      [
-        100,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && ( $_GET['subpage'] == \"menus\" || $_GET['subpage'] == \"submenus\" || $_GET['subpage'] == \"subsubmenus\" ) ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_menus_submenu_item\">"
-      ],
-      [
-        103,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"manufacturers\" ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_manufacturers_submenu_item\">"
-      ],
-      [
-        106,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"reviews\" ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_reviews_submenu_item\">"
-      ],
-      [
-        109,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"subscriptionplans\" ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_subscriptionplans_submenu_item\">"
-      ],
-      [
-        117,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-orders\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        122,
-        "<div class=\"ec_admin_left_submenu<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-orders\" ) { ?> ec_admin_left_submenu_open<?php }?>\" id=\"ec_admin_orders_submenu\">"
-      ],
-      [
-        123,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-orders\" && ( ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"orders\" ) || !isset( $_GET['subpage'] ) ) ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_orders_submenu_item\">"
-      ],
-      [
-        126,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"subscriptions\" ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_subscriptions_submenu_item\">"
-      ],
-      [
-        129,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"downloads\" ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_downloads_submenu_item\">"
-      ],
-      [
-        137,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-users\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        142,
-        "<div class=\"ec_admin_left_submenu<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-users\" ) { ?> ec_admin_left_submenu_open<?php }?>\" id=\"ec_admin_users_submenu\">"
-      ],
-      [
-        143,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-users\" && ( ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"accounts\" ) || !isset( $_GET['subpage'] ) ) ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_accounts_submenu_item\">"
-      ],
-      [
-        146,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"user-roles\" ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_subscribers_submenu_item\">"
-      ],
-      [
-        149,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"subscribers\" ) { ?> ec_admin_left_nav_selected<?php }?>\" id=\"ec_admin_subscribers_submenu_item\">"
-      ],
+  "plugins-wp\\all-in-one-event-calendar\\all-in-one-event-calendar\\app\\controller\\javascript-widget.php": {
+    "SSRF": [
       [
         158,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-rates\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        163,
-        "<div class=\"ec_admin_left_submenu<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-rates\" ) { ?> ec_admin_left_submenu_open<?php }?>\" id=\"ec_admin_rates_submenu\">"
-      ],
-      [
-        165,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-rates\" && ( ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"coupons\" ) || !isset( $_GET['subpage'] ) ) ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        168,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"promotions\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        171,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"gift-cards\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        174,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"abandon-cart\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        182,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-settings\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        187,
-        "<div class=\"ec_admin_left_submenu<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-settings\" ) { ?> ec_admin_left_submenu_open<?php }?>\" id=\"ec_admin_settings_submenu\">"
-      ],
-      [
-        189,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( !isset( $_GET['subpage'] ) || ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"initial-setup\" ) ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        192,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"products\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        195,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"checkout\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        198,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"account\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        203,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"payment\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        206,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"tax\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        209,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"fee\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        212,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"shipping-settings\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        215,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"shipping-rates\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        220,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"miscellaneous\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        223,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"design\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        226,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"language-editor\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        229,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"email-setup\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        232,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"country\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        235,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"states\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
+        "$main_widget = file_get_contents( $widget_file );"
+      ]
+    ]
+  },
+  "plugins-wp\\all-in-one-event-calendar\\all-in-one-event-calendar\\app\\controller\\javascript.php": {
+    "SSRF": [
       [
         238,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"perpage\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
+        "$page_js = file_get_contents( $js_path . 'pages/' . $page_to_load );"
       ],
       [
-        241,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"pricepoint\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
+        275,
+        "$page_ready = file_get_contents("
+      ]
+    ]
+  },
+  "plugins-wp\\all-in-one-event-calendar\\all-in-one-event-calendar\\lib\\http\\response\\render\\strategy\\jsonp.php": {
+    "XSS": [
       [
-        244,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"schedule\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        249,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"third-party\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
-      [
-        252,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"cart-importer\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
-      ],
+        28,
+        "echo $output;"
+      ]
+    ]
+  },
+  "plugins-wp\\contact-form-entries\\contact-form-entries\\includes\\plugin-pages.php": {
+    "XSS": [
       [
         257,
-        "<div class=\"ec_admin_left_nav_subitem<?php if ( isset( $_GET['subpage'] ) && $_GET['subpage'] == \"logs\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
+        "<?php echo get_avatar($note['user_id'], 60 ); ?>"
       ],
       [
         265,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-status\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
+        "<span class=\"post_time\" title=\"<?php _e('Note created at', 'contact-form-entries'); ?>\"><i class=\"fa fa-clock-o\"></i> <span class=\"date_time\"><?php echo date(\"d/M/y H:i:s\",strtotime($note['created']))?></span></span>"
+      ]
+    ]
+  },
+  "plugins-wp\\dashboard-widgets-suite\\dashboard-widgets-suite\\inc\\settings-reset.php": {
+    "XSS": [
+      [
+        53,
+        "<?php echo dashboard_widgets_suite_dismiss_notice_link($tab); ?>"
+      ]
+    ]
+  },
+  "plugins-wp\\event-tickets\\event-tickets\\common\\vendor\\woocommerce\\action-scheduler\\classes\\abstracts\\ActionScheduler_Abstract_ListTable.php": {
+    "XSS": [
+      [
+        608,
+        "$actions .= sprintf( '%s</span>', $separator );"
       ],
       [
-        273,
-        "<div class=\"ec_admin_left_nav_item ec_admin_default_color2-border ec_admin_default_color1-background-gradient<?php if ( isset( $_GET['page'] ) && $_GET['page'] == \"wp-easycart-registration\" ) { ?> ec_admin_left_nav_selected<?php }?>\">"
+        726,
+        "echo implode( \" | \\n\", $status_list_items ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\orders\\orders\\order-history.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\event-tickets\\event-tickets\\src\\admin-views\\list.php": {
+    "XSS": [
       [
-        16,
-        "<a href=\"#\"><?php echo sprintf( esc_attr__( 'Order %d was created!', 'wp-easycart' ), ( ( isset( $_GET['order_id'] ) ) ? (int) $_GET['order_id'] : '' ) ); ?></a>"
-      ],
-      [
-        44,
-        "<a href=\"#\"><?php echo sprintf( esc_attr__( 'Order logging is limited', 'wp-easycart' ), ( ( isset( $_GET['order_id'] ) ) ? (int) $_GET['order_id'] : '' ) ); ?></a>"
+        79,
+        "echo $provider_obj->get_event_reports_link( $post_id );"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\products\\categories\\category-details.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\event-tickets\\event-tickets\\src\\Tickets\\Commerce\\Reports\\Attendees.php": {
+    "XSS": [
       [
-        13,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new-category' ){ esc_attr_e( 'ADD NEW CATEGORY', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT CATEGORY', 'wp-easycart' ); } ?></span>"
-      ],
-      [
-        23,
-        "<?php if( isset( $_GET['category_id'] ) ){ ?><a href=\"<?php echo esc_url_raw( $this->get_category_link( ) ); ?>\" class=\"ec_page_title_button\"><?php esc_attr_e( 'View on Site', 'wp-easycart' ); ?></a><?php }?>"
-      ],
-      [
-        39,
-        "<?php if( isset( $_GET['category_id'] ) ){ ?><a href=\"<?php echo esc_url_raw( $this->get_category_link( ) ); ?>\" class=\"ec_page_title_button\"><?php esc_attr_e( 'View on Site', 'wp-easycart' ); ?></a><?php }?>"
+        117,
+        "$admin_title = sprintf( __( '%1$s - Attendee list', 'event-tickets' ), $event->post_title );"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\products\\manufacturers\\manufacturer-details.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\event-tickets\\event-tickets\\src\\Tribe\\Attendees.php": {
+    "XSS": [
       [
-        12,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new' ){ esc_attr_e( 'ADD NEW MANUFACTURER', 'wp-easycart' ); }else{ esc_attr_e('EDIT MANUFACTURER', 'wp-easycart' ); } ?></span>"
+        511,
+        "$admin_title = sprintf( __( '%s - Attendee list', 'event-tickets' ), $event->post_title );"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\products\\menus\\menulevel1-details.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\event-tickets\\event-tickets\\src\\Tribe\\Commerce\\Orders_Tabbed_View.php": {
+    "XSS": [
       [
-        13,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new-menulevel1' ){ esc_attr_e( 'ADD NEW MENU', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT MENU', 'wp-easycart' ); } ?></span>"
+        148,
+        "$view_title = sprintf( $title, get_the_title( $post_id ), $post_id );"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\products\\menus\\menulevel2-details.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\eventprime-event-calendar-management\\eventprime-event-calendar-management\\admin\\class-eventprime-event-calendar-management-admin.php": {
+    "XSS": [
       [
-        22,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new-menulevel2' ){ esc_attr_e( 'ADD NEW SUB-MENU', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT SUB-MENU', 'wp-easycart' ); } ?></span>"
+        2697,
+        "<?php echo '#' . absint( $post_id ); ?>"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\products\\menus\\menulevel3-details.php": {
-    "sqli": [],
-    "xss": [
-      [
-        21,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new-menulevel3' ){ esc_attr_e( 'ADD NEW SUB-SUB-MENU', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT SUB-SUB-MENU', 'wp-easycart' ); } ?></span>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\products\\options\\option-details.php": {
-    "sqli": [],
-    "xss": [
-      [
-        13,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new-option' ){ esc_attr_e( 'ADD NEW OPTION', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT OPTION', 'wp-easycart' ); } ?></span>"
-      ],
-      [
-        19,
-        "<?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'edit' ) { ?>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\products\\options\\optionitem-details.php": {
-    "sqli": [],
-    "xss": [
-      [
-        26,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new-optionitem' ){ esc_attr_e( 'ADD NEW OPTION ITEM', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT OPTION ITEM', 'wp-easycart' ); } ?></span>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\registration\\registration_status.php": {
-    "sqli": [],
-    "xss": [
-      [
-        18,
-        "<?php if( isset( $_GET['success'] ) && $_GET['success'] == 'deactivate-complete' ){ ?>"
-      ],
-      [
-        22,
-        "<?php }else if( isset( $_GET['error'] ) && $_GET['error'] == 'deactivate-no-key-found' ){ ?>"
-      ],
-      [
-        26,
-        "<?php }else if( isset( $_GET['error'] ) && $_GET['error'] == 'deactivate-registration-failed' ){ ?>"
-      ],
+  "plugins-wp\\eventprime-event-calendar-management\\eventprime-event-calendar-management\\admin\\partials\\settings\\settings-tab-emails.php": {
+    "XSS": [
       [
         32,
-        "<?php if( isset( $_GET['success'] ) && $_GET['success'] == 'activate-complete' ){ ?>"
+        "<?php  echo wp_kses($emailers_settings[$active_emailer_setting],$allowed_html);?>"
+      ]
+    ]
+  },
+  "plugins-wp\\eventprime-event-calendar-management\\eventprime-event-calendar-management\\admin\\partials\\settings\\settings-tab-payments.php": {
+    "XSS": [
+      [
+        44,
+        "<img src=\"<?php echo esc_url( $payments[$active_payment_setting]['icon_url'] );?>\" class=\"ep-payment-method-logo\">"
       ],
       [
-        36,
-        "<?php }else if( isset( $_GET['error'] ) && $_GET['error'] == 'activate-no-key-found' ){ ?>"
+        49,
+        "<?php echo $payments_settings[$active_payment_setting];?>"
+      ]
+    ]
+  },
+  "plugins-wp\\eventprime-event-calendar-management\\eventprime-event-calendar-management\\includes\\class-ep-ajax.php": {
+    "XSS": [
+      [
+        316,
+        "//print_r($ticket_data);"
       ],
       [
-        40,
-        "<?php }else if( isset( $_GET['error'] ) && $_GET['error'] == 'activate-registration-failed' ){ ?>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\settings\\cart-importer\\oscommerce-import.php": {
-    "sqli": [],
-    "xss": [
-      [
-        18,
-        "if( isset( $_GET['ec_success'] ) && $_GET['ec_success'] == \"oscommerce-imported\" ){ ?>"
+        343,
+        "//print_r($data);"
       ],
       [
-        22,
-        "<?php } else if( isset( $_GET['ec_action'] ) && $_GET['ec_action'] == \"import-oscommerce-products\" ){\t?>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\settings\\cart-importer\\woo-import.php": {
-    "sqli": [],
-    "xss": [
-      [
-        12,
-        "<?php if( isset( $_GET['ec_success'] ) && $_GET['ec_success'] == \"woo-imported\" ){ ?>"
+        364,
+        "//print_r($data);die;"
       ],
       [
-        16,
-        "<?php } else if( isset( $_GET['ec_action'] ) && $_GET['ec_action'] == \"import-woo-products\" ){\t?>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\settings\\country-state\\country-details.php": {
-    "sqli": [],
-    "xss": [
-      [
-        13,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new' ){ esc_attr_e( 'ADD NEW', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT', 'wp-easycart' ); } ?> <?php esc_attr_e( 'COUNTRY', 'wp-easycart' ); ?></span>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\settings\\country-state\\states-details.php": {
-    "sqli": [],
-    "xss": [
-      [
-        12,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new' ){ esc_attr_e( 'ADD NEW STATE & PROVINCE', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT STATE & PROVINCE', 'wp-easycart' ); } ?></span>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\settings\\initial-setup\\success-messages.php": {
-    "sqli": [],
-    "xss": [
-      [
-        1,
-        "<?php if( isset( $_GET['success'] ) && $_GET['success'] == \"easycart-initial-setup\" ){ ?>"
+        1631,
+        "echo json_encode($data);"
       ],
       [
-        3,
-        "<?php }else if( isset( $_GET['success'] ) && $_GET['success'] == \"easycart-storepage-added\" ){ ?>"
+        2156,
+        "echo $booking_controller->export_bookings_all($data);"
+      ]
+    ]
+  },
+  "plugins-wp\\eventprime-event-calendar-management\\eventprime-event-calendar-management\\includes\\class-ep-user-controller.php": {
+    "SSRF": [
+      [
+        417,
+        "$response = json_decode(file_get_contents(\"https://www.google.com/recaptcha/api/siteverify?secret=\".$ep_functions->ep_get_global_settings('google_recaptcha_secret_key').\"&response=\".$_POST['g-recaptcha-response'].\"&remoteip=\".$_SERVER['REMOTE_ADDR']), true);"
       ],
       [
-        5,
-        "<?php }else if( isset( $_GET['success'] ) && $_GET['success'] == \"easycart-cartpage-added\" ){ ?>"
+        562,
+        "$response = json_decode( file_get_contents( \"https://www.google.com/recaptcha/api/siteverify?secret=\".$ep_functions->ep_get_global_settings( 'google_recaptcha_secret_key' ).\"&response=\".$_POST['g-recaptcha-response'].\"&remoteip=\".$_SERVER['REMOTE_ADDR'] ), true );"
+      ]
+    ]
+  },
+  "plugins-wp\\hcaptcha-for-forms-and-more\\hcaptcha-for-forms-and-more\\src\\php\\EssentialBlocks\\Form.php": {
+    "CSRF": [
+      [
+        103,
+        "$form_data_str = isset( $_POST['form_data'] ) ? sanitize_text_field( wp_unslash( $_POST['form_data'] ) ) : '';"
       ],
       [
-        7,
-        "<?php }else if( isset( $_GET['success'] ) && $_GET['success'] == \"easycart-accountpage-added\" ){ ?>"
+        106,
+        "$_POST['hcaptcha-widget-id'] = $form_data['hcaptcha-widget-id'] ?? '';"
       ],
       [
-        9,
-        "<?php }else if( isset( $_GET['success'] ) && $_GET['success'] == \"easycart-demo-data-installed\" ){ ?>"
+        107,
+        "$_POST['h-captcha-response'] = $form_data['h-captcha-response'] ?? '';"
+      ]
+    ]
+  },
+  "plugins-wp\\hcaptcha-for-forms-and-more\\hcaptcha-for-forms-and-more\\vendor\\woocommerce\\action-scheduler\\classes\\abstracts\\ActionScheduler_Abstract_ListTable.php": {
+    "XSS": [
+      [
+        608,
+        "$actions .= sprintf( '%s</span>', $separator );"
       ],
       [
-        11,
-        "<?php }else if( isset( $_GET['success'] ) && $_GET['success'] == \"easycart-demo-data-uninstalled\" ){ ?>"
+        726,
+        "echo implode( \" | \\n\", $status_list_items ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\settings\\perpage\\perpage-details.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\mailchimp-for-woocommerce\\mailchimp-for-woocommerce\\admin\\partials\\mailchimp-woocommerce-admin-tabs.php": {
+    "XSS": [
       [
-        13,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new' ){ esc_attr_e( 'ADD NEW PER-PAGE VALUE', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT PER-PAGE VALUE', 'wp-easycart' ); } ?></span>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\settings\\pricepoint\\pricepoint-details.php": {
-    "sqli": [],
-    "xss": [
-      [
-        15,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new' ){ esc_attr_e( 'ADD NEW PRICE POINT', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT PRICE POINT', 'wp-easycart' ); } ?></span>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\settings\\products\\success-messages.php": {
-    "sqli": [],
-    "xss": [
-      [
-        1,
-        "<?php if( isset( $_GET['success'] ) && $_GET['success'] == \"easycart-products-saved\" ){ ?>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\upgrade\\upgrade-screen.php": {
-    "sqli": [],
-    "xss": [
-      [
-        22,
-        "<?php if( isset( $_GET['subpage'] ) && ( $_GET['subpage'] == 'shipping-settings' || $_GET['subpage'] == 'shipping-rates' ) ){ ?>"
+        131,
+        "<a href=\"?page=mailchimp-woocommerce&tab=api_key\" class=\"wizard-tab <?php echo $active_tab == 'api_key' ? 'wizard-tab-active' : ''; ?>\">"
       ],
       [
         140,
-        "<?php if( isset( $_GET['subpage'] ) && ( $_GET['subpage'] == 'shipping-settings' || $_GET['subpage'] == 'shipping-rates' ) ){ ?>"
+        "<a href=\"?page=mailchimp-woocommerce&tab=store_info\" class=\"wizard-tab <?php echo $active_tab == 'store_info' ? 'wizard-tab-active' : ''; ?>\">"
+      ],
+      [
+        152,
+        "<a href=\"?page=mailchimp-woocommerce&tab=campaign_defaults\" class=\"wizard-tab <?php echo $active_tab == 'campaign_defaults' ? 'wizard-tab-active' : ''; ?>\">"
+      ],
+      [
+        164,
+        "<a href=\"?page=mailchimp-woocommerce&tab=newsletter_settings\" class=\"wizard-tab <?php echo $active_tab == 'newsletter_settings' ? 'wizard-tab-active' : ''; ?>\">"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\users\\subscribers\\subscribers-details.php": {
-    "sqli": [],
-    "xss": [
-      [
-        13,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new' ){ esc_attr_e( 'ADD NEW SUBSCRIBER', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT SUBSCRIBER', 'wp-easycart' ); } ?></span>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\users\\user-roles\\user-role-details.php": {
-    "sqli": [],
-    "xss": [
-      [
-        13,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new' ){ esc_attr_e( 'ADD NEW USER ROLE', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT USER ROLE', 'wp-easycart' ); } ?></span>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\admin\\template\\users\\users\\user-details.php": {
-    "sqli": [],
-    "xss": [
-      [
-        12,
-        "<span><?php if( isset( $_GET['ec_admin_form_action'] ) && $_GET['ec_admin_form_action'] == 'add-new' ){ esc_attr_e( 'ADD NEW USER ACCOUNT', 'wp-easycart' ); }else{ esc_attr_e( 'EDIT USER ACCOUNT', 'wp-easycart' ); echo esc_attr( ' - ' . $this->user->first_name . ' ' . $this->user->last_name . ' (' . $this->user->user_id . ')' ); } ?></span>"
-      ],
-      [
-        17,
-        "<?php if( !isset( $_GET['ec_admin_form_action'] ) || $_GET['ec_admin_form_action'] != \"add-new\" ){ ?>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\design\\layout\\base-responsive-v3\\ec_add_to_cart_shortcode.php": {
-    "sqli": [],
-    "xss": [
-      [
-        37,
-        "<?php if ( isset( $_GET['ec_store_success'] ) && 'inquiry_sent' == $_GET['ec_store_success'] && isset( $_GET['model'] ) && $product->model_number == $_GET['model'] ) { ?>"
-      ],
-      [
-        39,
-        "<?php } else if ( isset( $_GET['ec_store_success'] ) && 'addtocart' == $_GET['ec_store_success'] && isset( $_GET['model'] ) && $product->model_number == $_GET['model'] ) { ?>"
-      ],
-      [
-        139,
-        "<li class=\"ec_details_swatch <?php echo ( 0 == $i ) ? 'ec_optionitem_images' : ''; ?> ec_option<?php echo esc_attr( $i+1 ); ?> ec_option<?php echo esc_attr( $i+1 ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?><?php if( $optionitem_in_stock ){ ?> ec_active <?php }?><?php if( $optionsets[$i]->optionset[$j]->optionitem_initially_selected || ( isset( $optionsets[$i]->option_meta['url_var'] ) && $optionsets[$i]->option_meta['url_var'] != '' && isset( $_GET[$optionsets[$i]->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionsets[$i]->option_meta['url_var']] ) ) == strtolower( $optionsets[$i]->optionset[$j]->optionitem_name ) ) || ( isset( $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] ) && $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] == $optionsets[$i]->optionset[$j]->optionitem_name ) ){ ?> ec_selected<?php }?>\" data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_id ); ?>\"<?php if( $product->use_optionitem_quantity_tracking && $i == 0 ){ ?> data-optionitem-quantity=\"<?php echo esc_attr( $product->option1quantity[$optionsets[$i]->optionset[$j]->optionitem_id] ); ?>\"<?php }?> data-optionitem-price=\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_price != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-onetime=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ) && $optionsets[$i]->optionset[$j]->optionitem_price_onetime != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-override=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_override ) && $optionsets[$i]->optionset[$j]->optionitem_price_override != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_override ); }else{ echo \"-1.00\"; } ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_multiplier ); ?>\"><img src=\"<?php if( substr( $optionsets[$i]->optionset[$j]->optionitem_icon, 0, 7 ) == 'http://' || substr( $optionsets[$i]->optionset[$j]->optionitem_icon, 0, 8 ) == 'https://' ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_icon ); }else{ echo esc_attr( plugins_url( \"/wp-easycart-data/products/swatches/\" . $optionsets[$i]->optionset[$j]->optionitem_icon, EC_PLUGIN_DATA_DIRECTORY ) ); } ?>\" title=\"<?php"
-      ],
-      [
-        157,
-        "<li class=\"ec_details_swatch wpeasycart-html-swatch <?php echo ( 0 == $i ) ? 'ec_optionitem_images' : ''; ?> ec_option<?php echo esc_attr( $i+1 ); ?> ec_option<?php echo esc_attr( $i+1 ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?><?php if( $optionitem_in_stock ){ ?> ec_active <?php }?><?php if( $optionsets[$i]->optionset[$j]->optionitem_initially_selected || ( isset( $optionsets[$i]->option_meta['url_var'] ) && $optionsets[$i]->option_meta['url_var'] != '' && isset( $_GET[$optionsets[$i]->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionsets[$i]->option_meta['url_var']] ) ) == strtolower( $optionsets[$i]->optionset[$j]->optionitem_name ) ) || ( isset( $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] ) && $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] == $optionsets[$i]->optionset[$j]->optionitem_name ) ){ ?> ec_selected<?php }?>\" data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_id ); ?>\"<?php if( $product->use_optionitem_quantity_tracking && $i == 0 ){ ?> data-optionitem-quantity=\"<?php echo esc_attr( $product->option1quantity[$optionsets[$i]->optionset[$j]->optionitem_id] ); ?>\"<?php }?> data-optionitem-price=\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_price != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-onetime=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ) && $optionsets[$i]->optionset[$j]->optionitem_price_onetime != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-override=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_override ) && $optionsets[$i]->optionset[$j]->optionitem_price_override != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_override ); }else{ echo \"-1.00\"; } ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_multiplier ); ?>\" title=\"<?php"
-      ],
-      [
-        202,
-        "<option value=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_id ); ?>\"<?php if( $product->use_optionitem_quantity_tracking && $i == 0 ){ ?> data-optionitem-quantity=\"<?php echo esc_attr( $product->option1quantity[$optionsets[$i]->optionset[$j]->optionitem_id] ); ?>\"<?php }?> data-optionitem-price=\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_price != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-onetime=\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_price_onetime != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-override=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_override ) && $optionsets[$i]->optionset[$j]->optionitem_price_override != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_override ); }else{ echo \"-1.00\"; } ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_multiplier ); ?>\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_initially_selected || ( isset( $optionsets[$i]->option_meta['url_var'] ) && $optionsets[$i]->option_meta['url_var'] != '' && isset( $_GET[$optionsets[$i]->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionsets[$i]->option_meta['url_var']] ) ) == strtolower( $optionsets[$i]->optionset[$j]->optionitem_name ) ) || ( isset( $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] ) && $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] == $optionsets[$i]->optionset[$j]->optionitem_name ) ){ ?> selected=\"selected\"<?php }?>><?php echo wp_easycart_escape_html( $optionsets[$i]->optionset[$j]->optionitem_name ); ?> <?php"
-      ],
-      [
-        273,
-        "<div class=\"ec_details_checkbox_row\"><input type=\"checkbox\" class=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $optionitem->optionitem_id ); ?>\" value=\"<?php echo esc_html( wp_easycart_escape_html( $optionitem->optionitem_name ) ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionitem->optionitem_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitem->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitem->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitem->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitem->optionitem_price_multiplier ); ?>\"<?php if( $optionitem->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ) == strtolower( $optionitem->optionitem_name ) ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitem->optionitem_name ) ){ ?> checked=\"checked\"<?php }?> /> <?php echo wp_easycart_escape_html( $optionitem->optionitem_name ); ?> <?php"
-      ],
-      [
-        305,
-        "<option value=\"<?php echo esc_attr( $optionitem->optionitem_id ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitem->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitem->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitem->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitem->optionitem_price_multiplier ); ?>\"<?php if( $optionitem->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ) == strtolower( $optionitem->optionitem_name ) ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitem->optionitem_name ) ){ ?> selected=\"selected\"<?php }?>><?php echo wp_easycart_escape_html( $optionitem->optionitem_name ); ?> <?php"
-      ],
-      [
-        333,
-        "<input type=\"text\" value=\"<?php if( isset( $_GET['o'.$optionset->option_id] ) || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) ) ){ echo esc_attr( htmlspecialchars( ( ( isset( $_GET['o'.$optionset->option_id] ) ) ? sanitize_text_field( $_GET['o'.$optionset->option_id] ) : sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ), ENT_QUOTES ) ); } ?>\" class=\"ec_is_datepicker\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" id=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[0]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_multiplier ); ?>\" /><?php"
-      ],
-      [
-        385,
-        "<li class=\"ec_details_swatch ec_advanced <?php echo ( $first_optionitem_image_type ) ? 'ec_optionitem_images' : ''; ?> ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?> ec_active<?php if( $optionitems[$j]->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) == $optionitems[$j]->optionitem_name ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitems[$j]->optionitem_name ) ){ ?> ec_selected<?php }?>\" data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionitems[$j]->optionitem_id ); ?>\" data-option-id=\"<?php echo esc_attr( $optionset->option_id ); ?>\" data-product-option-id=\"<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_multiplier ); ?>\"><img src=\"<?php if( substr( $optionitems[$j]->optionitem_icon, 0, 7 ) == 'http://' || substr( $optionitems[$j]->optionitem_icon, 0, 8 ) == 'https://' ){ echo esc_attr( $optionitems[$j]->optionitem_icon ); }else{ echo esc_attr( plugins_url( \"/wp-easycart-data/products/swatches/\" . $optionitems[$j]->optionitem_icon, EC_PLUGIN_DATA_DIRECTORY ) ); } ?>\" title=\"<?php echo esc_attr( $optionitems[$j]->optionitem_name ); ?> <?php"
-      ],
-      [
-        403,
-        "<li class=\"ec_details_swatch wpeasycart-html-swatch ec_advanced <?php echo ( $first_optionitem_image_type ) ? 'ec_optionitem_images' : ''; ?> ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?> ec_active<?php if( $optionitems[$j]->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) == $optionitems[$j]->optionitem_name ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitems[$j]->optionitem_name ) ){ ?> ec_selected<?php }?>\" data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionitems[$j]->optionitem_id ); ?>\" data-option-id=\"<?php echo esc_attr( $optionset->option_id ); ?>\" data-product-option-id=\"<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_multiplier ); ?>\" title=\"<?php echo esc_attr( $optionitems[$j]->optionitem_name ); ?><?php"
-      ],
-      [
-        480,
-        "<div class=\"ec_details_radio_row <?php echo ( $first_optionitem_image_type ) ? 'ec_optionitem_images' : ''; ?>\"><input type=\"radio\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" value=\"<?php echo esc_attr( $optionitem->optionitem_id ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitem->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitem->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitem->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitem->optionitem_price_multiplier ); ?>\"<?php if( $optionitem->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ) == strtolower( $optionitem->optionitem_name ) ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitem->optionitem_name ) ){ ?> checked=\"checked\"<?php }?> /> <?php echo wp_easycart_escape_html( $optionitem->optionitem_name ); ?> <?php"
-      ],
-      [
-        507,
-        "<input type=\"text\" value=\"<?php if( isset( $_GET['o'.$optionset->option_id] ) || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) ) ){ echo esc_attr( htmlspecialchars( ( ( isset( $_GET['o'.$optionset->option_id] ) ) ? sanitize_text_field( $_GET['o'.$optionset->option_id] ) : sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ), ENT_QUOTES ) ); }else if( $optionitems[0]->optionitem_initial_value != '' ){ echo esc_attr( $optionitems[0]->optionitem_initial_value ); } ?>\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" id=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\"<?php if( isset( $optionset->option_meta['min_length'] ) && '' != $optionset->option_meta['min_length'] ) { ?> minlength=\"<?php echo esc_attr( $optionset->option_meta['min_length'] ); ?>\"<?php }?><?php if( isset( $optionset->option_meta['max_length'] ) && '' != $optionset->option_meta['max_length'] ) { ?> maxlength=\"<?php echo esc_attr( $optionset->option_meta['max_length'] ); ?>\"<?php }?> data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[0]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_multiplier ); ?>\" data-optionitem-price-per-character=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_per_character ); ?>\" /><?php"
-      ],
-      [
-        530,
-        "<input type=\"number\" value=\"<?php if( isset( $_GET['o'.$optionset->option_id] ) || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) ) ){ echo esc_attr( htmlspecialchars( ( ( isset( $_GET['o'.$optionset->option_id] ) ) ? sanitize_text_field( $_GET['o'.$optionset->option_id] ) : sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ), ENT_QUOTES ) ); }else if( $optionitems[0]->optionitem_initial_value != '' ){ echo esc_attr( $optionitems[0]->optionitem_initial_value ); } ?>\" min=\"<?php echo esc_attr( $optionset->option_meta['min'] ); ?>\" max=\"<?php echo esc_attr( $optionset->option_meta['max'] ); ?>\" step=\"<?php echo esc_attr( $optionset->option_meta['step'] ); ?>\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" id=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[0]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_multiplier ); ?>\" /><?php"
-      ],
-      [
-        553,
-        "<textarea name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" id=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[0]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_multiplier ); ?>\" data-optionitem-price-per-character=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_per_character ); ?>\"><?php if( isset( $_GET['o'.$optionset->option_id] ) || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) ) ){ echo esc_attr( htmlspecialchars( ( ( isset( $_GET['o'.$optionset->option_id] ) ) ? sanitize_text_field( $_GET['o'.$optionset->option_id] ) : sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ), ENT_QUOTES ) ); } ?></textarea><?php"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\design\\layout\\base-responsive-v3\\ec_breadcrumb_widget.php": {
-    "sqli": [],
-    "xss": [
-      [
-        98,
-        "echo \"<span class=\\\"raquo\\\">\" . esc_attr( $divider ) . \"</span>\" . '<a href=\"' . esc_attr( $store_page . $permalink_divider ) . 'ec_search=' . esc_attr( sanitize_text_field( $_GET['ec_search'] ) ) . '\">' . esc_attr( sanitize_text_field( $_GET['ec_search'] ) ) . '</a>';"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\design\\layout\\base-responsive-v3\\ec_cart.php": {
-    "sqli": [],
-    "xss": [
-      [
-        20,
-        "<div class=\"ec_cart_breadcrumb<?php if( isset( $_GET['ec_page'] ) ){?> ec_inactive<?php }?>\"><?php echo wp_easycart_language( )->get_text( 'cart', 'cart_title' ); ?></div>"
-      ],
-      [
-        22,
-        "<div class=\"ec_cart_breadcrumb<?php if( !isset( $_GET['ec_page'] ) || ( isset( $_GET['ec_page'] ) && $_GET['ec_page'] != \"checkout_info\" ) ){?> ec_inactive<?php }?>\"><?php echo wp_easycart_language( )->get_text( 'cart', 'cart_checkout_details_title' ); ?></div>"
-      ],
-      [
-        24,
-        "<div class=\"ec_cart_breadcrumb<?php if( !isset( $_GET['ec_page'] ) || ( isset( $_GET['ec_page'] ) && $_GET['ec_page'] != \"checkout_payment\" ) ){?> ec_inactive<?php }?>\"><?php echo wp_easycart_language( )->get_text( 'cart', 'cart_submit_payment_title' ); ?></div>"
-      ],
-      [
-        27,
-        "<?php if( !isset( $_GET['ec_page'] ) || ( (float) apply_filters( 'wpeasycart_minimum_order_total', get_option( 'ec_option_minimum_order_total' ) ) > 0 && (float) apply_filters( 'wpeasycart_minimum_order_total', get_option( 'ec_option_minimum_order_total' ) ) > $this->cart->subtotal ) ){ ?>"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\design\\layout\\base-responsive-v3\\ec_cart_invoice.php": {
-    "sqli": [],
-    "xss": [
-      [
-        14,
-        "<?php if( isset( $_GET['ideal'] ) && isset( $_GET['client_secret'] ) && isset( $_GET['source'] ) && $_GET['ideal'] == 'returning' ){ ?>"
-      ],
+  "plugins-wp\\mailchimp-for-woocommerce\\mailchimp-for-woocommerce\\admin\\v2\\templates\\mailchimp-woocommerce-admin-pages.php": {
+    "XSS": [
       [
         126,
-        "source: '<?php echo esc_attr( sanitize_text_field( $_GET['source'] ) ); ?>',"
+        "<li class=\"<?php echo ( MC_WC_REVIEW_SYNC_SETTINGS === $active_breadcrumb && $has_valid_api_key) ? 'current' : (!$has_valid_api_key ? 'disabled' : 'mc-wc-breadcrumb-link'); ?> <?php echo ($is_confirmation ? 'mc-wc-breadcrumb-nextable' : ''); ?>\">"
       ],
       [
-        127,
-        "client_secret: '<?php echo esc_attr( sanitize_text_field( $_GET['client_secret'] ) ); ?>',"
+        133,
+        "<li class=\"<?php echo ( MC_WC_CONFIRMATION === $active_breadcrumb ) ? 'current' : ($is_confirmation ? 'mc-wc-breadcrumb-link' : 'disabled') ; ?>\">"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\design\\layout\\base-responsive-v3\\ec_cart_paypal_express.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\mailchimp-for-woocommerce\\mailchimp-for-woocommerce\\admin\\v2\\templates\\confirmation\\content.php": {
+    "XSS": [
       [
         17,
-        "<?php if( isset( $_GET['OID'] ) || $oid ){ ?>"
-      ],
-      [
-        18,
-        "<input type=\"hidden\" name=\"paypal_order_id\" value=\"<?php echo esc_attr( ( isset( $_GET['OID'] ) ) ? strtoupper( preg_replace( \"/[^A-Za-z0-9\\-]/\", '', sanitize_text_field( $_GET['OID'] ) ) ) : strtoupper( preg_replace( \"/[^A-Za-z0-9\\-]/\", '', $oid ) ) ); ?>\" />"
+        "<li class=\"<?php if (MC_WC_OVERVIEW_TAB === $active_tab) { echo 'current'; } ?>\">"
       ],
       [
         20,
-        "<input type=\"hidden\" name=\"paypal_payment_id\" value=\"<?php echo esc_attr( ( isset( $_GET['PID'] ) ) ? strtoupper( preg_replace( \"/[^A-Za-z0-9\\-]/\", '', sanitize_text_field( $_GET['PID'] ) ) ) : strtoupper( preg_replace( \"/[^A-Za-z0-9\\-]/\", '', $pid ) ) ); ?>\" />"
+        "<li class=\"<?php if (MC_WC_STORE_INFO_TAB === $active_tab) { echo 'current'; } ?>\">"
+      ],
+      [
+        23,
+        "<li class=\"<?php if (MC_WC_AUDIENCE_TAB === $active_tab) { echo 'current'; } ?>\">"
+      ],
+      [
+        26,
+        "<li class=\"<?php if (MC_WC_LOGS_TAB === $active_tab) { echo 'current'; } ?>\">"
+      ],
+      [
+        29,
+        "<li class=\"<?php if (MC_WC_ADVANCED_TAB === $active_tab) { echo 'current'; } ?>\">"
+      ],
+      [
+        41,
+        "<div class=\"mc-wc-tab-content <?php echo $active_tab; ?>\">"
+      ]
+    ]
+  },
+  "plugins-wp\\mailchimp-for-woocommerce\\mailchimp-for-woocommerce\\includes\\class-mailchimp-woocommerce-newsletter.php": {
+    "XSS": [
+      [
+        110,
+        "echo apply_filters( 'mailchimp_woocommerce_newsletter_field', $checkbox, $status, $label);"
+      ]
+    ]
+  },
+  "plugins-wp\\ninja-forms\\ninja-forms\\blocks\\bootstrap.php": {
+    "XSS": [
+      [
+        227,
+        "#nf-form-<?php echo $form_id; ?>-cont {"
+      ]
+    ]
+  },
+  "plugins-wp\\ninja-forms\\ninja-forms\\includes\\Admin\\CPT\\DownloadAllSubmissions.php": {
+    "XSS": [
+      [
+        188,
+        "document.location.href = \"<?php echo $redirect; ?>\";"
+      ]
+    ]
+  },
+  "plugins-wp\\ninja-forms\\ninja-forms\\includes\\Admin\\Menus\\ImportExport.php": {
+    "SSRF": [
+      [
+        63,
+        "$data = file_get_contents( $_FILES[ 'nf_import_form' ][ 'tmp_name' ] );"
+      ],
+      [
+        111,
+        "$import = file_get_contents( $_FILES[ 'nf_import_fields' ][ 'tmp_name' ] );"
+      ]
+    ]
+  },
+  "plugins-wp\\ninja-forms\\ninja-forms\\includes\\Admin\\Menus\\Submissions.php": {
+    "XSS": [
+      [
+        405,
+        "document.location.href = \"<?php echo $redirect; ?>\";"
+      ]
+    ]
+  },
+  "plugins-wp\\ninja-forms\\ninja-forms\\lib\\StepProcessing\\menu.php": {
+    "XSS": [
+      [
+        133,
+        "<h2><?php echo $page_title ?></h2>"
+      ]
+    ]
+  },
+  "plugins-wp\\post-smtp\\post-smtp\\Postman\\Mobile\\includes\\phpqrcode\\index.php": {
+    "XSS": [
+      [
+        72,
+        "echo '<img src=\"'.$PNG_WEB_DIR.basename($filename).'\" /><hr/>';"
+      ],
+      [
+        86,
+        "echo '<option value=\"'.$i.'\"'.(($matrixPointSize==$i)?' selected':'').'>'.$i.'</option>';"
+      ]
+    ]
+  },
+  "plugins-wp\\post-smtp\\post-smtp\\Postman\\Postman-Mail\\libs\\vendor\\woocommerce\\action-scheduler\\classes\\abstracts\\ActionScheduler_Abstract_ListTable.php": {
+    "XSS": [
+      [
+        590,
+        "$actions .= sprintf( '%s</span>', $separator );"
+      ],
+      [
+        708,
+        "echo implode( \" | \\n\", $status_list_items ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped"
+      ]
+    ]
+  },
+  "plugins-wp\\redux-framework\\redux-framework\\redux-core\\inc\\extensions\\color_scheme\\class-redux-extension-color-scheme.php": {
+    "XSS": [
+      [
+        558,
+        "echo $content; // phpcs:ignore WordPress.Security.EscapeOutput"
+      ],
+      [
+        606,
+        "echo Redux_Color_Scheme_Functions::get_scheme_select_html( $scheme_name ); // phpcs:ignore WordPress.Security.EscapeOutput"
+      ]
+    ]
+  },
+  "plugins-wp\\redux-framework\\redux-framework\\redux-core\\inc\\extensions\\widget_areas\\class-redux-widget-areas.php": {
+    "XSS": [
+      [
+        177,
+        "echo $name; // phpcs:disable WordPress.Security.EscapeOutput"
+      ]
+    ]
+  },
+  "plugins-wp\\redux-framework\\redux-framework\\redux-core\\inc\\welcome\\class-redux-welcome.php": {
+    "XSS": [
+      [
+        151,
+        "class=\"nav-tab <?php echo( 'redux-framework' === $selected ? 'nav-tab-active' : '' ); ?>\""
+      ]
+    ]
+  },
+  "plugins-wp\\relevanssi\\relevanssi\\lib\\admin-ajax.php": {
+    "XSS": [
+      [
+        256,
+        "$result .= '<p>' . sprintf( __( 'Found a total of %1$d posts, showing posts %2$d–%3$s.', 'relevanssi' ), $total, $start, '<span id=\"offset\">' . $end . '</span>' ) . '</p>';"
+      ],
+      [
+        287,
+        "$title     = sprintf( '<a href=\"%1$s\">%2$s %3$s</a>', $permalink, $post->post_title, $post_type );"
+      ],
+      [
+        290,
+        "$edit_link = sprintf( '(<a href=\"%1$s\">%2$s %3$s</a>)', $edit_url, __( 'Edit', 'relevanssi' ), $post_type );"
+      ]
+    ]
+  },
+  "plugins-wp\\relevanssi\\relevanssi\\lib\\user-searches.php": {
+    "XSS": [
+      [
+        107,
+        "<?php echo $source_select; ?>"
+      ],
+      [
+        141,
+        "<?php echo intval( relevanssi_nothing_found_queries( $from, $to, $source ) ); ?>"
+      ]
+    ]
+  },
+  "plugins-wp\\role-based-help-notes\\role-based-help-notes\\includes\\class-tabbed-settings.php": {
+    "XSS": [
+      [
+        538,
+        "echo '<a class=\"nav-tab ' . $active . '\" href=\"?page=' . $this->menu . '&tab=' . $tab_key . '\">' . $tab_options_array['title'] . '</a>';"
+      ]
+    ]
+  },
+  "plugins-wp\\role-based-help-notes\\role-based-help-notes\\includes\\class-tgm-plugin-activation.php": {
+    "XSS": [
+      [
+        872,
+        "'title'  => sprintf( $title, $this->plugins[ $slug ]['name'] ),"
+      ]
+    ]
+  },
+  "plugins-wp\\schema-and-structured-data-for-wp\\schema-and-structured-data-for-wp\\admin_section\\structure-admin.php": {
+    "XSS": [
+      [
+        2038,
+        "$message = sprintf(__( 'Your license key expired on %s.', 'schema-and-structured-data-for-wp' ),date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, current_time( 'timestamp' ) ) ));"
+      ]
+    ]
+  },
+  "plugins-wp\\schema-and-structured-data-for-wp\\schema-and-structured-data-for-wp\\modules\\reviews\\class-saswp-reviews-collection.php": {
+    "XSS": [
+      [
+        1020,
+        "[saswp-reviews-collection id=\"<?php echo intval($post_id); ?>\"]"
+      ]
+    ]
+  },
+  "plugins-wp\\schema-and-structured-data-for-wp\\schema-and-structured-data-for-wp\\modules\\reviews\\comments.php": {
+    "XSS": [
+      [
+        211,
+        "echo $rating_box_escaped;"
+      ]
+    ]
+  },
+  "plugins-wp\\schema-and-structured-data-for-wp\\schema-and-structured-data-for-wp\\view\\schema-type.php": {
+    "XSS": [
+      [
+        1348,
+        "echo apply_filters( 'saswp_repeater_html_render_filter', $post_id, $meta_list_arr);"
+      ]
+    ]
+  },
+  "plugins-wp\\site-reviews\\site-reviews\\vendors\\woocommerce\\action-scheduler\\classes\\abstracts\\ActionScheduler_Abstract_ListTable.php": {
+    "XSS": [
+      [
+        608,
+        "$actions .= sprintf( '%s</span>', $separator );"
+      ],
+      [
+        726,
+        "echo implode( \" | \\n\", $status_list_items ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped"
+      ]
+    ]
+  },
+  "plugins-wp\\ultimate-addons-for-gutenberg\\ultimate-addons-for-gutenberg\\blocks-config\\image-gallery\\class-spectra-image-gallery.php": {
+    "XSS": [
+      [
+        1032,
+        "<?php echo $attributes['feedPagination'] ? wp_kses( $this->render_grid_pagination_controls( $attributes ), $grid_page_allowed_tags ) : ''; ?>"
+      ],
+      [
+        1040,
+        "<?php echo $attributes['feedPagination'] ? wp_kses_post( $this->render_masonry_pagination_controls( $attributes ) ) : ''; ?>"
+      ],
+      [
+        1113,
+        "<?php echo $attributes['mediaGallery'][ $i ]['caption'] ? wp_kses_post( $attributes['mediaGallery'][ $i ]['caption'] ) : wp_kses_post( $attributes['imageDefaultCaption'] ); ?>"
+      ],
+      [
+        1669,
+        "loadLightBoxImages( blockScope, lightboxSwiper, null, <?php echo wp_json_encode( $attr ); ?>, thumbnailSwiper );"
+      ],
+      [
+        1693,
+        "const attr = <?php echo wp_json_encode( $attr ); ?>;"
+      ]
+    ]
+  },
+  "plugins-wp\\ultimate-addons-for-gutenberg\\ultimate-addons-for-gutenberg\\blocks-config\\post\\class-uagb-post.php": {
+    "XSS": [
+      [
+        1491,
+        "echo $this->render_pagination( $query, $attributes ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already escaped using wp_kses_post inside render_pagination()."
+      ],
+      [
+        2033,
+        "<?php echo ( true === $attributes['hideTaxonomyIcon'] ) ? '<span class=\"dashicons-admin-users dashicons\"></span>' : ''; ?>"
+      ],
+      [
+        2054,
+        "<?php echo ( true === $attributes['hideTaxonomyIcon'] ) ? '<span class=\"dashicons-calendar dashicons\"></span>' : ''; ?>"
+      ],
+      [
+        2074,
+        "<?php echo ( true === $attributes['hideTaxonomyIcon'] ) ? '<span class=\"dashicons-admin-comments dashicons\"></span>' : ''; ?>"
+      ],
+      [
+        2111,
+        "<?php echo ( true === $attributes['hideTaxonomyIcon'] ) ? '<span class=\"dashicons-tag dashicons\"></span>' : ''; ?>"
+      ]
+    ]
+  },
+  "plugins-wp\\ultimate-addons-for-gutenberg\\ultimate-addons-for-gutenberg\\classes\\class-uagb-admin.php": {
+    "XSS": [
+      [
+        206,
+        "'package_url' => sprintf( 'https://downloads.wordpress.org/plugin/%s.%s.zip', $plugin_slug, $update_version ),"
+      ]
+    ]
+  },
+  "plugins-wp\\ultimate-addons-for-gutenberg\\ultimate-addons-for-gutenberg\\lib\\gutenberg-templates\\inc\\importer\\template-kit-importer.php": {
+    "XSS": [
+      [
+        56,
+        "'message' => sprintf( __( 'Invalid Request URL - %s', 'ultimate-addons-for-gutenberg' ), $api_uri ),"
+      ]
+    ]
+  },
+  "plugins-wp\\user-registration\\user-registration\\includes\\class-ur-ajax.php": {
+    "XSS": [
+      [
+        1111,
+        "$shortcode       = sprintf( $pattern, absint( $form_id ) );"
+      ]
+    ]
+  },
+  "plugins-wp\\user-registration\\user-registration\\includes\\class-ur-form-handler.php": {
+    "XSS": [
+      [
+        54,
+        "$value = sprintf( '%s:%s', sanitize_text_field( wp_unslash( $_GET['login'] ) ), sanitize_text_field( wp_unslash( $_GET['key'] ) ) ); // phpcs:ignore WordPress.Security.NonceVerification"
+      ],
+      [
+        217,
+        "$user_email_update_message = sprintf( __( 'Your email address has not been updated yet. Please check your inbox at <strong>%s</strong> for a confirmation email.', 'user-registration' ), $pending_email );"
+      ]
+    ]
+  },
+  "plugins-wp\\user-registration\\user-registration\\includes\\functions-ur-account.php": {
+    "XSS": [
+      [
+        55,
+        "$error = sprintf( '<strong>' . __( 'ERROR:', 'user-registration' ) . '</strong>' . __( 'The password you entered for username %1$1s is incorrect. %2$2s', 'user-registration' ), sanitize_text_field( wp_unslash( $_POST['username'] ) ), \"<a href='\" . esc_url( wp_lostpassword_url() ) . \"'>\" . __( 'Lost Your Password?', 'user-registration' ) . '</a>' ); // phpcs:ignore WordPress.Security.NonceVerification"
+      ],
+      [
+        58,
+        "$error = sprintf( '<strong>' . __( 'ERROR:', 'user-registration' ) . '</strong>' . __( 'Invalid username. %1s', 'user-registration' ), \"<a href='\" . esc_url( wp_lostpassword_url() ) . \"'>\" . __( 'Lost Your Password?', 'user-registration' ) . '</a>' ); // phpcs:ignore WordPress.Security.NonceVerification"
+      ]
+    ]
+  },
+  "plugins-wp\\user-registration\\user-registration\\includes\\functions-ur-core.php": {
+    "XSS": [
+      [
+        5774,
+        "echo apply_filters( 'user_registration_frontend_form_row_end', '', $form_id, $current_row ); // phpcs:ignore"
+      ]
+    ]
+  },
+  "plugins-wp\\user-registration\\user-registration\\includes\\abstracts\\abstract-ur-list-table.php": {
+    "XSS": [
+      [
+        660,
+        "$status_links['all'] = sprintf("
+      ],
+      [
+        692,
+        "$status_links[ $status_name ] = sprintf("
+      ]
+    ]
+  },
+  "plugins-wp\\user-registration\\user-registration\\includes\\admin\\class-ur-admin-import-export-forms.php": {
+    "SSRF": [
+      [
+        146,
+        "$form_datas_obj = json_decode( file_get_contents( $_FILES['jsonfile']['tmp_name'] ) ); // @codingStandardsIgnoreLine"
+      ]
+    ]
+  },
+  "plugins-wp\\user-registration\\user-registration\\includes\\admin\\class-ur-admin-profile.php": {
+    "XSS": [
+      [
+        185,
+        "$attribute_string .= sprintf( '%s=\"%s\" ', $name, $value );"
+      ]
+    ]
+  },
+  "plugins-wp\\user-registration\\user-registration\\includes\\admin\\class-ur-admin-user-list-manager.php": {
+    "XSS": [
+      [
+        255,
+        "$message = sprintf( __( 'User Approved: %s users approved.', 'user-registration' ), $users_approved );"
+      ],
+      [
+        258,
+        "$message = sprintf( __( 'User Denied: %s users denied.', 'user-registration' ), $users_denied );"
+      ]
+    ]
+  },
+  "plugins-wp\\user-registration\\user-registration\\includes\\admin\\views\\html-admin-settings.php": {
+    "XSS": [
+      [
+        33,
+        "<header class=\"user-registration-header <?php echo $collapse_by_default ? 'collapsed' : ''; ?>\">"
+      ],
+      [
+        76,
+        "<button id=\"ur-settings-collapse\" class=\"<?php echo $collapse_by_default ? 'open' : 'close'; ?> nav-tab ur-nav__link\">"
+      ]
+    ]
+  },
+  "plugins-wp\\user-registration\\user-registration\\includes\\shortcodes\\class-ur-shortcode-my-account.php": {
+    "XSS": [
+      [
+        119,
+        "echo $login_form; // phpcs:ignore;"
+      ]
+    ]
+  },
+  "plugins-wp\\user-registration\\user-registration\\modules\\membership\\includes\\Admin\\Views\\membership-create.php": {
+    "XSS": [
+      [
+        70,
+        "<div class=\"ur-membership-input-container ur-d-flex ur-p-1 ur-mt-3\" style=\"gap:20px; <?php echo $is_editing ? '' : 'display:none !important'; ?> \">"
+      ],
+      [
+        85,
+        "<?php echo isset( $membership_content ) && $membership_content['status'] == 'true' ? 'checked' : ($is_editing ? '' : 'checked') ; ?>"
+      ]
+    ]
+  },
+  "plugins-wp\\user-registration\\user-registration\\modules\\membership\\includes\\Templates\\thank-you-page.php": {
+    "XSS": [
+      [
+        11,
+        "<p><?php echo __( \"Hello <b><i>$username</i></b>, Your registration was completed successfully.\", 'user-registration' ); ?></p>"
+      ],
+      [
+        20,
+        "<div class=\"data-section <?php echo empty( $bank_data ) ? 'urm-d-none' : ''; ?>\">"
       ],
       [
         22,
-        "<input type=\"hidden\" name=\"paypal_payer_id\" value=\"<?php echo esc_attr( ( isset( $_GET['PYID'] ) ) ? strtoupper( preg_replace( \"/[^A-Za-z0-9\\-]/\", '', sanitize_text_field( $_GET['PYID'] ) ) ) : strtoupper( preg_replace( \"/[^A-Za-z0-9]/\", '', $pyid ) ) ); ?>\" />"
+        "echo $bank_data;"
       ],
       [
-        229,
-        "<?php if( !isset( $_GET['OID'] ) && apply_filters( 'wp_easycart_allow_paypal_express', false ) && get_option( 'ec_option_use_shipping' ) && ( $this->cart->shippable_total_items > 0 || $this->order_totals->handling_total > 0 ) ){ ?>"
-      ],
-      [
-        453,
-        "<?php if( !isset( $_GET['OID'] ) && apply_filters( 'wp_easycart_allow_paypal_express', false ) && get_option( 'ec_option_use_shipping' ) && ( $this->cart->shippable_total_items > 0 || $this->order_totals->handling_total > 0 ) ){ ?>"
+        29,
+        "<p><?php echo __(\"Transaction ID : \", \"user-registration\") ?><b><i><?php echo $transaction_id; ?></i></b></p>"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\design\\layout\\base-responsive-v3\\ec_color_widget.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\user-registration\\user-registration\\modules\\payment-history\\Admin\\OrdersListTable.php": {
+    "XSS": [
       [
-        9,
-        "<li class=\"ec_details_swatch ec_option ec_active<?php if( isset( $_GET['ec_optionitem_id'] ) && $_GET['ec_optionitem_id'] == $optionitem->optionitem_id ){ echo \" ec_selected\"; } ?>\">"
+        397,
+        "style=\"display:<?php echo $show_membership ? 'flex' : 'none'; ?>; gap: 10px;\">"
+      ],
+      [
+        414,
+        "style=\"display:<?php echo ! $show_membership && $_REQUEST['payment_for'] == 'forms' ? 'flex' : 'none'; ?>; gap: 10px;\">"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\design\\layout\\base-responsive-v3\\ec_manufacturer_widget.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\webappick-pdf-invoice-for-woocommerce\\webappick-pdf-invoice-for-woocommerce\\includes\\class-woo-invoice-hooks.php": {
+    "SSRF": [
       [
-        4,
-        "<div><a href=\"<?php echo esc_attr( $filter->get_link_string( 3 ) ) . \"&amp;manufacturer=\" . esc_attr( $manufacturers[$i]->manufacturer_id ); ?>\" class=\"menu_link\"><?php if( isset( $_GET['manufacturer'] ) && $_GET['manufacturer'] == $manufacturers[$i]->manufacturer_id ){ echo \"<b>\"; } ?><?php echo esc_attr( $manufacturers[$i]->name ); ?> (<?php echo esc_attr( $manufacturers[$i]->product_count ); ?>)<?php if( isset( $_GET['manufacturer'] ) && $_GET['manufacturer'] == $manufacturers[$i]->manufacturer_id ){ echo \"</b>\"; } ?></a>"
-      ],
-      [
-        5,
-        "<?php if( isset( $_GET['manufacturer'] ) && $_GET['manufacturer'] == $manufacturers[$i]->manufacturer_id ){ ?>"
+        164,
+        "$get_font_content = file_get_contents($_FILES[\"file\"][\"tmp_name\"]); //phpcs:ignore"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\design\\layout\\base-responsive-v3\\ec_pricepoint_widget.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\wp-statistics\\wp-statistics\\includes\\admin\\class-wp-statistics-admin-ajax.php": {
+    "XSS": [
       [
-        6,
-        "<a href=\"<?php echo esc_attr( $filter->get_link_string( 4 ) ) . \"&amp;pricepoint=\" . esc_attr( $pricepoints[$i]->pricepoint_id ); ?>\" class=\"menu_link\"><?php if( isset( $_GET['pricepoint'] ) && $_GET['pricepoint'] == $pricepoints[$i]->pricepoint_id ){ echo \"<b>\"; } ?><?php echo wp_easycart_language( )->get_text( 'ec_pricepoint_widget', 'less_than' )?> <?php echo esc_attr( $GLOBALS['currency']->get_currency_display( $pricepoints[$i]->high_point ) ); ?> (<?php echo esc_attr( $pricepoints[$i]->product_count_below ); ?>)<?php if( isset( $_GET['pricepoint'] ) && $_GET['pricepoint'] == $pricepoints[$i]->pricepoint_id ){ echo \"</b>\"; } ?></a>"
+        360,
+        "echo Purge::purge_data($purge_days); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped"
       ],
       [
-        7,
-        "<?php if( isset( $_GET['pricepoint'] ) && $_GET['pricepoint'] == $pricepoints[$i]->pricepoint_id ){ ?>"
-      ],
-      [
-        15,
-        "<a href=\"<?php echo esc_attr( $filter->get_link_string( 4 ) ) . \"&amp;pricepoint=\" . esc_attr( $pricepoints[$i]->pricepoint_id ); ?>\" class=\"menu_link\"><?php if( isset( $_GET['pricepoint'] ) && $_GET['pricepoint'] == $pricepoints[$i]->pricepoint_id ){ echo \"<b>\"; } ?><?php echo wp_easycart_language( )->get_text( 'ec_pricepoint_widget', 'greater_than' )?> <?php echo esc_attr( $GLOBALS['currency']->get_currency_display( $pricepoints[$i]->low_point ) ); ?> (<?php echo esc_attr( $pricepoints[$i]->product_count_above ); ?>)<?php if( isset( $_GET['pricepoint'] ) && $_GET['pricepoint'] == $pricepoints[$i]->pricepoint_id ){ echo \"</b>\"; } ?></a>"
-      ],
-      [
-        16,
-        "<?php if( isset( $_GET['pricepoint'] ) && $_GET['pricepoint'] == $pricepoints[$i]->pricepoint_id ){ ?>"
-      ],
-      [
-        24,
-        "<a href=\"<?php echo esc_attr( $filter->get_link_string( 4 ) ) . \"&amp;pricepoint=\" . esc_attr( $pricepoints[$i]->pricepoint_id ); ?>\" class=\"menu_link\"><?php if( isset( $_GET['pricepoint'] ) && $_GET['pricepoint'] == $pricepoints[$i]->pricepoint_id ){ echo \"<b>\"; } ?><?php echo esc_attr( $GLOBALS['currency']->get_currency_display( $pricepoints[$i]->low_point ) ); ?> - <?php echo esc_attr( $GLOBALS['currency']->get_currency_display( $pricepoints[$i]->high_point ) ); ?> (<?php echo esc_attr( $pricepoints[$i]->product_count_between ); ?>)<?php if( isset( $_GET['pricepoint'] ) && $_GET['pricepoint'] == $pricepoints[$i]->pricepoint_id ){ echo \"</b>\"; } ?></a>"
-      ],
-      [
-        25,
-        "<?php if( isset( $_GET['pricepoint'] ) && $_GET['pricepoint'] == $pricepoints[$i]->pricepoint_id ){ ?>"
+        388,
+        "echo Purge::purge_visitor_hits($purge_hits); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\design\\layout\\base-responsive-v3\\ec_product_details_page.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\wp-statistics\\wp-statistics\\includes\\admin\\pages\\class-wp-statistics-admin-page-optimization.php": {
+    "XSS": [
       [
-        1698,
-        "<li class=\"ec_details_swatch <?php echo ( 0 == $i ) ? 'ec_optionitem_images' : ''; ?> ec_option<?php echo esc_attr( $i+1 ); ?> ec_option<?php echo esc_attr( $i+1 ); ?>_<?php echo esc_attr( $this->product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?><?php if( $optionitem_in_stock ){ ?> ec_active <?php }?><?php if( $optionsets[$i]->optionset[$j]->optionitem_initially_selected || ( isset( $optionsets[$i]->option_meta['url_var'] ) && $optionsets[$i]->option_meta['url_var'] != '' && isset( $_GET[$optionsets[$i]->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionsets[$i]->option_meta['url_var']] ) ) == strtolower( $optionsets[$i]->optionset[$j]->optionitem_name ) ) || ( isset( $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] ) && $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] == $optionsets[$i]->optionset[$j]->optionitem_name ) ){ ?> ec_selected<?php }?>\" data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_id ); ?>\"<?php if( $this->product->use_optionitem_quantity_tracking && $i == 0 ){ ?> data-optionitem-quantity=\"<?php echo esc_attr( $this->product->option1quantity[$optionsets[$i]->optionset[$j]->optionitem_id] ); ?>\"<?php }?> data-optionitem-price=\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_price != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-onetime=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ) && $optionsets[$i]->optionset[$j]->optionitem_price_onetime != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-override=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_override ) && $optionsets[$i]->optionset[$j]->optionitem_price_override != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_override ); }else{ echo \"-1.00\"; } ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_multiplier ); ?>\"><img src=\"<?php if( substr( $optionsets[$i]->optionset[$j]->optionitem_icon, 0, 7 ) == 'http://' || substr( $optionsets[$i]->optionset[$j]->optionitem_icon, 0, 8 ) == 'https://' ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_icon ); }else{ echo esc_attr( plugins_url( \"/wp-easycart-data/products/swatches/\" . $optionsets[$i]->optionset[$j]->optionitem_icon, EC_PLUGIN_DATA_DIRECTORY ) ); } ?>\" title=\"<?php"
-      ],
-      [
-        1716,
-        "<li class=\"ec_details_swatch wpeasycart-html-swatch <?php echo ( 0 == $i ) ? 'ec_optionitem_images' : ''; ?> ec_option<?php echo esc_attr( $i+1 ); ?> ec_option<?php echo esc_attr( $i+1 ); ?>_<?php echo esc_attr( $this->product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?><?php if( $optionitem_in_stock ){ ?> ec_active <?php }?><?php if( $optionsets[$i]->optionset[$j]->optionitem_initially_selected || ( isset( $optionsets[$i]->option_meta['url_var'] ) && $optionsets[$i]->option_meta['url_var'] != '' && isset( $_GET[$optionsets[$i]->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionsets[$i]->option_meta['url_var']] ) ) == strtolower( $optionsets[$i]->optionset[$j]->optionitem_name ) ) || ( isset( $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] ) && $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] == $optionsets[$i]->optionset[$j]->optionitem_name ) ){ ?> ec_selected<?php }?>\" data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_id ); ?>\"<?php if( $this->product->use_optionitem_quantity_tracking && $i == 0 ){ ?> data-optionitem-quantity=\"<?php echo esc_attr( $this->product->option1quantity[$optionsets[$i]->optionset[$j]->optionitem_id] ); ?>\"<?php }?> data-optionitem-price=\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_price != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-onetime=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ) && $optionsets[$i]->optionset[$j]->optionitem_price_onetime != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-override=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_override ) && $optionsets[$i]->optionset[$j]->optionitem_price_override != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_override ); }else{ echo \"-1.00\"; } ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_multiplier ); ?>\" title=\"<?php"
-      ],
-      [
-        1761,
-        "<option value=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_id ); ?>\"<?php if( $this->product->use_optionitem_quantity_tracking && $i == 0 ){ ?> data-optionitem-quantity=\"<?php echo esc_attr( $this->product->option1quantity[$optionsets[$i]->optionset[$j]->optionitem_id] ); ?>\"<?php }?> data-optionitem-price=\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_price != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-onetime=\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_price_onetime != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-override=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_override ) && $optionsets[$i]->optionset[$j]->optionitem_price_override != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_override ); }else{ echo \"-1.00\"; } ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_multiplier ); ?>\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_initially_selected || ( isset( $optionsets[$i]->option_meta['url_var'] ) && $optionsets[$i]->option_meta['url_var'] != '' && isset( $_GET[$optionsets[$i]->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionsets[$i]->option_meta['url_var']] ) ) == strtolower( $optionsets[$i]->optionset[$j]->optionitem_name ) ) || ( isset( $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] ) && $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] == $optionsets[$i]->optionset[$j]->optionitem_name ) ){ ?> selected=\"selected\"<?php }?>><?php echo wp_easycart_escape_html( $optionsets[$i]->optionset[$j]->optionitem_name ); ?> <?php"
-      ],
-      [
-        1832,
-        "<div class=\"ec_details_checkbox_row\"><input type=\"checkbox\" class=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $optionitem->optionitem_id ); ?>\" value=\"<?php echo esc_html( wp_easycart_escape_html( $optionitem->optionitem_name ) ); ?>\" data-product-id=\"<?php echo esc_attr( $this->product->product_id ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionitem->optionitem_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitem->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitem->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitem->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitem->optionitem_price_multiplier ); ?>\"<?php if( $optionitem->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ) == strtolower( $optionitem->optionitem_name ) ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitem->optionitem_name ) ){ ?> checked=\"checked\"<?php }?> /> <?php echo wp_easycart_escape_html( $optionitem->optionitem_name ); ?> <?php"
-      ],
-      [
-        1864,
-        "<option value=\"<?php echo esc_attr( $optionitem->optionitem_id ); ?>\" data-product-id=\"<?php echo esc_attr( $this->product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitem->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitem->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitem->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitem->optionitem_price_multiplier ); ?>\"<?php if( $optionitem->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ) == strtolower( $optionitem->optionitem_name ) ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitem->optionitem_name ) ){ ?> selected=\"selected\"<?php }?>><?php echo wp_easycart_escape_html( $optionitem->optionitem_name ); ?> <?php"
-      ],
-      [
-        1892,
-        "<input type=\"text\" value=\"<?php if( isset( $_GET['o'.$optionset->option_id] ) || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) ) ){ echo esc_attr( htmlspecialchars( ( ( isset( $_GET['o'.$optionset->option_id] ) ) ? sanitize_text_field( $_GET['o'.$optionset->option_id] ) : sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ), ENT_QUOTES ) ); } ?>\" class=\"ec_is_datepicker\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" id=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $this->product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $this->product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[0]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_multiplier ); ?>\" /><?php"
-      ],
-      [
-        1944,
-        "<li class=\"ec_details_swatch ec_advanced <?php echo ( $first_optionitem_image_type ) ? 'ec_optionitem_images' : ''; ?> ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $this->product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?> ec_active<?php if( $optionitems[$j]->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) == $optionitems[$j]->optionitem_name ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitems[$j]->optionitem_name ) ){ ?> ec_selected<?php }?>\" data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $this->product->product_id ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionitems[$j]->optionitem_id ); ?>\" data-option-id=\"<?php echo esc_attr( $optionset->option_id ); ?>\" data-product-option-id=\"<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_multiplier ); ?>\"><img src=\"<?php if( substr( $optionitems[$j]->optionitem_icon, 0, 7 ) == 'http://' || substr( $optionitems[$j]->optionitem_icon, 0, 8 ) == 'https://' ){ echo esc_attr( $optionitems[$j]->optionitem_icon ); }else{ echo esc_attr( plugins_url( \"/wp-easycart-data/products/swatches/\" . $optionitems[$j]->optionitem_icon, EC_PLUGIN_DATA_DIRECTORY ) ); } ?>\" title=\"<?php echo esc_attr( $optionitems[$j]->optionitem_name ); ?> <?php"
-      ],
-      [
-        1962,
-        "<li class=\"ec_details_swatch wpeasycart-html-swatch ec_advanced <?php echo ( $first_optionitem_image_type ) ? 'ec_optionitem_images' : ''; ?> ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $this->product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?> ec_active<?php if( $optionitems[$j]->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) == $optionitems[$j]->optionitem_name ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitems[$j]->optionitem_name ) ){ ?> ec_selected<?php }?>\" data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $this->product->product_id ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionitems[$j]->optionitem_id ); ?>\" data-option-id=\"<?php echo esc_attr( $optionset->option_id ); ?>\" data-product-option-id=\"<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_multiplier ); ?>\" title=\"<?php echo esc_attr( $optionitems[$j]->optionitem_name ); ?><?php"
-      ],
-      [
-        2039,
-        "<div class=\"ec_details_radio_row <?php echo ( $first_optionitem_image_type ) ? 'ec_optionitem_images' : ''; ?>\"><input type=\"radio\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" value=\"<?php echo esc_attr( $optionitem->optionitem_id ); ?>\" data-product-id=\"<?php echo esc_attr( $this->product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitem->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitem->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitem->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitem->optionitem_price_multiplier ); ?>\"<?php if( $optionitem->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ) == strtolower( $optionitem->optionitem_name ) ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitem->optionitem_name ) ){ ?> checked=\"checked\"<?php }?> /> <?php echo wp_easycart_escape_html( $optionitem->optionitem_name ); ?> <?php"
-      ],
-      [
-        2066,
-        "<input type=\"text\" value=\"<?php if( isset( $_GET['o'.$optionset->option_id] ) || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) ) ){ echo esc_attr( htmlspecialchars( ( ( isset( $_GET['o'.$optionset->option_id] ) ) ? sanitize_text_field( $_GET['o'.$optionset->option_id] ) : sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ), ENT_QUOTES ) ); }else if( $optionitems[0]->optionitem_initial_value != '' ){ echo esc_attr( $optionitems[0]->optionitem_initial_value ); } ?>\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" id=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $this->product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\"<?php if( isset( $optionset->option_meta['min_length'] ) && '' != $optionset->option_meta['min_length'] ) { ?> minlength=\"<?php echo esc_attr( $optionset->option_meta['min_length'] ); ?>\"<?php }?><?php if( isset( $optionset->option_meta['max_length'] ) && '' != $optionset->option_meta['max_length'] ) { ?> maxlength=\"<?php echo esc_attr( $optionset->option_meta['max_length'] ); ?>\"<?php }?> data-product-id=\"<?php echo esc_attr( $this->product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[0]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_multiplier ); ?>\" data-optionitem-price-per-character=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_per_character ); ?>\" /><?php"
-      ],
-      [
-        2089,
-        "<input type=\"number\" value=\"<?php if( isset( $_GET['o'.$optionset->option_id] ) || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) ) ){ echo esc_attr( htmlspecialchars( ( ( isset( $_GET['o'.$optionset->option_id] ) ) ? sanitize_text_field( $_GET['o'.$optionset->option_id] ) : sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ), ENT_QUOTES ) ); }else if( $optionitems[0]->optionitem_initial_value != '' ){ echo esc_attr( $optionitems[0]->optionitem_initial_value ); } ?>\" min=\"<?php echo esc_attr( $optionset->option_meta['min'] ); ?>\" max=\"<?php echo esc_attr( $optionset->option_meta['max'] ); ?>\" step=\"<?php echo esc_attr( $optionset->option_meta['step'] ); ?>\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" id=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $this->product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $this->product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[0]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_multiplier ); ?>\" /><?php"
-      ],
-      [
-        2112,
-        "<textarea name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" id=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $this->product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $this->product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[0]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_multiplier ); ?>\" data-optionitem-price-per-character=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_per_character ); ?>\"><?php if( isset( $_GET['o'.$optionset->option_id] ) || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) ) ){ echo esc_attr( htmlspecialchars( ( ( isset( $_GET['o'.$optionset->option_id] ) ) ? sanitize_text_field( $_GET['o'.$optionset->option_id] ) : sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ), ENT_QUOTES ) ); } ?></textarea><?php"
+        86,
+        "Notice::addFlashNotice(sprintf(__('Successfully anonymized <b>%d</b> IP addresses using hash values.', 'wp-statistics'), $result), 'success');"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\design\\layout\\base-responsive-v3\\ec_product_details_page_add_to_cart.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\yith-woocommerce-wishlist\\yith-woocommerce-wishlist\\plugin-fw\\yit-plugin.php": {
+    "XSS": [
       [
-        37,
-        "<?php if ( isset( $_GET['ec_store_success'] ) && 'inquiry_sent' == $_GET['ec_store_success'] && isset( $_GET['model'] ) && $product->model_number == $_GET['model'] ) { ?>"
-      ],
-      [
-        39,
-        "<?php } else if ( isset( $_GET['ec_store_success'] ) && 'addtocart' == $_GET['ec_store_success'] && isset( $_GET['model'] ) && $product->model_number == $_GET['model'] ) { ?>"
-      ],
-      [
-        139,
-        "<li class=\"ec_details_swatch_ele <?php echo ( 0 == $i ) ? 'ec_optionitem_images' : ''; ?> ec_option<?php echo esc_attr( $i+1 ); ?> ec_option<?php echo esc_attr( $i+1 ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?><?php if( $optionitem_in_stock ){ ?> ec_active <?php }?><?php if( $optionsets[$i]->optionset[$j]->optionitem_initially_selected || ( isset( $optionsets[$i]->option_meta['url_var'] ) && $optionsets[$i]->option_meta['url_var'] != '' && isset( $_GET[$optionsets[$i]->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionsets[$i]->option_meta['url_var']] ) ) == strtolower( $optionsets[$i]->optionset[$j]->optionitem_name ) ) || ( isset( $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] ) && $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] == $optionsets[$i]->optionset[$j]->optionitem_name ) ){ ?> ec_selected<?php }?>\" data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_id ); ?>\"<?php if( $product->use_optionitem_quantity_tracking && $i == 0 ){ ?> data-optionitem-quantity=\"<?php echo esc_attr( $product->option1quantity[$optionsets[$i]->optionset[$j]->optionitem_id] ); ?>\"<?php }?> data-optionitem-price=\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_price != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-onetime=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ) && $optionsets[$i]->optionset[$j]->optionitem_price_onetime != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-override=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_override ) && $optionsets[$i]->optionset[$j]->optionitem_price_override != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_override ); }else{ echo \"-1.00\"; } ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_multiplier ); ?>\"><img src=\"<?php if( substr( $optionsets[$i]->optionset[$j]->optionitem_icon, 0, 7 ) == 'http://' || substr( $optionsets[$i]->optionset[$j]->optionitem_icon, 0, 8 ) == 'https://' ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_icon ); }else{ echo esc_attr( plugins_url( \"/wp-easycart-data/products/swatches/\" . $optionsets[$i]->optionset[$j]->optionitem_icon, EC_PLUGIN_DATA_DIRECTORY ) ); } ?>\" title=\"<?php"
-      ],
-      [
-        157,
-        "<li class=\"ec_details_swatch_ele wpeasycart-html-swatch-ele <?php echo ( 0 == $i ) ? 'ec_optionitem_images' : ''; ?> ec_option<?php echo esc_attr( $i+1 ); ?> ec_option<?php echo esc_attr( $i+1 ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?><?php if( $optionitem_in_stock ){ ?> ec_active <?php }?><?php if( $optionsets[$i]->optionset[$j]->optionitem_initially_selected || ( isset( $optionsets[$i]->option_meta['url_var'] ) && $optionsets[$i]->option_meta['url_var'] != '' && isset( $_GET[$optionsets[$i]->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionsets[$i]->option_meta['url_var']] ) ) == strtolower( $optionsets[$i]->optionset[$j]->optionitem_name ) ) || ( isset( $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] ) && $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] == $optionsets[$i]->optionset[$j]->optionitem_name ) ){ ?> ec_selected<?php }?>\" data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_id ); ?>\"<?php if( $product->use_optionitem_quantity_tracking && $i == 0 ){ ?> data-optionitem-quantity=\"<?php echo esc_attr( $product->option1quantity[$optionsets[$i]->optionset[$j]->optionitem_id] ); ?>\"<?php }?> data-optionitem-price=\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_price != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-onetime=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ) && $optionsets[$i]->optionset[$j]->optionitem_price_onetime != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-override=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_override ) && $optionsets[$i]->optionset[$j]->optionitem_price_override != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_override ); }else{ echo \"-1.00\"; } ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_multiplier ); ?>\" title=\"<?php"
-      ],
-      [
-        202,
-        "<option value=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_id ); ?>\"<?php if( $product->use_optionitem_quantity_tracking && $i == 0 ){ ?> data-optionitem-quantity=\"<?php echo esc_attr( $product->option1quantity[$optionsets[$i]->optionset[$j]->optionitem_id] ); ?>\"<?php }?> data-optionitem-price=\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_price != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-onetime=\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_price_onetime != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_onetime ); }else{ echo \"0.00\"; } ?>\" data-optionitem-price-override=\"<?php if( isset( $optionsets[$i]->optionset[$j]->optionitem_price_override ) && $optionsets[$i]->optionset[$j]->optionitem_price_override != \"\" ){ echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_override ); }else{ echo \"-1.00\"; } ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionsets[$i]->optionset[$j]->optionitem_price_multiplier ); ?>\"<?php if( $optionsets[$i]->optionset[$j]->optionitem_initially_selected || ( isset( $optionsets[$i]->option_meta['url_var'] ) && $optionsets[$i]->option_meta['url_var'] != '' && isset( $_GET[$optionsets[$i]->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionsets[$i]->option_meta['url_var']] ) ) == strtolower( $optionsets[$i]->optionset[$j]->optionitem_name ) ) || ( isset( $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] ) && $_GET['o'.$optionsets[$i]->optionset[$j]->option_id] == $optionsets[$i]->optionset[$j]->optionitem_name ) ){ ?> selected=\"selected\"<?php }?>><?php echo wp_easycart_escape_html( $optionsets[$i]->optionset[$j]->optionitem_name ); ?> <?php"
-      ],
-      [
-        274,
-        "<label><input type=\"checkbox\" class=\"ec_details_checkbox_ele ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $optionitem->optionitem_id ); ?>\" value=\"<?php echo esc_html( wp_easycart_escape_html( $optionitem->optionitem_name ) ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionitem->optionitem_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitem->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitem->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitem->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitem->optionitem_price_multiplier ); ?>\"<?php if( $optionitem->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ) == strtolower( $optionitem->optionitem_name ) ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitem->optionitem_name ) ){ ?> checked=\"checked\"<?php }?> /> <?php echo wp_easycart_escape_html( $optionitem->optionitem_name ); ?> <?php"
-      ],
-      [
-        307,
-        "<option value=\"<?php echo esc_attr( $optionitem->optionitem_id ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitem->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitem->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitem->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitem->optionitem_price_multiplier ); ?>\"<?php if( $optionitem->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ) == strtolower( $optionitem->optionitem_name ) ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitem->optionitem_name ) ){ ?> selected=\"selected\"<?php }?>><?php echo wp_easycart_escape_html( $optionitem->optionitem_name ); ?> <?php"
-      ],
-      [
-        335,
-        "<input type=\"text\" value=\"<?php if( isset( $_GET['o'.$optionset->option_id] ) || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) ) ){ echo esc_attr( htmlspecialchars( ( ( isset( $_GET['o'.$optionset->option_id] ) ) ? sanitize_text_field( $_GET['o'.$optionset->option_id] ) : sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ), ENT_QUOTES ) ); } ?>\" class=\"ec_is_datepicker\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" id=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[0]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_multiplier ); ?>\" /><?php"
-      ],
-      [
-        387,
-        "<li class=\"ec_details_swatch_ele ec_advanced <?php echo ( $first_optionitem_image_type ) ? 'ec_optionitem_images' : ''; ?> ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?> ec_active<?php if( $optionitems[$j]->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) == $optionitems[$j]->optionitem_name ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitems[$j]->optionitem_name ) ){ ?> ec_selected<?php }?>\" data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionitems[$j]->optionitem_id ); ?>\" data-option-id=\"<?php echo esc_attr( $optionset->option_id ); ?>\" data-product-option-id=\"<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_multiplier ); ?>\"><img src=\"<?php if( substr( $optionitems[$j]->optionitem_icon, 0, 7 ) == 'http://' || substr( $optionitems[$j]->optionitem_icon, 0, 8 ) == 'https://' ){ echo esc_attr( $optionitems[$j]->optionitem_icon ); }else{ echo esc_attr( plugins_url( \"/wp-easycart-data/products/swatches/\" . $optionitems[$j]->optionitem_icon, EC_PLUGIN_DATA_DIRECTORY ) ); } ?>\" title=\"<?php echo esc_attr( $optionitems[$j]->optionitem_name ); ?> <?php"
-      ],
-      [
-        405,
-        "<li class=\"ec_details_swatch_ele wpeasycart-html-swatch-ele ec_advanced <?php echo ( $first_optionitem_image_type ) ? 'ec_optionitem_images' : ''; ?> ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?> ec_active<?php if( $optionitems[$j]->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) == $optionitems[$j]->optionitem_name ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitems[$j]->optionitem_name ) ){ ?> ec_selected<?php }?>\" data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-id=\"<?php echo esc_attr( $optionitems[$j]->optionitem_id ); ?>\" data-option-id=\"<?php echo esc_attr( $optionset->option_id ); ?>\" data-product-option-id=\"<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[$j]->optionitem_price_multiplier ); ?>\" title=\"<?php echo esc_attr( $optionitems[$j]->optionitem_name ); ?><?php"
-      ],
-      [
-        483,
-        "<label><input type=\"radio\" class=\"ec_details_radio_ele\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" value=\"<?php echo esc_attr( $optionitem->optionitem_id ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitem->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitem->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitem->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitem->optionitem_price_multiplier ); ?>\"<?php if( $optionitem->optionitem_initially_selected || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) && strtolower( sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ) == strtolower( $optionitem->optionitem_name ) ) || ( isset( $_GET['o'.$optionset->option_id] ) && sanitize_text_field( $_GET['o'.$optionset->option_id] ) == $optionitem->optionitem_name ) ){ ?> checked=\"checked\"<?php }?> data-rand-id=\"<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" /> <?php echo wp_easycart_escape_html( $optionitem->optionitem_name ); ?> <?php"
-      ],
-      [
-        511,
-        "<input type=\"text\" value=\"<?php if( isset( $_GET['o'.$optionset->option_id] ) || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) ) ){ echo esc_attr( htmlspecialchars( ( ( isset( $_GET['o'.$optionset->option_id] ) ) ? sanitize_text_field( $_GET['o'.$optionset->option_id] ) : sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ), ENT_QUOTES ) ); }else if( $optionitems[0]->optionitem_initial_value != '' ){ echo esc_attr( $optionitems[0]->optionitem_initial_value ); } ?>\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" id=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\"<?php if( isset( $optionset->option_meta['min_length'] ) && '' != $optionset->option_meta['min_length'] ) { ?> minlength=\"<?php echo esc_attr( $optionset->option_meta['min_length'] ); ?>\"<?php }?><?php if( isset( $optionset->option_meta['max_length'] ) && '' != $optionset->option_meta['max_length'] ) { ?> maxlength=\"<?php echo esc_attr( $optionset->option_meta['max_length'] ); ?>\"<?php }?> data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[0]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_multiplier ); ?>\" data-optionitem-price-per-character=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_per_character ); ?>\" /><?php"
-      ],
-      [
-        534,
-        "<input type=\"number\" value=\"<?php if( isset( $_GET['o'.$optionset->option_id] ) || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) ) ){ echo esc_attr( htmlspecialchars( ( ( isset( $_GET['o'.$optionset->option_id] ) ) ? sanitize_text_field( $_GET['o'.$optionset->option_id] ) : sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ), ENT_QUOTES ) ); }else if( $optionitems[0]->optionitem_initial_value != '' ){ echo esc_attr( $optionitems[0]->optionitem_initial_value ); } ?>\" min=\"<?php echo esc_attr( $optionset->option_meta['min'] ); ?>\" max=\"<?php echo esc_attr( $optionset->option_meta['max'] ); ?>\" step=\"<?php echo esc_attr( $optionset->option_meta['step'] ); ?>\" name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" id=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[0]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_multiplier ); ?>\" /><?php"
-      ],
-      [
-        557,
-        "<textarea name=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>\" id=\"ec_option_adv_<?php echo esc_attr( $optionset->option_to_product_id ); ?>_<?php echo esc_attr( $product->product_id ); ?>_<?php echo esc_attr( $wpeasycart_addtocart_shortcode_rand ); ?>\" data-product-id=\"<?php echo esc_attr( $product->product_id ); ?>\" data-optionitem-price=\"<?php echo esc_attr( $optionitems[0]->optionitem_price ); ?>\" data-optionitem-price-onetime=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_onetime ); ?>\" data-optionitem-price-override=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_override ); ?>\" data-optionitem-price-multiplier=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_multiplier ); ?>\" data-optionitem-price-per-character=\"<?php echo esc_attr( $optionitems[0]->optionitem_price_per_character ); ?>\"><?php if( isset( $_GET['o'.$optionset->option_id] ) || ( isset( $optionset->option_meta['url_var'] ) && $optionset->option_meta['url_var'] != '' && isset( $_GET[$optionset->option_meta['url_var']] ) ) ){ echo esc_attr( htmlspecialchars( ( ( isset( $_GET['o'.$optionset->option_id] ) ) ? sanitize_text_field( $_GET['o'.$optionset->option_id] ) : sanitize_text_field( $_GET[$optionset->option_meta['url_var']] ) ), ENT_QUOTES ) ); } ?></textarea><?php"
+        288,
+        "$message = sprintf( $message, implode( ', ', $names ) );"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\design\\layout\\base-responsive-v3\\ec_product_page.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\yith-woocommerce-wishlist\\yith-woocommerce-wishlist\\plugin-fw\\includes\\class-yit-plugin-panel-woocommerce.php": {
+    "XSS": [
       [
-        530,
-        "<input type=\"text\" value=\"<?php echo esc_attr( ( ( isset( $_GET['ec_search'] ) ) ? preg_replace( '/[^a-zA-Z0-9\\-\\_\\s]/', '', $_GET['ec_search'] ) : '' ) ); ?>\" name=\"ec_search\" placeholder=\"<?php echo wp_easycart_language( )->get_text( 'product_details', 'product_details_search' ); ?>\" />"
-      ],
-      [
-        532,
-        "<a href=\"<?php echo esc_attr( $this->get_current_url( ) ); ?>\" class=\"dashicons dashicons-no<?php echo ( isset( $_GET['ec_search'] ) && '' != $_GET['ec_search'] ) ? '' : ' ec_product_sidebar_search_clear_hide'; ?>\"></a>"
+        412,
+        "$this->print_custom_tab( $custom_tab_options );"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\inc\\classes\\account\\ec_accountpage.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\yith-woocommerce-wishlist\\yith-woocommerce-wishlist\\plugin-fw\\includes\\class-yit-plugin-panel.php": {
+    "XSS": [
       [
-        368,
-        "echo \"<input type=\\\"hidden\\\" name=\\\"ec_goto_page\\\" value=\\\"\" . esc_attr( sanitize_key( $_GET['ec_page'] ) ) . \"\\\" />\";"
-      ],
-      [
-        371,
-        "echo \"<input type=\\\"hidden\\\" name=\\\"ec_order_id\\\" value=\\\"\" . esc_attr( (int) $_GET['order_id'] ) . \"\\\" />\";"
-      ],
-      [
-        374,
-        "echo \"<input type=\\\"hidden\\\" name=\\\"ec_subscription_id\\\" value=\\\"\" . esc_attr( (int) $_GET['subscription_id'] ) . \"\\\" />\";"
+        1205,
+        "$print_template_cb = function () use ( $template, $plugin, $modal, $close_url ) {"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\inc\\classes\\cart\\ec_cartitem.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\yith-woocommerce-wishlist\\yith-woocommerce-wishlist\\plugin-fw\\includes\\builders\\gutenberg\\class-yith-gutenberg.php": {
+    "XSS": [
       [
-        1110,
-        "echo '<form action=\"' . esc_attr( $this->cart_page . $this->permalink_divider ) . 'ec_page=' . esc_attr( htmlspecialchars( sanitize_key( $_GET['ec_page'] ), ENT_QUOTES ) ) . '\" method=\"post\">';"
-      ],
-      [
-        1146,
-        "echo '<form action=\"' . esc_attr( $this->cart_page . $this->permalink_divider ) . 'ec_page=' . esc_attr( htmlspecialchars( sanitize_key( $_GET['ec_page'] ), ENT_QUOTES ) ) . '\" method=\"post\">';"
+        300,
+        "echo do_shortcode( apply_filters( 'yith_plugin_fw_gutenberg_shortcode', $shortcode, $current_action ) );"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   },
-  "plugins-wp\\wp-easycart\\wp-easycart\\inc\\classes\\cart\\ec_cartpage.php": {
-    "sqli": [],
-    "xss": [
+  "plugins-wp\\yith-woocommerce-wishlist\\yith-woocommerce-wishlist\\plugin-fw\\templates\\sysinfo\\system-information-panel.php": {
+    "XSS": [
       [
-        393,
-        "echo \"<div class=\\\"ec_cart_success\\\"><div>\" . esc_attr( $success_notes[ sanitize_key( $_GET['ec_cart_success'] ) ] ) . \"</div></div>\";"
+        56,
+        "<?php echo wp_kses_post( $tabs[ $current_tab ]['title'] ); ?>"
       ],
       [
-        424,
-        "echo \"<div class=\\\"ec_cart_error\\\"><div>\" . esc_attr( $error_notes[ sanitize_key( $_GET['ec_cart_error'] ) ] ) . \"</div></div>\";"
-      ],
-      [
-        1976,
-        "echo \"<form action=\\\"\". esc_attr( $this->cart_page . $this->permalink_divider ) . \"ec_page=subscription_info&subscription=\" . esc_attr( sanitize_text_field( $_GET['subscription'] ) ) . \"\\\" method=\\\"post\\\">\";"
-      ],
-      [
-        1981,
-        "echo \"<input type=\\\"hidden\\\" name=\\\"ec_cart_subscription\\\" value=\\\"\" . esc_attr( sanitize_text_field( $_GET['subscription'] ) ) . \"\\\" />\";"
-      ],
-      [
-        1994,
-        "echo \"<input type=\\\"hidden\\\" name=\\\"ec_cart_subscription\\\" value=\\\"\" . esc_attr( sanitize_text_field( $_GET['subscription'] ) ) . \"\\\" />\";"
-      ],
-      [
-        2034,
-        "echo \"<a href=\\\"\" . esc_attr( $this->cart_page . $this->permalink_divider ) . \"ec_cart_action=logout&subscription=\" . esc_attr( sanitize_text_field( $_GET['subscription'] ) ) . \"\\\" class=\\\"ec_cart_login_complete_logout_link\\\">\" . esc_attr( $input ) . \"</a>\";"
-      ],
-      [
-        7656,
-        "$response_string = print_r( $_POST, true );"
+        60,
+        "<?php echo wp_kses_post( $tabs[ $current_tab ]['desc'] ); ?>"
       ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\inc\\classes\\core\\ec_product.php": {
-    "sqli": [],
-    "xss": [
-      [
-        694,
-        "echo \"<a href=\\\"\" . esc_attr( $this->store_page . $this->permalink_divider ) . \"menuid=\" . esc_attr( (int) $_GET['menuid'] ) . \"&menu=\" . esc_attr( (int) $_GET['menu'] ) . \"\\\" class=\\\"ec_product_title_link\\\">\" . esc_attr( (int) $_GET['menu'] ) . \"</a>\" . esc_attr( $divider );"
-      ],
-      [
-        698,
-        "echo \"<a href=\\\"\" . esc_attr( $this->store_page . $this->permalink_divider ) . \"submenuid=\" . esc_attr( (int) $_GET['submenuid'] ) . \"&submenu=\" . esc_attr( (int) $_GET['submenu'] ) . \"\\\" class=\\\"ec_product_title_link\\\">\" . esc_attr( (int) $_GET['submenu'] ) . \"</a>\" . esc_attr( $divider );"
-      ],
-      [
-        702,
-        "echo \"<a href=\\\"\" . esc_attr( $this->store_page . $this->permalink_divider ) . \"subsubmenuid=\" . esc_attr( (int) $_GET['subsubmenuid'] ) . \"&subsubmenu=\" . esc_attr( (int) $_GET['subsubmenu'] ) . \"\\\" class=\\\"ec_product_title_link\\\">\" . esc_attr( (int) $_GET['subsubmenu'] ) . \"</a>\" . esc_attr( $divider );"
-      ],
-      [
-        1804,
-        "echo \"<form action=\\\"\" . esc_attr( $this->store_page . $this->permalink_divider ) . \"model_number=\" . esc_attr( $this->model_number ) . \"&optionitem_id=\" . esc_attr( (int) $_GET['optionitem_id'] ) . \"\\\" method=\\\"post\\\" id=\\\"customer_review_form\\\">\";"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\inc\\classes\\gateway\\ec_paypal.php": {
-    "sqli": [],
-    "xss": [],
-    "ssrf": [],
-    "rce": [
-      [
-        1402,
-        "$url = ( get_option( 'ec_option_paypal_use_sandbox' ) ) ? \"https://api.sandbox.paypal.com/v1/payments/payment/\" . preg_replace( \"/[^A-Za-z0-9\\-]/\", '', sanitize_text_field( $_POST['paypal_payment_id'] ) ) . '/execute' : \"https://api.paypal.com/v1/payments/payment/\" . preg_replace( \"/[^A-Za-z0-9\\-]/\", '', sanitize_text_field( $_POST['paypal_payment_id'] ) ) . '/execute';"
-      ]
-    ],
-    "lfi": []
-  },
-  "plugins-wp\\wp-easycart\\wp-easycart\\inc\\classes\\store\\ec_storepage.php": {
-    "sqli": [],
-    "xss": [
-      [
-        157,
-        "echo \"<div class=\\\"ec_cart_success\\\"><div>\" . esc_attr( $success_notes[ sanitize_key( $_GET['ec_store_success'] ) ] ) . \"</div></div>\";"
-      ],
-      [
-        159,
-        "echo \"<div class=\\\"ec_cart_success\\\"><div>\" . esc_attr( str_replace( \"[prod_title]\", wp_easycart_language( )->convert_text( $title ), esc_attr( $success_notes[ sanitize_key( $_GET['ec_store_success'] ) ] ) ) ) . \" \";"
-      ],
-      [
-        170,
-        "echo \"<div class=\\\"ec_cart_error\\\"><div>\" . esc_attr( $error_notes[ sanitize_key( $_GET['ec_store_error'] ) ] ) . \"</div></div>\";"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
-  },
-  "plugins-wp\\wp-store-locator\\wp-store-locator\\admin\\class-metaboxes.php": {
-    "sqli": [],
-    "xss": [
-      [
-        900,
-        "5  => isset( $_GET['revision'] ) ? sprintf( __( 'Store restored to revision from %s', 'wpsl' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,"
-      ]
-    ],
-    "ssrf": [],
-    "rce": [],
-    "lfi": []
+    ]
   }
 }
