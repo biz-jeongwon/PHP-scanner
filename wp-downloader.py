@@ -1,9 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 import os
+import zipfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from threading import Lock
 
-# ANSI color codes
 class Colors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -12,6 +13,8 @@ class Colors:
     FAIL = '\033[91m'
     RESET = '\033[0m'
     BOLD = '\033[1m'
+
+print_lock = Lock()
 
 def search_wordpress_plugins(keyword, pages, max_plugins=20):
     plugin_links = []
@@ -34,16 +37,40 @@ def download_plugin_zip(plugin_url, download_dir="plugins-wp"):
     zip_path = os.path.join(download_dir, f"{plugin_slug}.zip")
 
     try:
-        print(f"{Colors.OKBLUE}[+] Downloading {plugin_slug}...{Colors.RESET}")
+        with print_lock:
+            print(f"{Colors.OKBLUE}[+] Downloading {plugin_slug}...{Colors.RESET}", flush=True)
         response = requests.get(zip_url)
         if response.status_code == 200:
             with open(zip_path, "wb") as f:
                 f.write(response.content)
-            print(f"{Colors.OKGREEN}[OK] Saved to: {zip_path}{Colors.RESET}")
+            with print_lock:
+                print(f"{Colors.OKGREEN}[OK] Saved to: {zip_path}{Colors.RESET}", flush=True)
         else:
-            print(f"{Colors.FAIL}[X] Failed to download {plugin_slug} (Status: {response.status_code}){Colors.RESET}")
+            with print_lock:
+                print(f"{Colors.FAIL}[X] Failed to download {plugin_slug} (Status: {response.status_code}){Colors.RESET}", flush=True)
     except Exception as e:
-        print(f"{Colors.FAIL}[X] Error downloading {plugin_slug}: {e}{Colors.RESET}")
+        with print_lock:
+            print(f"{Colors.FAIL}[X] Error downloading {plugin_slug}: {e}{Colors.RESET}", flush=True)
+
+def extract_and_cleanup_zip_files(directory="plugins-wp"):
+    print(f"{Colors.BOLD}\n[*] Extracting zip files and cleaning up...{Colors.RESET}", flush=True)
+    for filename in os.listdir(directory):
+        if filename.endswith(".zip"):
+            zip_path = os.path.join(directory, filename)
+            extract_path = os.path.join(directory, filename.replace(".zip", ""))
+
+            try:
+                with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                    zip_ref.extractall(extract_path)
+                os.remove(zip_path)
+                with print_lock:
+                    print(f"{Colors.OKGREEN}[OK] Extracted and deleted: {filename}{Colors.RESET}", flush=True)
+            except zipfile.BadZipFile:
+                with print_lock:
+                    print(f"{Colors.FAIL}[X] Bad zip file: {filename}{Colors.RESET}", flush=True)
+            except Exception as e:
+                with print_lock:
+                    print(f"{Colors.FAIL}[X] Failed to extract {filename}: {e}{Colors.RESET}", flush=True)
 
 def main():
     keyword_input = input(f"{Colors.BOLD}[?] Enter plugin keywords (space-separated): {Colors.RESET}")
@@ -52,18 +79,20 @@ def main():
     keywords = keyword_input.strip().split()
 
     for keyword in keywords:
-        print(f"\n{Colors.HEADER}[*] Searching for keyword: '{keyword}'...{Colors.RESET}")
+        print(f"\n{Colors.HEADER}[*] Searching for keyword: '{keyword}'...{Colors.RESET}", flush=True)
         plugin_urls = search_wordpress_plugins(keyword, pages)
 
         if not plugin_urls:
-            print(f"{Colors.WARNING}[X] No plugins found for '{keyword}'.{Colors.RESET}")
+            print(f"{Colors.WARNING}[X] No plugins found for '{keyword}'.{Colors.RESET}", flush=True)
             continue
 
-        print(f"{Colors.BOLD}[!] Downloading {len(plugin_urls)} plugins for '{keyword}'...{Colors.RESET}")
-        with ThreadPoolExecutor(max_workers=10) as executor:
+        print(f"{Colors.BOLD}[!] Downloading {len(plugin_urls)} plugins for '{keyword}'...{Colors.RESET}", flush=True)
+        with ThreadPoolExecutor(max_workers=20) as executor:
             futures = [executor.submit(download_plugin_zip, url) for url in plugin_urls]
             for future in as_completed(futures):
                 pass
+
+    extract_and_cleanup_zip_files()
 
 if __name__ == "__main__":
     main()
