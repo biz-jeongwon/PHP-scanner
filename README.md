@@ -14,4 +14,6 @@ pip install -r requirements.txt
 ```bash
 python3 wp-downloader.py
 # Enter keywords separated by spaces (e.g., seo security backup)
+
+python3 scanner.py
 ```
