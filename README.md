@@ -1,23 +1,25 @@
 # PHP Vulnerability Scanner
 <br>
 
-## Usage
-
 ### Environment
 ```bash
 pip install -r requirements.txt
 ```
 
 ### To target wordpress plugins
+
+#### download wordpress plugins
 ```bash
 python3 wp-downloader.py
 # Enter keywords separated by spaces (e.g., seo security backup)
 # Enter start page number and end page number
+```
 
+#### scanning wordpress plugins
+```bash
 python3 scanner.py
-```
 
-```
+# Example
 PS C:\Users\bizje\Desktop\yen\PHP-scanner> python3 scanner.py
 
 ██████╗ ██╗  ██╗██████╗     ███████╗ ██████╗ █████╗ ███╗   ██╗███╗   ██╗███████╗██████╗
@@ -41,9 +43,13 @@ PS C:\Users\bizje\Desktop\yen\PHP-scanner> python3 scanner.py
     [+] CSRF: 3
 ```
 
+#### generate report
 ```bash
 python3 generate_report.py
 ```
+
+![report example](report_example.png)
+
 
 
 
