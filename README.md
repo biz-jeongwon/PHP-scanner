@@ -1,30 +1,42 @@
-# PHP Vulnerability Scanner
-<br>
+# 🛡️ PHP Vulnerability Scanner
 
-## ■ Environment
+A powerful static analysis tool for scanning **WordPress plugins** to detect common PHP security vulnerabilities such as **SQL Injection**, **XSS**, **LFI**, **RCE**, **SSRF**, and **CSRF**.
+
+---
+
+## 📦 Environment Setup
+
+Install required Python packages:
+
 ```bash
 pip install -r requirements.txt
 ```
-<br>
 
-## ■ To target wordpress plugins
-<br>
+---
 
-### ● download wordpress plugins
+## 🔍 WordPress Plugin Scanning Workflow
+
+### 📥 1. Download WordPress Plugins
+
 ```bash
 python3 wp-downloader.py
-# Enter keywords separated by spaces (e.g., seo security backup)
-# Enter start page number and end page number
 ```
-<br>
 
-### ● scanning wordpress plugins
+- **Instructions:**
+  - Enter keywords separated by spaces (e.g., `seo security backup`)
+  - Enter start and end page numbers
+
+---
+
+### 🧪 2. Scan Plugins for Vulnerabilities
+
 ```bash
 python3 scanner.py
+```
 
-# Example
-PS C:\Users\bizje\Desktop\yen\PHP-scanner> python3 scanner.py
+#### ✅ Example Output
 
+```plaintext
 ██████╗ ██╗  ██╗██████╗     ███████╗ ██████╗ █████╗ ███╗   ██╗███╗   ██╗███████╗██████╗
 ██╔══██╗██║  ██║██╔══██╗    ██╔════╝██╔════╝██╔══██╗████╗  ██║████╗  ██║██╔════╝██╔══██╗
 ██████╔╝███████║██████╔╝    ███████╗██║     ███████║██╔██╗ ██║██╔██╗ ██║█████╗  ██████╔╝
@@ -45,15 +57,25 @@ PS C:\Users\bizje\Desktop\yen\PHP-scanner> python3 scanner.py
     [+] SSRF: 9
     [+] CSRF: 3
 ```
-<br>
 
-### ● generate report
+---
+
+### 📊 3. Generate Detailed Report
+
 ```bash
 python3 generate_report.py
 ```
 
-![report example](report_example.png)
+![Report Example](report_example.png)
 
+---
 
+## 🤝 Contributing
 
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
