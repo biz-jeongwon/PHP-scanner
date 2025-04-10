@@ -29,15 +29,18 @@ def find_php_files(root_dir):
     return php_files
 
 def collect_user_input_vars(code_lines):
-    tainted_vars = set()
+    tainted_vars = {}
     assign_pattern = re.compile(r'\$(\w+)\s*=\s*(.+);')
     sources = [r'\$_GET', r'\$_POST', r'\$_REQUEST', r'\$_COOKIE', r'\$_FILES']
-    for line in code_lines:
+    escape_functions = r'(htmlspecialchars|htmlentities|esc_html|esc_attr|wp_kses|sanitize_text_field|filter_var|absint|give_clean)'
+
+    for i, line in enumerate(code_lines):
         match = assign_pattern.search(line)
         if match:
             var_name, value = match.groups()
             if any(re.search(src, value) for src in sources):
-                tainted_vars.add(var_name)
+                if not re.search(escape_functions, value, re.IGNORECASE):
+                    tainted_vars[var_name] = line.strip()  # <== trace 기록
     return tainted_vars
 
 def detect_vulns(code_lines, tainted_vars):
@@ -55,9 +58,15 @@ def detect_vulns(code_lines, tainted_vars):
     lfi_patterns = [r"include\s*\(", r"require\s*\(", r"include_once\s*\(", r"require_once\s*\("]
     rce_patterns = [r"eval\s*\(", r"system\s*\(", r"exec\s*\(", r"shell_exec\s*\(", r"passthru\s*\("]
     ssrf_patterns = [r"file_get_contents\s*\(", r"curl_exec", r"curl_init"]
-    escape_functions = r'htmlspecialchars|htmlentities|esc_html|esc_attr'
+    escape_functions = r'htmlspecialchars|htmlentities|esc_html|esc_attr|absint|strtotime|give_clean'
+    tainted_sources = [r'\$_GET', r'\$_POST', r'\$_REQUEST', r'\$_COOKIE', r'\$_FILES']
+
+    variable_map = tainted_vars.copy()
+    function_def_pattern = re.compile(r'function\s+(\w+)\s*\((.*?)\)\s*\{?')
 
     in_form = False
+    inside_function = None
+    function_blocks = {}
 
     for i, line in enumerate(code_lines):
         stripped = line.strip().lower()
@@ -65,30 +74,72 @@ def detect_vulns(code_lines, tainted_vars):
             in_form = True
         if "</form>" in stripped:
             in_form = False
-    
+
+        func_def_match = function_def_pattern.search(line)
+        if func_def_match:
+            func_name = func_def_match.group(1)
+            inside_function = func_name
+            function_blocks[func_name] = []
+        elif inside_function:
+            function_blocks[inside_function].append((i, line))
+            if line.strip() == "}":
+                inside_function = None
+
     for i, line in enumerate(code_lines):
-        for pattern in sqli_patterns:
-            if re.search(pattern, line) and any(f"${var}" in line for var in tainted_vars):
-                vuln_results["SQLi"].append((i + 1, line.strip()))
-        for pattern in xss_patterns:
-            if re.search(pattern, line) and any(f"${var}" in line for var in tainted_vars):
-                if not re.search(escape_functions, line, re.IGNORECASE):
-                    vuln_results["XSS"].append((i + 1, line.strip()))
-        for pattern in lfi_patterns:
-            if re.search(pattern, line) and any(f"${var}" in line for var in tainted_vars):
-                vuln_results["LFI"].append((i + 1, line.strip()))
-        for pattern in rce_patterns:
-            if re.search(pattern, line) and any(f"${var}" in line for var in tainted_vars):
-                vuln_results["RCE"].append((i + 1, line.strip()))
-        for pattern in ssrf_patterns:
-            if re.search(pattern, line) and any(f"${var}" in line for var in tainted_vars):
-                vuln_results["SSRF"].append((i + 1, line.strip()))
+        assign_match = re.search(r'\$(\w+)\s*=\s*(\$[\w\[\]\'"]+);', line)
+        if assign_match:
+            var_name, source = assign_match.groups()
+            src_var = source.strip('$')
+            if src_var in variable_map:
+                variable_map[var_name] = variable_map[src_var]
+
+        for vuln_type, patterns in {
+            "SQLi": sqli_patterns,
+            "XSS": xss_patterns,
+            "LFI": lfi_patterns,
+            "RCE": rce_patterns,
+            "SSRF": ssrf_patterns
+        }.items():
+            for pattern in patterns:
+                if re.search(pattern, line, re.IGNORECASE):
+                    for var, trace in variable_map.items():
+                        if f"${var}" in line:
+                            if vuln_type == "XSS" and re.search(escape_functions, line, re.IGNORECASE):
+                                continue
+                            vuln_results[vuln_type].append({
+                                "line": i + 1,
+                                "code": line.strip(),
+                                "trace": trace
+                            })
 
         if re.search(r'\$_POST', line):
             lower_line = line.lower()
             if in_form:
                 if not re.search(r'csrf|nonce|token|wp_nonce', lower_line) and not re.search(r'check.*csrf|verify.*token', lower_line):
-                    vuln_results["CSRF"].append((i + 1, line.strip()))
+                    vuln_results["CSRF"].append({"line": i + 1, "code": line.strip()})
+
+    for func_name, func_lines in function_blocks.items():
+        for idx, line in func_lines:
+            for vuln_type, patterns in {
+                "SQLi": sqli_patterns,
+                "XSS": xss_patterns,
+                "LFI": lfi_patterns,
+                "RCE": rce_patterns,
+                "SSRF": ssrf_patterns
+            }.items():
+                for pattern in patterns:
+                    if re.search(pattern, line, re.IGNORECASE):
+                        for var, trace in variable_map.items():
+                            if f"${var}" in line:
+                                if vuln_type == "XSS" and re.search(escape_functions, line, re.IGNORECASE):
+                                    continue
+                                vuln_results[vuln_type].append({
+                                    "line": idx + 1,
+                                    "code": line.strip(),
+                                    "trace": trace,
+                                    "function": func_name
+                                })
+
     return vuln_results
 
 def analyze_php_file(filepath):
@@ -103,7 +154,7 @@ def print_progress(current, total):
 
 def main():
     print_ascii_art()
-    
+
     plugins_dir = "plugins-wp"
     php_files = find_php_files(plugins_dir)
     total_files = len(php_files)
