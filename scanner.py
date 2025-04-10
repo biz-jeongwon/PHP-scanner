@@ -32,7 +32,7 @@ def collect_user_input_vars(code_lines):
     tainted_vars = {}
     assign_pattern = re.compile(r'\$(\w+)\s*=\s*(.+);')
     sources = [r'\$_GET', r'\$_POST', r'\$_REQUEST', r'\$_COOKIE', r'\$_FILES']
-    escape_functions = r'(htmlspecialchars|htmlentities|esc_html|esc_attr|wp_kses|sanitize_text_field|filter_var|absint|give_clean)'
+    escape_functions = r'(htmlspecialchars|htmlentities|esc_html|esc_attr|wp_kses|sanitize_text_field|filter_var|absint|give_clean|intval|esc_url)'
 
     for i, line in enumerate(code_lines):
         match = assign_pattern.search(line)
@@ -58,7 +58,7 @@ def detect_vulns(code_lines, tainted_vars):
     lfi_patterns = [r"include\s*\(", r"require\s*\(", r"include_once\s*\(", r"require_once\s*\("]
     rce_patterns = [r"eval\s*\(", r"system\s*\(", r"exec\s*\(", r"shell_exec\s*\(", r"passthru\s*\("]
     ssrf_patterns = [r"file_get_contents\s*\(", r"curl_exec", r"curl_init"]
-    escape_functions = r'htmlspecialchars|htmlentities|esc_html|esc_attr|absint|strtotime|give_clean'
+    escape_functions = r'htmlspecialchars|htmlentities|esc_html|esc_attr|absint|strtotime|give_clean|intval|esc_url'
     tainted_sources = [r'\$_GET', r'\$_POST', r'\$_REQUEST', r'\$_COOKIE', r'\$_FILES']
 
     variable_map = tainted_vars.copy()

@@ -1,729 +1,978 @@
 {
-  "plugins-wp/slicewp/slicewp/includes/admin/payouts/views/view-create-payout.php": {
+  "plugins-wp\\broken-link-notifier\\broken-link-notifier\\includes\\results.php": {
     "XSS": [
       {
-        "line": 44,
-        "code": "<option value=\"up_to\" <?php echo ( ( ! empty( $request['date_range'] ) && $request['date_range'] == 'up_to' ) ? 'selected=\"selected\"' : '' ); ?>><?php echo __( 'Unpaid commissions up to...', 'slicewp' ); ?></option>",
-        "trace": "$request = ( ! empty( $_POST ) ? $_POST : $_GET );"
-      },
-      {
-        "line": 45,
-        "code": "<option value=\"custom_range\" <?php echo ( ( ! empty( $request['date_range'] ) && $request['date_range'] == 'custom_range' ) ? 'selected=\"selected\"' : '' ); ?>><?php echo __( 'Unpaid commission from custom range...', 'slicewp' ); ?></option>",
-        "trace": "$request = ( ! empty( $_POST ) ? $_POST : $_GET );"
-      },
-      {
-        "line": 118,
-        "code": "<option value=\"all\" <?php echo ( ( ! empty( $request['included_affiliates'] ) && $request['included_affiliates'] == 'all' ) ? 'selected=\"selected\"' : '' ); ?>><?php echo __( 'All eligible affiliates', 'slicewp' ); ?></option>",
-        "trace": "$request = ( ! empty( $_POST ) ? $_POST : $_GET );"
-      },
-      {
-        "line": 119,
-        "code": "<option value=\"selected\" <?php echo ( ( ! empty( $request['included_affiliates'] ) && $request['included_affiliates'] == 'selected' ) ? 'selected=\"selected\"' : '' ); ?>><?php echo __( 'Only selected affiliates...', 'slicewp' ); ?></option>",
-        "trace": "$request = ( ! empty( $_POST ) ? $_POST : $_GET );"
+        "line": 505,
+        "code": "echo wp_kses_post( $source_url ).'<div class=\"row-actions\" data-source-id=\"' . $source_id . '\">'.wp_kses_post( implode( ' | ', $actions ) ).'</div>';",
+        "trace": "$s = sanitize_key( $_REQUEST[ 'link-type' ] ); // phpcs:ignore"
       }
     ]
   },
-  "plugins-wp/slicewp/slicewp/includes/users/class-list-table.php": {
+  "plugins-wp\\download-manager\\download-manager\\src\\Admin\\Menu\\Packages.php": {
     "XSS": [
       {
-        "line": 654,
-        "code": "echo '<a class=\"slicewp-pagination-link\" href=\"' . esc_url( add_query_arg( array( $page_number_arg_slug => 1 ), $screen_url ) ) . '\" title=\"' . __( 'First page', 'slicewp' ) . '\">' . slicewp_get_svg( 'outline-chevron-double-left' ) . '</a>';",
-        "trace": "$screen_url = add_query_arg( array_diff_key( $_GET, $query_vars ), $this->screen_base_url );"
-      },
-      {
-        "line": 660,
-        "code": "echo '<a class=\"slicewp-pagination-link\" href=\"' . esc_url( add_query_arg( array( $page_number_arg_slug => $this->current_page - 1 ), $screen_url ) ) . '\" title=\"' . __( 'Previous page', 'slicewp' ) . '\">' . slicewp_get_svg( 'outline-chevron-left' ) . '</a>';",
-        "trace": "$screen_url = add_query_arg( array_diff_key( $_GET, $query_vars ), $this->screen_base_url );"
-      },
-      {
-        "line": 666,
-        "code": "echo '<a class=\"slicewp-pagination-link\" href=\"' . esc_url( add_query_arg( array( $page_number_arg_slug => $this->current_page + 1 ), $screen_url ) ) . '\" title=\"' . __( 'Next page', 'slicewp' ) . '\">' . slicewp_get_svg( 'outline-chevron-right' ) . '</a>';",
-        "trace": "$screen_url = add_query_arg( array_diff_key( $_GET, $query_vars ), $this->screen_base_url );"
-      },
-      {
-        "line": 672,
-        "code": "echo '<a class=\"slicewp-pagination-link\" href=\"' . esc_url( add_query_arg( array( $page_number_arg_slug => $total_pages ), $screen_url ) ) . '\" title=\"' . __( 'Last page', 'slicewp' ) . '\">' . slicewp_get_svg( 'outline-chevron-double-right' ) . '</a>';",
-        "trace": "$screen_url = add_query_arg( array_diff_key( $_GET, $query_vars ), $this->screen_base_url );"
+        "line": 172,
+        "code": "echo \"|||\" . $filename . \"|||\";",
+        "trace": "$name = isset( $_FILES['package_file']['name'] ) && ! isset( $_REQUEST[\"chunks\"] ) ? sanitize_file_name( $_FILES['package_file']['name'] ) : wpdm_query_var( 'name', 'txt' );"
       }
     ]
   },
-  "plugins-wp/slicewp/slicewp/includes/users/shortcodes/functions-actions-shortcodes.php": {
+  "plugins-wp\\download-manager\\download-manager\\src\\Admin\\views\\templates\\list-templates.php": {
     "XSS": [
       {
-        "line": 721,
-        "code": "slicewp_add_log( sprintf( 'Password changed for user: %s', $user->user_login ) );",
-        "trace": "$user = check_password_reset_key( wp_unslash( $_POST['reset_key'] ), $user->user_login );"
+        "line": 68,
+        "code": "<tr valign=\"top\" class=\"author-self status-inherit\" id=\"template-<?php echo $ttype; ?>-<?php echo $ctpl; ?>\">",
+        "trace": "$ttype = isset($_GET['_type'])?wpdm_query_var('_type'):'link';"
+      },
+      {
+        "line": 84,
+        "code": "<a data-toggle=\"modal\" href=\"#\" data-href=\"admin-ajax.php?action=template_preview&_type=<?php echo $ttype; ?>&template=<?php echo $ctpl; ?>&_tplnonce=<?php echo  wp_create_nonce(WPDM_PUB_NONCE) ?>\" data-target=\"#preview-modal\" rel=\"<?php echo $ctpl; ?>\" class=\"template_preview btn btn-sm btn-success\"><i class=\"fa fa-desktop\"></i> Preview</a>",
+        "trace": "$ttype = isset($_GET['_type'])?wpdm_query_var('_type'):'link';"
       }
     ]
   },
-  "plugins-wp/slicewp/slicewp/includes/base/abstracts/abstract-class-list-table.php": {
+  "plugins-wp\\download-manager\\download-manager\\src\\Package\\views\\lock-options-iframe.php": {
     "XSS": [
       {
-        "line": 619,
-        "code": "sprintf( __( '%1$s %2$d' ), $wp_locale->get_month( $month ), $year )",
-        "trace": "$m = isset( $_GET['m'] ) ? (int) $_GET['m'] : 0;"
+        "line": 360,
+        "code": "echo WPDM()->package->downloadLink(wpdm_query_var('__wpdmlo', 'int'), 1, $extras);",
+        "trace": "$extras = isset($_REQUEST['__wpdmfl']) ? ['ind' => wpdm_query_var('__wpdmfl', 'txt')] : [];"
       }
     ]
   },
-  "plugins-wp/advanced-ads/advanced-ads/includes/importers/class-xml-importer.php": {
+  "plugins-wp\\download-manager\\download-manager\\src\\User\\User.php": {
     "XSS": [
       {
-        "line": 277,
-        "code": "$this->messages[] = [ 'error', sprintf( __( 'Failed to upload file, error: <em>%s</em>', 'advanced-ads' ), $file['error'] ) ];",
-        "trace": "$file = $_FILES['import'];"
+        "line": 223,
+        "code": "echo wpdm_paginate_links($total, $items_per_page, $page, 'cp', array('async' => 1, 'container' => \"#wpdm-authors{$contid}\"));",
+        "trace": "$page = isset($_REQUEST['cp']) && $_REQUEST['cp'] > 0 ? (int)$_REQUEST['cp'] : 1;"
       }
     ]
   },
-  "plugins-wp/advanced-ads/advanced-ads/modules/gadsense/includes/class-mapi.php": {
-    "CSRF": [
+  "plugins-wp\\eventprime-event-calendar-management\\eventprime-event-calendar-management\\includes\\class-ep-ajax.php": {
+    "XSS": [
       {
-        "line": 738,
-        "code": "$publisher_id = sanitize_text_field( wp_unslash( isset( $_POST['parsed_code']['pubId'] ) ? $_POST['parsed_code']['pubId'] : '' ) );"
+        "line": 316,
+        "code": "//print_r($ticket_data);",
+        "trace": "$ticket_data = json_decode( stripslashes( $_POST['ticket_data'] ) );"
       },
       {
-        "line": 748,
-        "code": "if ( empty( $_POST['parsed_code']['slotId'] ) || empty( $_POST['raw_code'] ) ) {"
+        "line": 343,
+        "code": "//print_r($data);",
+        "trace": "$data = $_POST;"
       },
       {
-        "line": 757,
-        "code": "$slot_id = 'ca-' . $publisher_id . ':' . sanitize_text_field( wp_unslash( $_POST['parsed_code']['slotId'] ) );"
+        "line": 364,
+        "code": "//print_r($data);die;",
+        "trace": "$data = $_POST;"
       },
       {
-        "line": 812,
-        "code": "$post_data = wp_unslash( $_POST );"
+        "line": 1631,
+        "code": "echo json_encode($data);",
+        "trace": "$data = $_POST;"
       },
       {
-        "line": 929,
-        "code": "if ( isset( $_POST['inlineAttempt'] ) ) {"
+        "line": 2156,
+        "code": "echo $booking_controller->export_bookings_all($data);",
+        "trace": "$data = $_POST;"
       },
       {
-        "line": 1013,
-        "code": "$post_vars = wp_unslash( $_POST );"
-      },
-      {
-        "line": 1056,
-        "code": "$post_data = wp_unslash( $_POST );"
-      },
-      {
-        "line": 1098,
-        "code": "$post_data = wp_unslash( $_POST );"
+        "line": 2156,
+        "code": "echo $booking_controller->export_bookings_all($data);",
+        "trace": "$data = $_POST;",
+        "function": "booking_export_all"
       }
     ]
   },
-  "plugins-wp/notificationx/notificationx/blocks/style-handler/style-handler.php": {
+  "plugins-wp\\eventprime-event-calendar-management\\eventprime-event-calendar-management\\includes\\class-ep-user-controller.php": {
     "SSRF": [
       {
-        "line": 114,
-        "code": "$existingCss = file_get_contents( $editSiteCssPath );",
-        "trace": "$editSiteCssPath = $upload_dir . 'nx-style-' . $_POST['editorType'] . '.min.css';"
+        "line": 417,
+        "code": "$response = json_decode(file_get_contents(\"https://www.google.com/recaptcha/api/siteverify?secret=\".$ep_functions->ep_get_global_settings('google_recaptcha_secret_key').\"&response=\".$_POST['g-recaptcha-response'].\"&remoteip=\".$_SERVER['REMOTE_ADDR']), true);",
+        "trace": "$response = json_decode( file_get_contents( \"https://www.google.com/recaptcha/api/siteverify?secret=\".$ep_functions->ep_get_global_settings( 'google_recaptcha_secret_key' ).\"&response=\".$_POST['g-recaptcha-response'].\"&remoteip=\".$_SERVER['REMOTE_ADDR'] ), true );"
+      },
+      {
+        "line": 562,
+        "code": "$response = json_decode( file_get_contents( \"https://www.google.com/recaptcha/api/siteverify?secret=\".$ep_functions->ep_get_global_settings( 'google_recaptcha_secret_key' ).\"&response=\".$_POST['g-recaptcha-response'].\"&remoteip=\".$_SERVER['REMOTE_ADDR'] ), true );",
+        "trace": "$response = json_decode( file_get_contents( \"https://www.google.com/recaptcha/api/siteverify?secret=\".$ep_functions->ep_get_global_settings( 'google_recaptcha_secret_key' ).\"&response=\".$_POST['g-recaptcha-response'].\"&remoteip=\".$_SERVER['REMOTE_ADDR'] ), true );"
       }
     ]
   },
-  "plugins-wp/reviews-widgets/reviews-widgets/tabs/free-widget-configurator.php": {
+  "plugins-wp\\gutenberg\\gutenberg\\lib\\experimental\\sync\\class-gutenberg-http-signaling-server.php": {
     "XSS": [
       {
-        "line": 506,
-        "code": "<img src=\"<?php echo esc_url($pageDetails['avatar_url']); ?>\" />",
-        "trace": "$pageDetails = isset($_POST['page_details']) ? json_decode(stripcslashes($_POST['page_details']), true) : null;"
-      },
-      {
-        "line": 702,
-        "code": "<?php echo $pluginManagerInstance->renderWidgetAdmin(true, false, ['style-id' => $styleId, 'set-id' => $id]); ?>",
-        "trace": "$styleId = (int)$_REQUEST['style_id'];"
-      },
-      {
-        "line": 730,
-        "code": "<?php echo $pluginManagerInstance->renderWidgetAdmin(true, false, ['style-id' => $styleId, 'set-id' => $id, 'verified-by-trustindex' => true]); ?>",
-        "trace": "$styleId = (int)$_REQUEST['style_id'];"
+        "line": 193,
+        "code": "echo 'data: ' . wp_json_encode( $subscriber_to_messages[ $subscriber_id ] ) . PHP_EOL . PHP_EOL;",
+        "trace": "$subscriber_id = $_REQUEST['subscriber_id'];"
       }
     ]
   },
-  "plugins-wp/wp-event-solution/wp-event-solution/core/Admin/Hooks.php": {
-    "SSRF": [
-      {
-        "line": 468,
-        "code": "$imageContent = file_get_contents( $imageUrl );",
-        "trace": "$imageUrl = isset( $_GET['url'] ) ? $_GET['url'] : null;"
-      }
-    ]
-  },
-  "plugins-wp/wp-event-solution/wp-event-solution/core/modules/seat-plan/frontend/views/seatplan-form.php": {
+  "plugins-wp\\icegram\\icegram\\lite\\classes\\class-icegram-campaign-admin.php": {
     "XSS": [
       {
-        "line": 47,
-        "code": "<p style=\"text-align: center; color: red\"><?php echo $errors['seat_limit_error'] ?></p>",
-        "trace": "$errors = isset( $_GET['etn_errors'] ) ? $_GET['etn_errors'] : '';"
+        "line": 524,
+        "code": "<p class=\"form-field py-1 \" <?php echo ( !empty( $campaign_target_rules['sitewide'] ) && $campaign_target_rules['sitewide'] == 'yes' ) ? '' : 'style=\"display: none;\"'; ?>>",
+        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
+      },
+      {
+        "line": 531,
+        "code": "echo selected( in_array( $page->ID, $campaign_target_rules['exclude_page_id'] ) );",
+        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
+      },
+      {
+        "line": 552,
+        "code": "<p class=\"form-field py-1\" <?php echo ( !empty( $campaign_target_rules['other_page'] ) && $campaign_target_rules['other_page'] == 'yes' ) ? '' : 'style=\"display: none;\"'; ?>>",
+        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
+      },
+      {
+        "line": 559,
+        "code": "echo selected( in_array( $page->ID, $campaign_target_rules['page_id'] ) );",
+        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
+      },
+      {
+        "line": 576,
+        "code": "<p class=\"form-field py-1 local_url\" <?php echo ( !empty( $campaign_target_rules['local_url'] ) && $campaign_target_rules['local_url'] == 'yes' ) ? '' : 'style=\"display: none;\"'; ?>>",
+        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
+      },
+      {
+        "line": 617,
+        "code": "<span class=\"form-field\" id=\"date_picker\" <?php echo ( !empty( $campaign_target_rules['when'] ) && $campaign_target_rules['when'] == 'schedule' ) ? '' : 'style=\"display: none;\"'; ?>>",
+        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
+      },
+      {
+        "line": 690,
+        "code": "echo selected( in_array( $role_value, $campaign_target_rules['users'] ) );",
+        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
+      },
+      {
+        "line": 728,
+        "code": "echo $campaign_target_rules_retargeting['html'];",
+        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
+      },
+      {
+        "line": 524,
+        "code": "<p class=\"form-field py-1 \" <?php echo ( !empty( $campaign_target_rules['sitewide'] ) && $campaign_target_rules['sitewide'] == 'yes' ) ? '' : 'style=\"display: none;\"'; ?>>",
+        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );",
+        "function": "icegram_add_campaign_target_rules"
+      },
+      {
+        "line": 531,
+        "code": "echo selected( in_array( $page->ID, $campaign_target_rules['exclude_page_id'] ) );",
+        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );",
+        "function": "icegram_add_campaign_target_rules"
       }
     ]
   },
-  "plugins-wp/netreviews/netreviews/includes/av_backoffice.php": {
-    "XSS": [
-      {
-        "line": 926,
-        "code": "for=\"status_<?php echo $i; ?>\"><?php echo $status; ?></label>",
-        "trace": "$status = isset($_POST['status']) ? ($_POST['status']) : array();"
-      },
-      {
-        "line": 931,
-        "code": "for=\"status_<?php echo $i; ?>\"><?php echo $status; ?></label>",
-        "trace": "$status = isset($_POST['status']) ? ($_POST['status']) : array();"
-      }
-    ]
-  },
-  "plugins-wp/astra-sites/astra-sites/inc/lib/gutenberg-templates/inc/importer/template-kit-importer.php": {
-    "XSS": [
-      {
-        "line": 56,
-        "code": "'message' => sprintf( __( 'Invalid Request URL - %s', 'astra-sites' ), $api_uri ),",
-        "trace": "$api_uri = ( isset( $_REQUEST['api_uri'] ) ) ? esc_url_raw( $_REQUEST['api_uri'] ) : '';"
-      }
-    ]
-  },
-  "plugins-wp/give/give/includes/forms/template.php": {
-    "XSS": [
-      {
-        "line": 350,
-        "code": "<div id=\"give-checkout-login-register-<?php echo $form_id; ?>\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 363,
-        "code": "<div id=\"give-checkout-login-register-<?php echo $form_id; ?>\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 666,
-        "code": "echo apply_filters( 'give_form_level_output', $output, $form_id );",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 706,
-        "code": "echo apply_filters( 'give_display_checkout_button', $output, $form_id, $args );",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 739,
-        "code": "echo apply_filters( 'give_display_checkout_button', $output, $form_id, $args );",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 802,
-        "code": "echo(give_field_is_required('give_title', $form_id) ? ' required aria-required=\"true\" ' : ''); ?>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 842,
-        "code": "echo(give_field_is_required('give_first', $form_id) ? ' required aria-required=\"true\" ' : ''); ?>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 862,
-        "code": "echo(give_field_is_required('give_last', $form_id) ? ' required' : ''); ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 872,
-        "code": "echo(give_field_is_required('give_last', $form_id) ? ' required aria-required=\"true\" ' : ''); ?>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 986,
-        "code": "echo(give_field_is_required('give_email', $form_id) ? ' required aria-required=\"true\" ' : ''); ?>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1000,
-        "code": "echo(give_field_is_required('give_anonymous_donation', $form_id) ? ' required' : ''); ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1046,
-        "code": "class=\"give-input<?php echo( give_field_is_required( 'give_comment', $form_id ) ? ' required' : '' ); ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1050,
-        "code": "<?php echo( give_field_is_required( 'give_comment', $form_id ) ? ' required aria-required=\"true\" ' : '' ); ?>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1104,
-        "code": "<fieldset id=\"give_cc_fields-<?php echo $form_id; ?>\" class=\"give-do-validate\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1107,
-        "code": "<div id=\"give_secure_site_wrapper-<?php echo $form_id; ?>\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1112,
-        "code": "<p id=\"give-card-number-wrap-<?php echo $form_id; ?>\" class=\"form-row form-row-two-thirds form-row-responsive\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1113,
-        "code": "<label for=\"card_number-<?php echo $form_id; ?>\" class=\"give-label\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1120,
-        "code": "<input type=\"tel\" autocomplete=\"off\" name=\"card_number\" id=\"card_number-<?php echo $form_id; ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1125,
-        "code": "<p id=\"give-card-cvc-wrap-<?php echo $form_id; ?>\" class=\"form-row form-row-one-third form-row-responsive\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1126,
-        "code": "<label for=\"card_cvc-<?php echo $form_id; ?>\" class=\"give-label\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1132,
-        "code": "<input type=\"tel\" size=\"4\" autocomplete=\"off\" name=\"card_cvc\" id=\"card_cvc-<?php echo $form_id; ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1137,
-        "code": "<p id=\"give-card-name-wrap-<?php echo $form_id; ?>\" class=\"form-row form-row-two-thirds form-row-responsive\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1138,
-        "code": "<label for=\"card_name-<?php echo $form_id; ?>\" class=\"give-label\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1144,
-        "code": "<input type=\"text\" autocomplete=\"off\" name=\"card_name\" id=\"card_name-<?php echo $form_id; ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1159,
-        "code": "<label for=\"card_expiry-<?php echo $form_id; ?>\" class=\"give-label\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1165,
-        "code": "<input type=\"hidden\" id=\"card_exp_month-<?php echo $form_id; ?>\" name=\"card_exp_month\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1167,
-        "code": "<input type=\"hidden\" id=\"card_exp_year-<?php echo $form_id; ?>\" name=\"card_exp_year\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1170,
-        "code": "<input type=\"tel\" autocomplete=\"off\" name=\"card_expiry\" id=\"card_expiry-<?php echo $form_id; ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1270,
-        "code": "class=\"billing-country billing_country give-select<?php echo( give_field_is_required( 'billing_country', $form_id ) ? ' required' : '' ); ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1271,
-        "code": "<?php echo( give_field_is_required( 'billing_country', $form_id ) ? ' required aria-required=\"true\" ' : '' ); ?>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1297,
-        "code": "class=\"card-address give-input<?php echo( give_field_is_required( 'card_address', $form_id ) ? ' required' : '' ); ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1300,
-        "code": "<?php echo( give_field_is_required( 'card_address', $form_id ) ? '  required aria-required=\"true\" ' : '' ); ?>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1318,
-        "code": "class=\"card-address-2 give-input<?php echo( give_field_is_required( 'card_address_2', $form_id ) ? ' required' : '' ); ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1321,
-        "code": "<?php echo( give_field_is_required( 'card_address_2', $form_id ) ? ' required aria-required=\"true\" ' : '' ); ?>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1338,
-        "code": "class=\"card-city give-input<?php echo( give_field_is_required( 'card_city', $form_id ) ? ' required' : '' ); ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1341,
-        "code": "<?php echo( give_field_is_required( 'card_city', $form_id ) && $city_required ? ' required aria-required=\"true\" ' : '' ); ?>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1465,
-        "code": "<fieldset id=\"give-register-fields-<?php echo $form_id; ?>\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1478,
-        "code": "<fieldset id=\"give-register-account-fields-<?php echo $form_id; ?>\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1507,
-        "code": "<label for=\"give-create-account-<?php echo $form_id; ?>\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1508,
-        "code": "<input type=\"checkbox\" id=\"give-create-account-<?php echo $form_id; ?>\" name=\"give_create_account\" class=\"give-input\" value=\"on\" />",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1515,
-        "code": "<input type=\"hidden\" id=\"give-create-account-<?php echo $form_id; ?>\" name=\"give_create_account\" class=\"give-input\" value=\"on\" checked />",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1642,
-        "code": "<input class=\"give-input<?php echo ( give_logged_in_only( $form_id ) ) ? ' required' : ''; ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1645,
-        "code": "placeholder=\"<?php _e( 'Your username or email', 'give' ); ?>\"<?php echo ( give_logged_in_only( $form_id ) ) ? ' required aria-required=\"true\" ' : ''; ?>/>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1656,
-        "code": "<input class=\"give-input<?php echo ( give_logged_in_only( $form_id ) ) ? ' required' : ''; ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1658,
-        "code": "placeholder=\"<?php _e( 'Your password', 'give' ); ?>\"<?php echo ( give_logged_in_only( $form_id ) ) ? ' required aria-required=\"true\" ' : ''; ?>/>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1887,
-        "code": "<div id=\"give_terms\" class=\"give_terms-<?php echo $form_id; ?>\" style=\"display:none;\">",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1906,
-        "code": "<a href=\"#\" class=\"give_terms_links give_terms_links-<?php echo $form_id; ?>\" role=\"button\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1908,
-        "code": "<a href=\"#\" class=\"give_terms_links give_terms_links-<?php echo $form_id; ?>\" role=\"button\"",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1913,
-        "code": "id=\"give_agree_to_terms-<?php echo $form_id; ?>\" value=\"1\" required aria-required=\"true\"/>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 1914,
-        "code": "<label for=\"give_agree_to_terms-<?php echo $form_id; ?>\"><?php echo $label; ?></label>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 2006,
-        "code": "echo give_get_donation_form_submit_button( $form_id, $args );",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 2074,
-        "code": "echo apply_filters( 'give_goal_output', ob_get_clean(), $form_id, $args );",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 2223,
-        "code": "echo apply_filters( 'give_form_content_output', $output, $form_id, $args );",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 2255,
-        "code": "<input type=\"hidden\" name=\"give-gateway\" value=\"<?php echo give_get_chosen_gateway( $form_id ); ?>\"/>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 2358,
-        "code": "<input type=\"hidden\" name=\"give-form-id\" value=\"<?php echo intval( $form_id ); ?>\"/>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 2370,
-        "code": "value=\"<?php echo give_maybe_sanitize_amount( give_get_form_minimum_price( $form_id ) ); ?>\"/>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 2372,
-        "code": "value=\"<?php echo give_maybe_sanitize_amount( give_get_form_maximum_price( $form_id ) ); ?>\"/>",
-        "trace": "$form_id = $_POST['give_form_id'];"
-      },
-      {
-        "line": 350,
-        "code": "<div id=\"give-checkout-login-register-<?php echo $form_id; ?>\">",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_show_register_login_fields"
-      },
-      {
-        "line": 363,
-        "code": "<div id=\"give-checkout-login-register-<?php echo $form_id; ?>\">",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_show_register_login_fields"
-      },
-      {
-        "line": 739,
-        "code": "echo apply_filters( 'give_display_checkout_button', $output, $form_id, $args );",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_add_button_open_form"
-      },
-      {
-        "line": 1104,
-        "code": "<fieldset id=\"give_cc_fields-<?php echo $form_id; ?>\" class=\"give-do-validate\">",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1107,
-        "code": "<div id=\"give_secure_site_wrapper-<?php echo $form_id; ?>\">",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1112,
-        "code": "<p id=\"give-card-number-wrap-<?php echo $form_id; ?>\" class=\"form-row form-row-two-thirds form-row-responsive\">",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1113,
-        "code": "<label for=\"card_number-<?php echo $form_id; ?>\" class=\"give-label\">",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1120,
-        "code": "<input type=\"tel\" autocomplete=\"off\" name=\"card_number\" id=\"card_number-<?php echo $form_id; ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1125,
-        "code": "<p id=\"give-card-cvc-wrap-<?php echo $form_id; ?>\" class=\"form-row form-row-one-third form-row-responsive\">",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1126,
-        "code": "<label for=\"card_cvc-<?php echo $form_id; ?>\" class=\"give-label\">",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1132,
-        "code": "<input type=\"tel\" size=\"4\" autocomplete=\"off\" name=\"card_cvc\" id=\"card_cvc-<?php echo $form_id; ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1137,
-        "code": "<p id=\"give-card-name-wrap-<?php echo $form_id; ?>\" class=\"form-row form-row-two-thirds form-row-responsive\">",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1138,
-        "code": "<label for=\"card_name-<?php echo $form_id; ?>\" class=\"give-label\">",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1144,
-        "code": "<input type=\"text\" autocomplete=\"off\" name=\"card_name\" id=\"card_name-<?php echo $form_id; ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1159,
-        "code": "<label for=\"card_expiry-<?php echo $form_id; ?>\" class=\"give-label\">",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1165,
-        "code": "<input type=\"hidden\" id=\"card_exp_month-<?php echo $form_id; ?>\" name=\"card_exp_month\"",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1167,
-        "code": "<input type=\"hidden\" id=\"card_exp_year-<?php echo $form_id; ?>\" name=\"card_exp_year\"",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 1170,
-        "code": "<input type=\"tel\" autocomplete=\"off\" name=\"card_expiry\" id=\"card_expiry-<?php echo $form_id; ?>\"",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_get_cc_form"
-      },
-      {
-        "line": 2006,
-        "code": "echo give_get_donation_form_submit_button( $form_id, $args );",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_checkout_submit"
-      },
-      {
-        "line": 2074,
-        "code": "echo apply_filters( 'give_goal_output', ob_get_clean(), $form_id, $args );",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_show_goal_progress"
-      },
-      {
-        "line": 2255,
-        "code": "<input type=\"hidden\" name=\"give-gateway\" value=\"<?php echo give_get_chosen_gateway( $form_id ); ?>\"/>",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "give_checkout_hidden_fields"
-      },
-      {
-        "line": 2358,
-        "code": "<input type=\"hidden\" name=\"give-form-id\" value=\"<?php echo intval( $form_id ); ?>\"/>",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "__give_form_add_donation_hidden_field"
-      },
-      {
-        "line": 2370,
-        "code": "value=\"<?php echo give_maybe_sanitize_amount( give_get_form_minimum_price( $form_id ) ); ?>\"/>",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "__give_form_add_donation_hidden_field"
-      },
-      {
-        "line": 2372,
-        "code": "value=\"<?php echo give_maybe_sanitize_amount( give_get_form_maximum_price( $form_id ) ); ?>\"/>",
-        "trace": "$form_id = $_POST['give_form_id'];",
-        "function": "__give_form_add_donation_hidden_field"
-      }
-    ]
-  },
-  "plugins-wp/give/give/includes/admin/tools/import/class-give-import-donations.php": {
-    "XSS": [
-      {
-        "line": 925,
-        "code": "$csv_description = sprintf(",
-        "trace": "$csv       = (int) $_GET['csv'];"
-      }
-    ]
-  },
-  "plugins-wp/give/give/includes/admin/donors/donor-actions.php": {
-    "XSS": [
-      {
-        "line": 467,
-        "code": "$donor_note = sprintf( __( 'Email address %1$s added by %2$s', 'give' ), $email, $user_login );",
-        "trace": "$donor = new Give_Donor( $_GET['id'] );"
-      },
-      {
-        "line": 467,
-        "code": "$donor_note = sprintf( __( 'Email address %1$s added by %2$s', 'give' ), $email, $user_login );",
-        "trace": "$donor_note = sprintf( __( 'Email address %1$s set as primary by %2$s', 'give' ), $_GET['email'], $user_login );"
-      },
-      {
-        "line": 471,
-        "code": "$donor_note = sprintf( __( 'Email address %1$s set as primary by %2$s', 'give' ), $email, $user_login );",
-        "trace": "$donor = new Give_Donor( $_GET['id'] );"
-      },
-      {
-        "line": 471,
-        "code": "$donor_note = sprintf( __( 'Email address %1$s set as primary by %2$s', 'give' ), $email, $user_login );",
-        "trace": "$donor_note = sprintf( __( 'Email address %1$s set as primary by %2$s', 'give' ), $_GET['email'], $user_login );"
-      },
-      {
-        "line": 525,
-        "code": "$donor_note = sprintf( __( 'Email address %1$s removed by %2$s', 'give' ), $_GET['email'], $user_login );",
-        "trace": "$donor = new Give_Donor( $_GET['id'] );"
-      },
-      {
-        "line": 525,
-        "code": "$donor_note = sprintf( __( 'Email address %1$s removed by %2$s', 'give' ), $_GET['email'], $user_login );",
-        "trace": "$donor_note = sprintf( __( 'Email address %1$s set as primary by %2$s', 'give' ), $_GET['email'], $user_login );"
-      },
-      {
-        "line": 577,
-        "code": "$donor_note = sprintf( __( 'Email address %1$s set as primary by %2$s', 'give' ), $_GET['email'], $user_login );",
-        "trace": "$donor = new Give_Donor( $_GET['id'] );"
-      },
-      {
-        "line": 577,
-        "code": "$donor_note = sprintf( __( 'Email address %1$s set as primary by %2$s', 'give' ), $_GET['email'], $user_login );",
-        "trace": "$donor_note = sprintf( __( 'Email address %1$s set as primary by %2$s', 'give' ), $_GET['email'], $user_login );"
-      }
-    ]
-  },
-  "plugins-wp/give/give/includes/admin/emails/class-email-setting-field.php": {
+  "plugins-wp\\icegram\\icegram\\lite\\classes\\class-icegram-message-admin.php": {
     "XSS": [
       {
         "line": 183,
-        "code": "$description = isset( $_GET['page'] ) && 'give-settings' === $_GET['page'] ? __( 'Choose whether you want this email enabled or not.', 'give' ) : sprintf( __( 'Global Options are set <a href=\"%s\">in GiveWP settings</a>. You may override them for this form here.', 'give' ), admin_url( 'edit.php?post_type=give_forms&page=give-settings&tab=emails' ) );",
-        "trace": "$description = isset( $_GET['page'] ) && 'give-settings' === $_GET['page'] ? __( 'Choose whether you want this email enabled or not.', 'give' ) : sprintf( __( 'Global Options are set <a href=\"%s\">in GiveWP settings</a>. You may override them for this form here.', 'give' ), admin_url( 'edit.php?post_type=give_forms&page=give-settings&tab=emails' ) );"
-      }
-    ]
-  },
-  "plugins-wp/give/give/includes/admin/shortcodes/class-shortcode-button.php": {
-    "XSS": [
-      {
-        "line": 154,
-        "code": "$shortcodes[ $shortcode ] = sprintf(",
-        "trace": "$shortcode = isset( $_POST['shortcode'] ) ? $_POST['shortcode'] : false;"
+        "code": "<input id=\"upload_image\" type=\"text\" class=\"message_field form-input\" name=\"message_data[<?php echo $message_id; ?>][icon]\" value=\"<?php if ( isset( $message_data['icon'] ) ) {",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
       },
       {
-        "line": 154,
-        "code": "$shortcodes[ $shortcode ] = sprintf(",
-        "trace": "$shortcode = isset( $_POST['shortcode'] ) ? $_POST['shortcode'] : false;",
-        "function": "shortcode_button"
-      }
-    ]
-  },
-  "plugins-wp/give/give/includes/admin/upgrades/views/upgrades.php": {
-    "XSS": [
-      {
-        "line": 103,
-        "code": "data-redirect-url=\"<?php echo esc_url( admin_url( '/edit.php?post_type=give_forms&page=give-updates&give-restart-db-upgrades=1' ) ); ?>\"<?php echo $is_disabled; ?>><?php _e( 'Restart Upgrades', 'give' ); ?></button>",
-        "trace": "<?php $is_disabled = isset( $_GET['give-pause-db-upgrades'] ) ? ' disabled' : ''; ?>"
+        "line": 436,
+        "code": "<input style=\"width:auto\" type=\"text\" class=\"message_field form-input\" name=\"message_data[<?php echo $message_id; ?>][label]\" id=\"message_label\" value=\"<?php if ( isset( $message_data['label'] ) ) {",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
       },
       {
-        "line": 107,
-        "code": "data-redirect-url=\"<?php echo esc_url( admin_url( '/edit.php?post_type=give_forms&page=give-updates&give-pause-db-upgrades=1' ) ); ?>\"<?php echo $is_disabled; ?>>",
-        "trace": "<?php $is_disabled = isset( $_GET['give-pause-db-upgrades'] ) ? ' disabled' : ''; ?>"
-      }
-    ]
-  },
-  "plugins-wp/give/give/src/PaymentGateways/Stripe/Admin/AccountManagerSettingField.php": {
-    "XSS": [
-      {
-        "line": 507,
-        "code": "echo $can_display; ?>\"",
-        "trace": "$can_display = ! empty($_GET['stripe_account']) ? '0' : '1';"
+        "line": 576,
+        "code": "value=\"left\" <?php echo ( ! empty( $message_data['form_layout'] ) && \"left\" == $message_data['form_layout'] ) ? 'checked' : ( empty( $message_data['form_layout'] ) && \"left\" == $default_form_layout ? 'checked' : '' ); ?> />",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
       },
       {
-        "line": 507,
-        "code": "echo $can_display; ?>\"",
-        "trace": "$can_display = ! empty($_GET['stripe_account']) ? '0' : '1';",
-        "function": "getStripeAccountOnBoardingModalMarkup"
+        "line": 586,
+        "code": "value=\"right\" <?php echo ( ! empty( $message_data['form_layout'] ) && \"right\" == $message_data['form_layout'] ) ? 'checked' : ( empty( $message_data['form_layout'] ) && \"right\" == $default_form_layout ? 'checked' : '' ); ?> />",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
+      },
+      {
+        "line": 596,
+        "code": "value=\"bottom\" <?php echo ( ! empty( $message_data['form_layout'] ) && \"bottom\" == $message_data['form_layout'] ) ? 'checked' : ( empty( $message_data['form_layout'] ) && \"bottom\" == $default_form_layout ? 'checked' : '' ); ?> />",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
+      },
+      {
+        "line": 673,
+        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio01_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"00\" <?php echo ( ! empty( $message_data['position'] ) && \"00\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
+      },
+      {
+        "line": 679,
+        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio02_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"01\" <?php echo ( ! empty( $message_data['position'] ) && \"01\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
+      },
+      {
+        "line": 685,
+        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio03_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"02\" <?php echo ( ! empty( $message_data['position'] ) && \"02\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
+      },
+      {
+        "line": 691,
+        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio04_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"10\" <?php echo ( ! empty( $message_data['position'] ) && \"10\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
+      },
+      {
+        "line": 697,
+        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio05_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"11\" <?php echo ( ! empty( $message_data['position'] ) && \"11\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
+      },
+      {
+        "line": 703,
+        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio06_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"12\" <?php echo ( ! empty( $message_data['position'] ) && \"12\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
+      },
+      {
+        "line": 709,
+        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio07_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"20\" <?php echo ( ! empty( $message_data['position'] ) && \"20\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
+      },
+      {
+        "line": 715,
+        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio08_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"21\" <?php echo ( ! empty( $message_data['position'] ) && \"21\" == $message_data['position'] || ! isset( $message_data['position'] ) ) ? 'checked' : ''; ?> />",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
+      },
+      {
+        "line": 721,
+        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio09_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"22\" <?php echo ( ! empty( $message_data['position'] ) && \"22\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
+        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
       }
     ]
   },
-  "plugins-wp/ibtana-ecommerce-product-addons/ibtana-ecommerce-product-addons/IEPA_Whizzie/iepa_tgmpa/iepa-class-tgm-plugin-activation.php": {
+  "plugins-wp\\simple-back-to-top\\simple-back-to-top\\options.php": {
+    "SSRF": [
+      {
+        "line": 17,
+        "code": "$upload = wp_upload_bits($_FILES['sbtt_attachment']['name'], null, file_get_contents($_FILES['sbtt_attachment']['tmp_name']));",
+        "trace": "$upload = wp_upload_bits($_FILES['sbtt_attachment']['name'], null, file_get_contents($_FILES['sbtt_attachment']['tmp_name']));"
+      }
+    ]
+  },
+  "plugins-wp\\simple-back-to-top\\simple-back-to-top\\6.0\\options.php": {
+    "SSRF": [
+      {
+        "line": 17,
+        "code": "$upload = wp_upload_bits($_FILES['sbtt_attachment']['name'], null, file_get_contents($_FILES['sbtt_attachment']['tmp_name']));",
+        "trace": "$upload = wp_upload_bits($_FILES['sbtt_attachment']['name'], null, file_get_contents($_FILES['sbtt_attachment']['tmp_name']));"
+      }
+    ]
+  },
+  "plugins-wp\\simple-page-sidebars\\simple-page-sidebars\\admin\\admin.php": {
     "XSS": [
       {
-        "line": 869,
-        "code": "'title'  => sprintf( $title, $this->plugins[ $slug ]['name'] ),",
-        "trace": "$slug = $this->sanitize_key( urldecode( $_GET['plugin'] ) );"
+        "line": 217,
+        "code": "echo $sidebar;",
+        "trace": "$sidebar = ( isset( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) ) ? self::sanitize_sidebar_name( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) : -1;"
+      },
+      {
+        "line": 502,
+        "code": "#echo '<pre>'; print_r( $sidebars_widgets ); echo '</pre>'; exit;",
+        "trace": "$sidebar = ( isset( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) ) ? self::sanitize_sidebar_name( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) : -1;"
+      },
+      {
+        "line": 502,
+        "code": "#echo '<pre>'; print_r( $sidebars_widgets ); echo '</pre>'; exit;",
+        "trace": "$sidebar = ( isset( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) ) ? self::sanitize_sidebar_name( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) : -1;"
+      },
+      {
+        "line": 539,
+        "code": "echo $messages[ $message_id ];",
+        "trace": "$message_id = $_REQUEST['simple-page-sidebars-message'];"
+      },
+      {
+        "line": 217,
+        "code": "echo $sidebar;",
+        "trace": "$sidebar = ( isset( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) ) ? self::sanitize_sidebar_name( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) : -1;",
+        "function": "display_columns"
+      }
+    ]
+  },
+  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\core\\WPL_AjaxHandler.php": {
+    "XSS": [
+      {
+        "line": 171,
+        "code": "$response->msg \t\t\t  = sprintf( __( 'Profile \"%s\" was applied to %s items.', 'wp-lister-for-ebay' ), $profile['profile_name'], count($product_ids) );",
+        "trace": "$product_ids = wple_clean($_REQUEST['product_ids']);"
+      },
+      {
+        "line": 309,
+        "code": "WPLE()->logger->info('running task: '.print_r($task,1));",
+        "trace": "$task       = wple_clean($_REQUEST['task']);"
+      },
+      {
+        "line": 1099,
+        "code": "// echo \"<pre>profile_id: \";echo $profile_id;echo\"</pre>\";",
+        "trace": "$profile_id  = wple_clean($_REQUEST['profile_id']);"
+      },
+      {
+        "line": 1748,
+        "code": "$errors  = sprintf( __( 'There were no products found for query %s.', 'wp-lister-for-ebay' ), $query );",
+        "trace": "if ( isset( $_REQUEST['query'] ) ) $query = wple_clean( $_REQUEST['query'] );"
+      },
+      {
+        "line": 309,
+        "code": "WPLE()->logger->info('running task: '.print_r($task,1));",
+        "trace": "$task       = wple_clean($_REQUEST['task']);",
+        "function": "jobs_run_task"
+      }
+    ],
+    "SSRF": [
+      {
+        "line": 1930,
+        "code": "die( nl2br( file_get_contents( $path ) ) );",
+        "trace": "$path          = wple_clean($_POST[\"dir\"]);"
+      },
+      {
+        "line": 1930,
+        "code": "die( nl2br( file_get_contents( $path ) ) );",
+        "trace": "$path          = wple_clean($_POST[\"dir\"]);",
+        "function": "ajax_wple_load_log_file"
+      }
+    ]
+  },
+  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\core\\WPL_Core.php": {
+    "XSS": [
+      {
+        "line": 102,
+        "code": "$msg = sprintf('<b>Warning: You are trying to use an account which does not exist in WP-Lister</b> (ID %s).',$account_id) . '<br>';",
+        "trace": "$account_id = wple_clean($_REQUEST['account_id']);"
+      }
+    ]
+  },
+  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\integration\\WooBackendIntegration.php": {
+    "XSS": [
+      {
+        "line": 1408,
+        "code": "$views['listed'] = sprintf( '<a href=\"%s\" class=\"%s\">%s %s</a>', $query_string, $class, __( 'On eBay', 'wp-lister-for-ebay' ), $on_ebay_count );",
+        "trace": "$class = ( isset( $_REQUEST['is_from_ebay'] ) && $_REQUEST['is_from_ebay'] == 'no' ) ? 'current' : '';"
+      },
+      {
+        "line": 1414,
+        "code": "$views['unlisted'] = sprintf( '<a href=\"%s\" class=\"%s\">%s %s</a>', $query_string, $class, __( 'Not on eBay', 'wp-lister-for-ebay' ), $not_on_ebay_count );",
+        "trace": "$class = ( isset( $_REQUEST['is_from_ebay'] ) && $_REQUEST['is_from_ebay'] == 'no' ) ? 'current' : '';"
+      },
+      {
+        "line": 1823,
+        "code": "// echo '<div id=\"message\" class=\"'.$class.'\" style=\"display:block !important\"><p>'.$message.'</p></div>';",
+        "trace": "$class = ( isset( $_REQUEST['is_from_ebay'] ) && $_REQUEST['is_from_ebay'] == 'no' ) ? 'current' : '';"
+      },
+      {
+        "line": 2008,
+        "code": "<?php if ( $account_id == $account->id ) echo 'selected'; ?>",
+        "trace": "$account_id   = isset($_REQUEST['wple_account_id']) ? sanitize_key($_REQUEST['wple_account_id']) : false;"
+      },
+      {
+        "line": 2008,
+        "code": "<?php if ( $account_id == $account->id ) echo 'selected'; ?>",
+        "trace": "$account_id   = isset($_REQUEST['wple_account_id']) ? sanitize_key($_REQUEST['wple_account_id']) : false;",
+        "function": "wple_render_orders_filter_nav"
+      }
+    ]
+  },
+  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\page\\ListingsPage.php": {
+    "XSS": [
+      {
+        "line": 109,
+        "code": "// WPLE()->logger->info('remove_from_ebay / products: '.print_r($products,1));",
+        "trace": "$products =  is_array( $_REQUEST['post'] ) ? wple_clean($_REQUEST['post']) : array( wple_clean($_REQUEST['post']) );"
+      },
+      {
+        "line": 820,
+        "code": "$archive_link = sprintf('<a class=\"archive button button-small\" href=\"?page=%s&action=%s&auction=%s&_wpnonce=%s\">%s</a>',$page,'wple_archive',$listing->id, wp_create_nonce( 'bulk-auctions' ), __( 'Click to move to archive', 'wp-lister-for-ebay' ));",
+        "trace": "$page = sanitize_key($_REQUEST['page']);"
+      },
+      {
+        "line": 825,
+        "code": "$delete_link = sprintf('<a class=\"delete button button-small button-primary\" href=\"?page=%s&action=%s&auction=%s&_wpnonce=%s\">%s</a>',$page,'wple_delete_listing',$listing->id, wp_create_nonce( 'wplister_delete_auction' ), __( 'Click to remove this listing', 'wp-lister-for-ebay' ));",
+        "trace": "$page = sanitize_key($_REQUEST['page']);"
+      },
+      {
+        "line": 820,
+        "code": "$archive_link = sprintf('<a class=\"archive button button-small\" href=\"?page=%s&action=%s&auction=%s&_wpnonce=%s\">%s</a>',$page,'wple_archive',$listing->id, wp_create_nonce( 'bulk-auctions' ), __( 'Click to move to archive', 'wp-lister-for-ebay' ));",
+        "trace": "$page = sanitize_key($_REQUEST['page']);",
+        "function": "renderDupeTable"
+      }
+    ]
+  },
+  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\page\\ProfilesPage.php": {
+    "XSS": [
+      {
+        "line": 749,
+        "code": "$this->showMessage( sprintf( __( '%s prepared items updated.', 'wp-lister-for-ebay' ), count($items) ) );",
+        "trace": "$item = $profilesModel->getItem( wple_clean($_REQUEST['profile']) );"
+      },
+      {
+        "line": 756,
+        "code": "$this->showMessage( sprintf( __( '%s verified items updated.', 'wp-lister-for-ebay' ), count($items) ) );",
+        "trace": "$item = $profilesModel->getItem( wple_clean($_REQUEST['profile']) );"
+      },
+      {
+        "line": 763,
+        "code": "$this->showMessage( sprintf( __( '%s published items changed.', 'wp-lister-for-ebay' ), count($items) ) );",
+        "trace": "$item = $profilesModel->getItem( wple_clean($_REQUEST['profile']) );"
+      },
+      {
+        "line": 770,
+        "code": "$this->showMessage( sprintf( __( '%s ended items updated.', 'wp-lister-for-ebay' ), count($items) ) );",
+        "trace": "$item = $profilesModel->getItem( wple_clean($_REQUEST['profile']) );"
+      }
+    ]
+  },
+  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\page\\TemplatesPage.php": {
+    "XSS": [
+      {
+        "line": 45,
+        "code": "wple_show_message( sprintf( __( '<b>Warning:</b> The function <em>%s</em> is being used by %d templates (%s).', 'wp-lister-for-ebay' ), $fn, count( $templates ), join(', ', $template_names ) ), 'warn' );",
+        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );"
+      },
+      {
+        "line": 297,
+        "code": "// WPLE()->logger->info( print_r($templates_cache,1));",
+        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );"
+      },
+      {
+        "line": 692,
+        "code": "// echo \"<pre>\";print_r($templatesModel);echo\"</pre>\";die();",
+        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );"
+      },
+      {
+        "line": 692,
+        "code": "// echo \"<pre>\";print_r($templatesModel);echo\"</pre>\";die();",
+        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );"
+      },
+      {
+        "line": 728,
+        "code": "echo( \"Could not create template folder: \" . $tpl_dir );",
+        "trace": "$tpl = wple_clean($_REQUEST['tpl']);"
+      },
+      {
+        "line": 692,
+        "code": "// echo \"<pre>\";print_r($templatesModel);echo\"</pre>\";die();",
+        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );",
+        "function": "ajax_wpl_duplicate_template"
+      },
+      {
+        "line": 692,
+        "code": "// echo \"<pre>\";print_r($templatesModel);echo\"</pre>\";die();",
+        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );",
+        "function": "ajax_wpl_duplicate_template"
+      }
+    ],
+    "SSRF": [
+      {
+        "line": 602,
+        "code": "$zip->addFromString(str_replace($source . '/', '', $template_id . '/' . $file), file_get_contents($file));",
+        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );"
+      },
+      {
+        "line": 602,
+        "code": "$zip->addFromString(str_replace($source . '/', '', $template_id . '/' . $file), file_get_contents($file));",
+        "trace": "$template_id \t\t\t= wple_clean( urldecode( @$_REQUEST['template_id'] ) );"
+      },
+      {
+        "line": 752,
+        "code": "$tpl_config\t \t\t\t\t= file_exists( $src_tpl_dir . '/config.json' ) ? file_get_contents( $src_tpl_dir . '/config.json') : false;",
+        "trace": "$tpl = wple_clean($_REQUEST['tpl']);"
+      }
+    ]
+  },
+  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\table\\ListingsTable.php": {
+    "CSRF": [
+      {
+        "line": 666,
+        "code": "if ( isset($_POST['s']) && $_POST['s'] == $id ) $color = '#555';"
+      }
+    ]
+  },
+  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\table\\LogTable.php": {
+    "XSS": [
+      {
+        "line": 541,
+        "code": "<?php if ( $callname == $call ) echo 'selected'; ?>",
+        "trace": "$callname = esc_sql( wple_clean($_REQUEST['callname']) );"
+      },
+      {
+        "line": 550,
+        "code": "<?php if ( $usertype == $type ) echo 'selected'; ?>",
+        "trace": "$usertype = esc_sql( wple_clean($_REQUEST['usertype']) );"
+      },
+      {
+        "line": 541,
+        "code": "<?php if ( $callname == $call ) echo 'selected'; ?>",
+        "trace": "$callname = esc_sql( wple_clean($_REQUEST['callname']) );",
+        "function": "extra_tablenav"
+      },
+      {
+        "line": 550,
+        "code": "<?php if ( $usertype == $type ) echo 'selected'; ?>",
+        "trace": "$usertype = esc_sql( wple_clean($_REQUEST['usertype']) );",
+        "function": "extra_tablenav"
+      }
+    ]
+  },
+  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\table\\StocksLogTable.php": {
+    "XSS": [
+      {
+        "line": 220,
+        "code": "<?php if ( $usertype == $type ) echo 'selected'; ?>",
+        "trace": "$usertype = wple_clean($_REQUEST['usertype']);"
+      },
+      {
+        "line": 220,
+        "code": "<?php if ( $usertype == $type ) echo 'selected'; ?>",
+        "trace": "$usertype = wple_clean($_REQUEST['usertype']);",
+        "function": "extra_tablenav"
+      }
+    ]
+  },
+  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\views\\settings_tabs.php": {
+    "XSS": [
+      {
+        "line": 18,
+        "code": "<a href=\"<?php echo $wpl_settings_url; ?>&tab=settings\"   class=\"nav-tab <?php echo $active_tab == 'settings' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'General Settings', 'wp-lister-for-ebay' ) ?></a>",
+        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'settings';"
+      },
+      {
+        "line": 21,
+        "code": "<a href=\"<?php echo $wpl_settings_url; ?>&tab=accounts\"  class=\"nav-tab <?php echo $active_tab == 'accounts' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Accounts', 'wp-lister-for-ebay' ) ?></a>",
+        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'settings';"
+      },
+      {
+        "line": 24,
+        "code": "<a href=\"<?php echo $wpl_settings_url; ?>&tab=categories\" class=\"nav-tab <?php echo $active_tab == 'categories' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Categories', 'wp-lister-for-ebay' ) ?></a>",
+        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'settings';"
+      },
+      {
+        "line": 27,
+        "code": "<a href=\"<?php echo $wpl_settings_url; ?>&tab=advanced\"   class=\"nav-tab <?php echo $active_tab == 'advanced' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Advanced', 'wp-lister-for-ebay' ) ?></a>",
+        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'settings';"
+      },
+      {
+        "line": 30,
+        "code": "<a href=\"<?php echo $wpl_settings_url; ?>&tab=developer\"  class=\"nav-tab <?php echo $active_tab == 'developer' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Developer', 'wp-lister-for-ebay' ) ?></a>",
+        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'settings';"
+      },
+      {
+        "line": 43,
+        "code": "<li><a href=\"?page=wplister-settings&tab=developer\" class=\"<?php echo ( $active_subtab == 'settings' ) ? 'current' : ''; ?>\"><?php _e( 'Developer Settings', 'wp-lister-for-ebay' ); ?></a> |",
+        "trace": "$active_subtab = empty( $_REQUEST['subtab'] ) ? 'settings' : $_REQUEST['subtab'];"
+      },
+      {
+        "line": 44,
+        "code": "</li><li><a href=\"?page=wplister-settings&tab=developer&subtab=stockslog\" class=\"<?php echo ( $active_subtab == 'stockslog' ) ? 'current' : ''; ?>\"><?php _e( 'Stocks Log', 'wp-lister-for-ebay' ); ?></a></li>",
+        "trace": "$active_subtab = empty( $_REQUEST['subtab'] ) ? 'settings' : $_REQUEST['subtab'];"
+      }
+    ]
+  },
+  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\views\\tools_tabs.php": {
+    "XSS": [
+      {
+        "line": 13,
+        "code": "<a href=\"<?php echo $wpl_tools_url; ?>&tab=inventory\" class=\"nav-tab <?php echo $active_tab == 'inventory' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Inventory', 'wp-lister-for-ebay' ) ?></a>",
+        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'inventory';"
+      },
+      {
+        "line": 14,
+        "code": "<a href=\"<?php echo $wpl_tools_url; ?>&tab=stock_log\" class=\"nav-tab <?php echo $active_tab == 'stock_log' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Stock Log', 'wp-lister-for-ebay' ) ?></a>",
+        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'inventory';"
+      },
+      {
+        "line": 15,
+        "code": "<a href=\"<?php echo $wpl_tools_url; ?>&tab=developer\" class=\"nav-tab <?php echo $active_tab == 'developer' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Developer', 'wp-lister-for-ebay' ) ?></a>",
+        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'inventory';"
+      }
+    ]
+  },
+  "plugins-wp\\wp-migrate-db\\wp-migrate-db\\class\\Common\\Http\\Helper.php": {
+    "SSRF": [
+      {
+        "line": 97,
+        "code": "$_POST = $_REQUEST = json_decode(file_get_contents('php://input'), true);",
+        "trace": "$_POST = $_REQUEST = json_decode(file_get_contents('php://input'), true);"
+      }
+    ]
+  },
+  "plugins-wp\\wpematico\\wpematico\\app\\addons_page.php": {
+    "XSS": [
+      {
+        "line": 354,
+        "code": "echo '<a target=\"' . $target . '\" class=\"' . $class . '\" title=\"' . $title . '\" href=\"' . $url . '\" style=\"' . $style . '\">' . $caption . '</a>';",
+        "trace": "$s\t\t = isset($_REQUEST['s']) ? urlencode($_REQUEST['s']) : '';"
+      },
+      {
+        "line": 492,
+        "code": "//\techo('<pre>PLUGINS:' . print_r($plugins, 1) . '</pre>');",
+        "trace": "$plugin\t = isset($_REQUEST['plugin']) ? $_REQUEST['plugin'] : '';"
+      },
+      {
+        "line": 492,
+        "code": "//\techo('<pre>PLUGINS:' . print_r($plugins, 1) . '</pre>');",
+        "trace": "$plugins = isset($_REQUEST['checked']) ? (array) wp_unslash($_REQUEST['checked']) : array();"
+      },
+      {
+        "line": 492,
+        "code": "//\techo('<pre>PLUGINS:' . print_r($plugins, 1) . '</pre>');",
+        "trace": "$plugin\t = isset($_REQUEST['plugin']) ? $_REQUEST['plugin'] : '';"
+      },
+      {
+        "line": 492,
+        "code": "//\techo('<pre>PLUGINS:' . print_r($plugins, 1) . '</pre>');",
+        "trace": "$plugins = isset($_REQUEST['checked']) ? (array) wp_unslash($_REQUEST['checked']) : array();"
+      }
+    ]
+  },
+  "plugins-wp\\wpematico\\wpematico\\app\\campaigns_list.php": {
+    "XSS": [
+      {
+        "line": 114,
+        "code": "WPeMatico::add_wp_notice(array('text' => sprintf(__('%s Campaigns activated', 'wpematico'), count($post_ids)), 'below-h2' => false));",
+        "trace": "$post_ids = ( isset($_POST['post_ids']) && !empty($_POST['post_ids']) ) ? $_POST['post_ids'] : NULL;"
+      },
+      {
+        "line": 121,
+        "code": "WPeMatico::add_wp_notice(array('text' => sprintf(__('%s Campaigns deactivated', 'wpematico'), count($post_ids)), 'below-h2' => false));",
+        "trace": "$post_ids = ( isset($_POST['post_ids']) && !empty($_POST['post_ids']) ) ? $_POST['post_ids'] : NULL;"
+      }
+    ]
+  },
+  "plugins-wp\\wpematico\\wpematico\\app\\campaign_edit.php": {
+    "XSS": [
+      {
+        "line": 192,
+        "code": "echo substr( WPeMatico :: wpematico_dojob( $campaign_ID ) , 0, -1); // borro el ultimo caracter que es un 0",
+        "trace": "$campaign = apply_filters('wpematico_check_campaigndata', $_POST);"
+      },
+      {
+        "line": 350,
+        "code": "$err_message .= sprintf(__('There\\'s an error with the supplied RegEx expression in word: %s', 'wpematico'),'<span class=\"coderr\">'.$word.'</span>');",
+        "trace": "$err_message = apply_filters('wpematico_check_error_message',$err_message, $_POST);"
+      },
+      {
+        "line": 368,
+        "code": "$err_message .= sprintf(__('There\\'s an error with the supplied RegEx expression in ReWrite: %s', 'wpematico'),'<span class=\"coderr\">'.$origin.'</span>');",
+        "trace": "$err_message = apply_filters('wpematico_check_error_message',$err_message, $_POST);"
+      }
+    ]
+  },
+  "plugins-wp\\wpematico\\wpematico\\app\\campaign_preview_item.php": {
+    "XSS": [
+      {
+        "line": 314,
+        "code": "<input type=\"hidden\" id=\"feed\" name=\"feed\" value=\"<?php echo $feed; ?>\"/>",
+        "trace": "$feed = $_REQUEST['feed'];"
+      }
+    ]
+  },
+  "plugins-wp\\wpematico\\wpematico\\app\\debug_page.php": {
+    "XSS": [
+      {
+        "line": 1857,
+        "code": "$return .= print_r($debug_constants, 1);",
+        "trace": "//\t$return = wp_strip_all_tags( $_POST['wpematico-sysinfo'] );"
+      },
+      {
+        "line": 1926,
+        "code": "//\techo $return;",
+        "trace": "//\t$return = wp_strip_all_tags( $_POST['wpematico-sysinfo'] );"
+      }
+    ]
+  },
+  "plugins-wp\\wpematico\\wpematico\\app\\settings_page.php": {
+    "XSS": [
+      {
+        "line": 271,
+        "code": "<label><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['disablecheckfeeds'], true); ?> name=\"disablecheckfeeds\" id=\"disablecheckfeeds\" /> <?php _e('Disable Check Feeds before Save', 'wpematico'); ?></label><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['disablecheckfeeds']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 273,
+        "code": "<label><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['enabledelhash'], true); ?> name=\"enabledelhash\" id=\"enabledelhash\" /><b>&nbsp;<?php _e('Enable \"Del Hash\"', 'wpematico'); ?></b></label> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['enabledelhash']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 275,
+        "code": "<label><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['enableseelog'], true); ?> name=\"enableseelog\" id=\"enableseelog\" /><b>&nbsp;<?php _e('Enable \"See last log\"', 'wpematico'); ?></b></label> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['enableseelog']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 277,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['enable_xml_upload'], true); ?> name=\"enable_xml_upload\" id=\"enable_xml_upload\" /><b>&nbsp;<?php _e('Enable \"Upload of XMLs\"', 'wpematico'); ?></b> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['enable_xml_upload']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 279,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['disable_credits'], true); ?> name=\"disable_credits\" id=\"disable_credits\" /><b>&nbsp;<?php _e('Disable \"WPeMatico Credits\"', 'wpematico'); ?></b> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['disable_credits']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 280,
+        "code": "<span id=\"discredits\" style=\"<?php echo ($cfg['disable_credits']) ? '' : 'display:none;' ?>\"><br /><?php",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 286,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['disable_categories_description'], true); ?> name=\"disable_categories_description\" id=\"disable_categories_description\" /><b>&nbsp;<?php _e('Disable \"Auto-Category description\"', 'wpematico'); ?></b> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['disable_categories_description']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 288,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['disable_extensions_feed_page'], true); echo $disable_extensions_feed ?> name=\"disable_extensions_feed_page\" id=\"disable_extensions_feed_page\" /><b>&nbsp;<?php _e('Disable Extensions feed Page', 'wpematico'); ?></b> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['disable_extensions_feed_page']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 290,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['entity_decode_html'], true); ?> name=\"entity_decode_html\" id=\"entity_decode_html\" /><b>&nbsp;<?php _e('HTML entity decode on publish.', 'wpematico'); ?></b> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['entity_decode_html']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 402,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['imgcache'], true); ?> name=\"imgcache\" id=\"imgcache\" />&nbsp;<b><label for=\"imgcache\"><?php _e('Store images locally.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['imgcache']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 403,
+        "code": "<div id=\"nolinkimg\" style=\"padding-left:20px; <?php if(!$cfg['imgcache']) echo 'display:none;'; ?>\">",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 404,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['imgattach'], true); ?> name=\"imgattach\" id=\"imgattach\" /><b>&nbsp;<label for=\"imgattach\"><?php _e('Attach Images to posts.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['imgattach']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 407,
+        "code": "<input class=\"checkbox\"  value=\"1\" type=\"checkbox\" <?php checked($cfg['save_attr_images'], true); ?> name=\"save_attr_images\" id=\"save_attr_images\" /><b>&nbsp;<label for=\"save_attr_images\"><?php _e('Save Image attributes on WP Media.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['save_attr_images']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 409,
+        "code": "<input name=\"gralnolinkimg\" id=\"gralnolinkimg\" class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['gralnolinkimg'], true); ?> />&nbsp;<label for=\"gralnolinkimg\"><?php _e('Remove link to source images', 'wpematico'); ?></label><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['gralnolinkimg']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 414,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['featuredimg'], true); ?> name=\"featuredimg\" id=\"featuredimg\" /><b>&nbsp;<label for=\"featuredimg\"><?php _e('Set first image in content as Featured Image.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['featuredimg']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 416,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['rmfeaturedimg'], true); ?> name=\"rmfeaturedimg\" id=\"rmfeaturedimg\" /><b>&nbsp;<label for=\"rmfeaturedimg\"><?php _e('Remove Featured Image from content.', 'wpematico'); ?></label></b> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['rmfeaturedimg']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 418,
+        "code": "<div id=\"custom_uploads\" style=\"<?php if(!$cfg['imgcache'] && !$cfg['featuredimg']) echo 'display:none;'; ?>\">",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 419,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['customupload'], true); ?> name=\"customupload\" id=\"customupload\" /><b>&nbsp;<label for=\"customupload\"><?php _e('Use custom upload.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['customupload']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 434,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['enablemimetypes'], true); ?> name=\"enablemimetypes\" id=\"enablemimetypes\" /><b>&nbsp;<label for=\"enablemimetypes\"><?php _e('Enable add mime types.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['enablemimetypes']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 439,
+        "code": "<p><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['fifu'], (!$fifu_activated) ? ((!$cfg['fifu']) ? true : false ) : true ); ?> name=\"fifu\" id=\"fifu\"  <?php echo (!$fifu_activated ? 'disabled' : '') ?>/><b>&nbsp;<label for=\"fifu\"><?php _e('Use Featured Image from URL.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['fifu'].' '. __('See more info in Help tab above.','wpematico'); ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 449,
+        "code": "<div id=\"fifu_extra_options\" style=\"padding-left: 20px;<?php if(!$cfg['fifu']) echo 'display:none;'; ?>\"\"><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['fifu-video'], (!$fifu_activated) ? ((!$cfg['fifu-video']) ? true : false ) : true ); ?> name=\"fifu-video\" id=\"fifu-video\"/><b>&nbsp;<label for=\"fifu-video\"><?php _e('Use video link as featured if available.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['fifu'].' '. __('See more info in Help tab above.','wpematico'); ?>\"></span></div>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 462,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['video_cache'], true); ?> name=\"video_cache\" id=\"video_cache\" />&nbsp;<b><label for=\"video_cache\"><?php _e('Store videos locally.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['video_cache']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 463,
+        "code": "<div id=\"nolink_video\" style=\"padding-left:20px; <?php if(!$cfg['video_cache']) echo 'display:none;'; ?>\">",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 464,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['video_attach'], true); ?> name=\"video_attach\" id=\"video_attach\" /><b>&nbsp;<label for=\"video_attach\"><?php _e('Attach Videos to posts.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['video_attach']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 466,
+        "code": "<input name=\"gralnolink_video\" id=\"gralnolink_video\" class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['gralnolink_video'], true); ?> /><label for=\"gralnolink_video\"><?php _e('Remove link to source videos', 'wpematico'); ?></label><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['gralnolink_video']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 469,
+        "code": "<div id=\"custom_uploads_videos\" style=\"<?php if(!$cfg['video_cache']) echo 'display:none;'; ?>\">",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 470,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['customupload_videos'], true); ?> name=\"customupload_videos\" id=\"customupload_videos\" /><b>&nbsp;<label for=\"customupload_videos\"><?php _e('Use custom upload.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['customupload_videos']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 497,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['audio_cache'], true); ?> name=\"audio_cache\" id=\"audio_cache\" />&nbsp;<b><label for=\"audio_cache\"><?php _e('Store audios locally.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['audio_cache']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 498,
+        "code": "<div id=\"nolink_audio\" style=\"padding-left:20px; <?php if(!$cfg['audio_cache']) echo 'display:none;'; ?>\">",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 499,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['audio_attach'], true); ?> name=\"audio_attach\" id=\"audio_attach\" /><b>&nbsp;<label for=\"audio_attach\"><?php _e('Attach Audios to posts.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['audio_attach']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 501,
+        "code": "<input name=\"gralnolink_audio\" id=\"gralnolink_audio\" class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['gralnolink_audio'], true); ?> /><label for=\"gralnolink_audio\"><?php _e('Remove link to source audios', 'wpematico'); ?></label><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['gralnolink_audio']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 504,
+        "code": "<div id=\"custom_uploads_audios\" style=\"<?php if(!$cfg['audio_cache']) echo 'display:none;'; ?>\">",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 505,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['customupload_audios'], true); ?> name=\"customupload_audios\" id=\"customupload_audios\" /><b>&nbsp;<label for=\"customupload_audios\"><?php _e('Use custom upload.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['customupload_audios']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 593,
+        "code": "<label><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['set_stupidly_fast'], true); ?> name=\"set_stupidly_fast\" id=\"set_stupidly_fast\"  onclick=\"jQuery('#simpie').show();\"  /> <?php _e('Set Simplepie \"stupidly fast\"', 'wpematico'); ?></label>  <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['stupidly_fast']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 595,
+        "code": "<div id=\"simpie\" style=\"margin-left: 25px;<?php if($cfg['set_stupidly_fast']) echo 'display:none;'; ?>\">",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 599,
+        "code": "<textarea style=\"width:500px;\" <?php disabled($cfg['simplepie_strip_htmltags'], false, true); ?> name=\"strip_htmltags\" id=\"strip_htmltags\" ><?php echo esc_textarea($cfg['strip_htmltags']); ?></textarea>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 604,
+        "code": "<textarea style=\"width:500px;\" <?php disabled($cfg['simplepie_strip_attributes'], false, true); ?> name=\"strip_htmlattr\" id=\"strip_htmlattr\" ><?php echo esc_textarea($cfg['strip_htmlattr']); ?></textarea>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 619,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['woutfilter'], true); ?> name=\"woutfilter\" id=\"woutfilter\" /> <?php echo '<b><i>' . __('Allow option on campaign to skip the content filters', 'wpematico') . '</b></i>'; ?><br />",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 632,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['allowduplicates'], true); ?> name=\"allowduplicates\" id=\"allowduplicates\" /><b>&nbsp;<?php echo '<label for=\"allowduplicates\">' . __('Deactivate duplicate controls.', 'wpematico') . '</label>'; ?></b>  <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['allowduplicates']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 634,
+        "code": "<div id=\"enadup\" style=\"padding-left:20px; <?php if(!$cfg['allowduplicates']) echo 'display:none;'; ?>\">",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 636,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['allowduptitle'], true); ?> name=\"allowduptitle\" id=\"allowduptitle\" /><b>&nbsp;<?php echo '<label for=\"allowduptitle\">' . __('Allow duplicates titles.', 'wpematico') . '</label>'; ?></b><br />",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 637,
+        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['allowduphash'], true); ?> name=\"allowduphash\" id=\"allowduphash\" /><b>&nbsp;<?php echo '<label for=\"allowduphash\">' . __('Allow duplicates hashes. (Not Recommended)', 'wpematico') . '</label>'; ?></b>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 639,
+        "code": "<div id=\"div_add_extra_duplicate_filter_meta_source\" <?php if($cfg['disableccf'] || $cfg['allowduptitle']) echo 'style=\"display:none;\"' ?>>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 735,
+        "code": "<span id=\"column_campaign_pos_field\" class=\"insidesec\" style=\"padding-left:20px; <?php if(!$cfg['campaign_in_postslist']) echo 'display:none;'; ?>\">",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 753,
+        "code": "<div id=\"hlptrash\" style=\"padding-left:20px; <?php if(!$cfg['emptytrashbutton']) echo 'display:none;'; ?>\">",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 783,
+        "code": "<label><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['disabledashboard'], true); ?> name=\"disabledashboard\" id=\"disabledashboard\" /> <?php _e('Disable \"WP Dashboard Widget\"', 'wpematico'); ?></label><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['disabledashboard']; ?>\"></span>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 785,
+        "code": "<label id=\"roleslabel\" <?php if($cfg['disabledashboard']) echo 'style=\"display:none;\"'; ?>><?php _e('User roles to show Dashboard widget:', 'wpematico'); ?></label>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      },
+      {
+        "line": 786,
+        "code": "<div id=\"roles\" <?php if($cfg['disabledashboard']) echo 'style=\"display:none;\"'; ?>>",
+        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+      }
+    ]
+  },
+  "plugins-wp\\wpematico\\wpematico\\app\\wpematico_functions.php": {
+    "XSS": [
+      {
+        "line": 1289,
+        "code": "$response['message'] = sprintf(__('The feed %s has been parsed successfully.', 'wpematico'), $url);",
+        "trace": "//$url\t = wp_sanitize_redirect($_POST['url']);"
+      },
+      {
+        "line": 1309,
+        "code": "$response['message'] = sprintf(__('The feed %1$s cannot be parsed. Simplepie said: %2$s', 'wpematico'), $url, $errors) . '<br />' . $professional_notice;",
+        "trace": "//$url\t = wp_sanitize_redirect($_POST['url']);"
+      },
+      {
+        "line": 1316,
+        "code": "printf(__('The feed %s has been parsed successfully.', 'wpematico'), $url);",
+        "trace": "//$url\t = wp_sanitize_redirect($_POST['url']);"
+      },
+      {
+        "line": 1319,
+        "code": "printf(__('The feed %1$s cannot be parsed. Simplepie said: %2$s', 'wpematico'), $url, $errors) . '<br />' . $professional_notice;",
+        "trace": "//$url\t = wp_sanitize_redirect($_POST['url']);"
+      },
+      {
+        "line": 1685,
+        "code": "print $settings_data_json;",
+        "trace": "$settings = file_get_contents($_FILES['txtsettings']['tmp_name']);"
+      },
+      {
+        "line": 1685,
+        "code": "print $settings_data_json;",
+        "trace": "$settings = file_get_contents($_FILES['txtsettings']['tmp_name']);",
+        "function": "wpematico_export_settings"
+      }
+    ],
+    "SSRF": [
+      {
+        "line": 1698,
+        "code": "$settings = file_get_contents($_FILES['txtsettings']['tmp_name']);",
+        "trace": "$settings = file_get_contents($_FILES['txtsettings']['tmp_name']);"
+      },
+      {
+        "line": 1698,
+        "code": "$settings = file_get_contents($_FILES['txtsettings']['tmp_name']);",
+        "trace": "$settings = file_get_contents($_FILES['txtsettings']['tmp_name']);",
+        "function": "wpematico_import_settings"
+      }
+    ]
+  },
+  "plugins-wp\\wpematico\\wpematico\\app\\xml-importer.php": {
+    "XSS": [
+      {
+        "line": 425,
+        "code": "<?php do_action('wpematico_xml_input_nodes_print', $campaign_data); ?>",
+        "trace": "$campaign_data = apply_filters('wpematico_xml_campaign_data_ajax', $campaign_data, $_REQUEST);"
       }
     ]
   }
