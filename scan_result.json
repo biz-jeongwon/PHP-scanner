@@ -1,979 +1,1968 @@
 {
-  "plugins-wp\\broken-link-notifier\\broken-link-notifier\\includes\\results.php": {
-    "XSS": [
-      {
-        "line": 505,
-        "code": "echo wp_kses_post( $source_url ).'<div class=\"row-actions\" data-source-id=\"' . $source_id . '\">'.wp_kses_post( implode( ' | ', $actions ) ).'</div>';",
-        "trace": "$s = sanitize_key( $_REQUEST[ 'link-type' ] ); // phpcs:ignore"
-      }
-    ]
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/ApbctWP/FindSpam/UsersChecker.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp\\download-manager\\download-manager\\src\\Admin\\Menu\\Packages.php": {
-    "XSS": [
-      {
-        "line": 172,
-        "code": "echo \"|||\" . $filename . \"|||\";",
-        "trace": "$name = isset( $_FILES['package_file']['name'] ) && ! isset( $_REQUEST[\"chunks\"] ) ? sanitize_file_name( $_FILES['package_file']['name'] ) : wpdm_query_var( 'name', 'txt' );"
-      }
-    ]
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/ApbctWP/FindSpam/CommentsChecker.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp\\download-manager\\download-manager\\src\\Admin\\views\\templates\\list-templates.php": {
-    "XSS": [
-      {
-        "line": 68,
-        "code": "<tr valign=\"top\" class=\"author-self status-inherit\" id=\"template-<?php echo $ttype; ?>-<?php echo $ctpl; ?>\">",
-        "trace": "$ttype = isset($_GET['_type'])?wpdm_query_var('_type'):'link';"
-      },
-      {
-        "line": 84,
-        "code": "<a data-toggle=\"modal\" href=\"#\" data-href=\"admin-ajax.php?action=template_preview&_type=<?php echo $ttype; ?>&template=<?php echo $ctpl; ?>&_tplnonce=<?php echo  wp_create_nonce(WPDM_PUB_NONCE) ?>\" data-target=\"#preview-modal\" rel=\"<?php echo $ctpl; ?>\" class=\"template_preview btn btn-sm btn-success\"><i class=\"fa fa-desktop\"></i> Preview</a>",
-        "trace": "$ttype = isset($_GET['_type'])?wpdm_query_var('_type'):'link';"
-      }
-    ]
+  "plugins-wp/comments-like-dislike/comments-like-dislike/inc/classes/cld-ajax.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp\\download-manager\\download-manager\\src\\Package\\views\\lock-options-iframe.php": {
-    "XSS": [
-      {
-        "line": 360,
-        "code": "echo WPDM()->package->downloadLink(wpdm_query_var('__wpdmlo', 'int'), 1, $extras);",
-        "trace": "$extras = isset($_REQUEST['__wpdmfl']) ? ['ind' => wpdm_query_var('__wpdmfl', 'txt')] : [];"
-      }
-    ]
+  "plugins-wp/akismet/akismet/class.akismet-admin.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp\\download-manager\\download-manager\\src\\User\\User.php": {
-    "XSS": [
+  "plugins-wp/comments-plus/comments-plus/libs/factory/core/includes/class-factory-requests.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [
       {
-        "line": 223,
-        "code": "echo wpdm_paginate_links($total, $items_per_page, $page, 'cp', array('async' => 1, 'container' => \"#wpdm-authors{$contid}\"));",
-        "trace": "$page = isset($_REQUEST['cp']) && $_REQUEST['cp'] > 0 ? (int)$_REQUEST['cp'] : 1;"
-      }
-    ]
-  },
-  "plugins-wp\\eventprime-event-calendar-management\\eventprime-event-calendar-management\\includes\\class-ep-ajax.php": {
-    "XSS": [
-      {
-        "line": 316,
-        "code": "//print_r($ticket_data);",
-        "trace": "$ticket_data = json_decode( stripslashes( $_POST['ticket_data'] ) );"
-      },
-      {
-        "line": 343,
-        "code": "//print_r($data);",
-        "trace": "$data = $_POST;"
-      },
-      {
-        "line": 364,
-        "code": "//print_r($data);die;",
-        "trace": "$data = $_POST;"
-      },
-      {
-        "line": 1631,
-        "code": "echo json_encode($data);",
-        "trace": "$data = $_POST;"
-      },
-      {
-        "line": 2156,
-        "code": "echo $booking_controller->export_bookings_all($data);",
-        "trace": "$data = $_POST;"
-      },
-      {
-        "line": 2156,
-        "code": "echo $booking_controller->export_bookings_all($data);",
-        "trace": "$data = $_POST;",
-        "function": "booking_export_all"
-      }
-    ]
-  },
-  "plugins-wp\\eventprime-event-calendar-management\\eventprime-event-calendar-management\\includes\\class-ep-user-controller.php": {
-    "SSRF": [
-      {
-        "line": 417,
-        "code": "$response = json_decode(file_get_contents(\"https://www.google.com/recaptcha/api/siteverify?secret=\".$ep_functions->ep_get_global_settings('google_recaptcha_secret_key').\"&response=\".$_POST['g-recaptcha-response'].\"&remoteip=\".$_SERVER['REMOTE_ADDR']), true);",
-        "trace": "$response = json_decode( file_get_contents( \"https://www.google.com/recaptcha/api/siteverify?secret=\".$ep_functions->ep_get_global_settings( 'google_recaptcha_secret_key' ).\"&response=\".$_POST['g-recaptcha-response'].\"&remoteip=\".$_SERVER['REMOTE_ADDR'] ), true );"
-      },
-      {
-        "line": 562,
-        "code": "$response = json_decode( file_get_contents( \"https://www.google.com/recaptcha/api/siteverify?secret=\".$ep_functions->ep_get_global_settings( 'google_recaptcha_secret_key' ).\"&response=\".$_POST['g-recaptcha-response'].\"&remoteip=\".$_SERVER['REMOTE_ADDR'] ), true );",
-        "trace": "$response = json_decode( file_get_contents( \"https://www.google.com/recaptcha/api/siteverify?secret=\".$ep_functions->ep_get_global_settings( 'google_recaptcha_secret_key' ).\"&response=\".$_POST['g-recaptcha-response'].\"&remoteip=\".$_SERVER['REMOTE_ADDR'] ), true );"
-      }
-    ]
-  },
-  "plugins-wp\\gutenberg\\gutenberg\\lib\\experimental\\sync\\class-gutenberg-http-signaling-server.php": {
-    "XSS": [
-      {
-        "line": 193,
-        "code": "echo 'data: ' . wp_json_encode( $subscriber_to_messages[ $subscriber_id ] ) . PHP_EOL . PHP_EOL;",
-        "trace": "$subscriber_id = $_REQUEST['subscriber_id'];"
-      }
-    ]
-  },
-  "plugins-wp\\icegram\\icegram\\lite\\classes\\class-icegram-campaign-admin.php": {
-    "XSS": [
-      {
-        "line": 524,
-        "code": "<p class=\"form-field py-1 \" <?php echo ( !empty( $campaign_target_rules['sitewide'] ) && $campaign_target_rules['sitewide'] == 'yes' ) ? '' : 'style=\"display: none;\"'; ?>>",
-        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
-      },
-      {
-        "line": 531,
-        "code": "echo selected( in_array( $page->ID, $campaign_target_rules['exclude_page_id'] ) );",
-        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
-      },
-      {
-        "line": 552,
-        "code": "<p class=\"form-field py-1\" <?php echo ( !empty( $campaign_target_rules['other_page'] ) && $campaign_target_rules['other_page'] == 'yes' ) ? '' : 'style=\"display: none;\"'; ?>>",
-        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
-      },
-      {
-        "line": 559,
-        "code": "echo selected( in_array( $page->ID, $campaign_target_rules['page_id'] ) );",
-        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
-      },
-      {
-        "line": 576,
-        "code": "<p class=\"form-field py-1 local_url\" <?php echo ( !empty( $campaign_target_rules['local_url'] ) && $campaign_target_rules['local_url'] == 'yes' ) ? '' : 'style=\"display: none;\"'; ?>>",
-        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
-      },
-      {
-        "line": 617,
-        "code": "<span class=\"form-field\" id=\"date_picker\" <?php echo ( !empty( $campaign_target_rules['when'] ) && $campaign_target_rules['when'] == 'schedule' ) ? '' : 'style=\"display: none;\"'; ?>>",
-        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
-      },
-      {
-        "line": 690,
-        "code": "echo selected( in_array( $role_value, $campaign_target_rules['users'] ) );",
-        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
-      },
-      {
-        "line": 728,
-        "code": "echo $campaign_target_rules_retargeting['html'];",
-        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );"
-      },
-      {
-        "line": 524,
-        "code": "<p class=\"form-field py-1 \" <?php echo ( !empty( $campaign_target_rules['sitewide'] ) && $campaign_target_rules['sitewide'] == 'yes' ) ? '' : 'style=\"display: none;\"'; ?>>",
-        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );",
-        "function": "icegram_add_campaign_target_rules"
-      },
-      {
-        "line": 531,
-        "code": "echo selected( in_array( $page->ID, $campaign_target_rules['exclude_page_id'] ) );",
-        "trace": "$campaign_target_rules = apply_filters( 'icegram_update_campaign_rules', $_POST['campaign_target_rules'], $post_id );",
-        "function": "icegram_add_campaign_target_rules"
-      }
-    ]
-  },
-  "plugins-wp\\icegram\\icegram\\lite\\classes\\class-icegram-message-admin.php": {
-    "XSS": [
-      {
-        "line": 183,
-        "code": "<input id=\"upload_image\" type=\"text\" class=\"message_field form-input\" name=\"message_data[<?php echo $message_id; ?>][icon]\" value=\"<?php if ( isset( $message_data['icon'] ) ) {",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 436,
-        "code": "<input style=\"width:auto\" type=\"text\" class=\"message_field form-input\" name=\"message_data[<?php echo $message_id; ?>][label]\" id=\"message_label\" value=\"<?php if ( isset( $message_data['label'] ) ) {",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 576,
-        "code": "value=\"left\" <?php echo ( ! empty( $message_data['form_layout'] ) && \"left\" == $message_data['form_layout'] ) ? 'checked' : ( empty( $message_data['form_layout'] ) && \"left\" == $default_form_layout ? 'checked' : '' ); ?> />",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 586,
-        "code": "value=\"right\" <?php echo ( ! empty( $message_data['form_layout'] ) && \"right\" == $message_data['form_layout'] ) ? 'checked' : ( empty( $message_data['form_layout'] ) && \"right\" == $default_form_layout ? 'checked' : '' ); ?> />",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 596,
-        "code": "value=\"bottom\" <?php echo ( ! empty( $message_data['form_layout'] ) && \"bottom\" == $message_data['form_layout'] ) ? 'checked' : ( empty( $message_data['form_layout'] ) && \"bottom\" == $default_form_layout ? 'checked' : '' ); ?> />",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 673,
-        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio01_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"00\" <?php echo ( ! empty( $message_data['position'] ) && \"00\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 679,
-        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio02_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"01\" <?php echo ( ! empty( $message_data['position'] ) && \"01\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 685,
-        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio03_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"02\" <?php echo ( ! empty( $message_data['position'] ) && \"02\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 691,
-        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio04_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"10\" <?php echo ( ! empty( $message_data['position'] ) && \"10\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 697,
-        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio05_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"11\" <?php echo ( ! empty( $message_data['position'] ) && \"11\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 703,
-        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio06_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"12\" <?php echo ( ! empty( $message_data['position'] ) && \"12\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 709,
-        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio07_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"20\" <?php echo ( ! empty( $message_data['position'] ) && \"20\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 715,
-        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio08_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"21\" <?php echo ( ! empty( $message_data['position'] ) && \"21\" == $message_data['position'] || ! isset( $message_data['position'] ) ) ? 'checked' : ''; ?> />",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      },
-      {
-        "line": 721,
-        "code": "<input class=\"form-radio\" type=\"radio\" id=\"radio09_<?php echo $message_id; ?>\" name=\"message_data[<?php echo $message_id; ?>][position][ig_default]\" value=\"22\" <?php echo ( ! empty( $message_data['position'] ) && \"22\" == $message_data['position'] ) ? 'checked' : ''; ?> />",
-        "trace": "$message_data = $_POST['message_data'][ $post_id ];"
-      }
-    ]
-  },
-  "plugins-wp\\simple-back-to-top\\simple-back-to-top\\options.php": {
-    "SSRF": [
-      {
-        "line": 17,
-        "code": "$upload = wp_upload_bits($_FILES['sbtt_attachment']['name'], null, file_get_contents($_FILES['sbtt_attachment']['tmp_name']));",
-        "trace": "$upload = wp_upload_bits($_FILES['sbtt_attachment']['name'], null, file_get_contents($_FILES['sbtt_attachment']['tmp_name']));"
-      }
-    ]
-  },
-  "plugins-wp\\simple-back-to-top\\simple-back-to-top\\6.0\\options.php": {
-    "SSRF": [
-      {
-        "line": 17,
-        "code": "$upload = wp_upload_bits($_FILES['sbtt_attachment']['name'], null, file_get_contents($_FILES['sbtt_attachment']['tmp_name']));",
-        "trace": "$upload = wp_upload_bits($_FILES['sbtt_attachment']['name'], null, file_get_contents($_FILES['sbtt_attachment']['tmp_name']));"
-      }
-    ]
-  },
-  "plugins-wp\\simple-page-sidebars\\simple-page-sidebars\\admin\\admin.php": {
-    "XSS": [
-      {
-        "line": 217,
-        "code": "echo $sidebar;",
-        "trace": "$sidebar = ( isset( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) ) ? self::sanitize_sidebar_name( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) : -1;"
-      },
-      {
-        "line": 502,
-        "code": "#echo '<pre>'; print_r( $sidebars_widgets ); echo '</pre>'; exit;",
-        "trace": "$sidebar = ( isset( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) ) ? self::sanitize_sidebar_name( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) : -1;"
-      },
-      {
-        "line": 502,
-        "code": "#echo '<pre>'; print_r( $sidebars_widgets ); echo '</pre>'; exit;",
-        "trace": "$sidebar = ( isset( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) ) ? self::sanitize_sidebar_name( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) : -1;"
-      },
-      {
-        "line": 539,
-        "code": "echo $messages[ $message_id ];",
-        "trace": "$message_id = $_REQUEST['simple-page-sidebars-message'];"
-      },
-      {
-        "line": 217,
-        "code": "echo $sidebar;",
-        "trace": "$sidebar = ( isset( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) ) ? self::sanitize_sidebar_name( $_REQUEST['simplepagesidebars_page_sidebar_name'] ) : -1;",
-        "function": "display_columns"
-      }
-    ]
-  },
-  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\core\\WPL_AjaxHandler.php": {
-    "XSS": [
-      {
-        "line": 171,
-        "code": "$response->msg \t\t\t  = sprintf( __( 'Profile \"%s\" was applied to %s items.', 'wp-lister-for-ebay' ), $profile['profile_name'], count($product_ids) );",
-        "trace": "$product_ids = wple_clean($_REQUEST['product_ids']);"
-      },
-      {
-        "line": 309,
-        "code": "WPLE()->logger->info('running task: '.print_r($task,1));",
-        "trace": "$task       = wple_clean($_REQUEST['task']);"
-      },
-      {
-        "line": 1099,
-        "code": "// echo \"<pre>profile_id: \";echo $profile_id;echo\"</pre>\";",
-        "trace": "$profile_id  = wple_clean($_REQUEST['profile_id']);"
-      },
-      {
-        "line": 1748,
-        "code": "$errors  = sprintf( __( 'There were no products found for query %s.', 'wp-lister-for-ebay' ), $query );",
-        "trace": "if ( isset( $_REQUEST['query'] ) ) $query = wple_clean( $_REQUEST['query'] );"
-      },
-      {
-        "line": 309,
-        "code": "WPLE()->logger->info('running task: '.print_r($task,1));",
-        "trace": "$task       = wple_clean($_REQUEST['task']);",
-        "function": "jobs_run_task"
+        "line": 51,
+        "code": "return ! empty( $sanitize ) ? call_user_func( $sanitize_function_name, $method[ $param ] ) : $method[ $param ];",
+        "variable": "method",
+        "source": "$_REQUEST",
+        "source_line": 39
       }
     ],
-    "SSRF": [
-      {
-        "line": 1930,
-        "code": "die( nl2br( file_get_contents( $path ) ) );",
-        "trace": "$path          = wple_clean($_POST[\"dir\"]);"
-      },
-      {
-        "line": 1930,
-        "code": "die( nl2br( file_get_contents( $path ) ) );",
-        "trace": "$path          = wple_clean($_POST[\"dir\"]);",
-        "function": "ajax_wple_load_log_file"
-      }
-    ]
+    "SSRF": [],
+    "CSRF": []
   },
-  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\core\\WPL_Core.php": {
-    "XSS": [
-      {
-        "line": 102,
-        "code": "$msg = sprintf('<b>Warning: You are trying to use an account which does not exist in WP-Lister</b> (ID %s).',$account_id) . '<br>';",
-        "trace": "$account_id = wple_clean($_REQUEST['account_id']);"
-      }
-    ]
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/wp-security-process-renamed-login-page.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\integration\\WooBackendIntegration.php": {
-    "XSS": [
-      {
-        "line": 1408,
-        "code": "$views['listed'] = sprintf( '<a href=\"%s\" class=\"%s\">%s %s</a>', $query_string, $class, __( 'On eBay', 'wp-lister-for-ebay' ), $on_ebay_count );",
-        "trace": "$class = ( isset( $_REQUEST['is_from_ebay'] ) && $_REQUEST['is_from_ebay'] == 'no' ) ? 'current' : '';"
-      },
-      {
-        "line": 1414,
-        "code": "$views['unlisted'] = sprintf( '<a href=\"%s\" class=\"%s\">%s %s</a>', $query_string, $class, __( 'Not on eBay', 'wp-lister-for-ebay' ), $not_on_ebay_count );",
-        "trace": "$class = ( isset( $_REQUEST['is_from_ebay'] ) && $_REQUEST['is_from_ebay'] == 'no' ) ? 'current' : '';"
-      },
-      {
-        "line": 1823,
-        "code": "// echo '<div id=\"message\" class=\"'.$class.'\" style=\"display:block !important\"><p>'.$message.'</p></div>';",
-        "trace": "$class = ( isset( $_REQUEST['is_from_ebay'] ) && $_REQUEST['is_from_ebay'] == 'no' ) ? 'current' : '';"
-      },
-      {
-        "line": 2008,
-        "code": "<?php if ( $account_id == $account->id ) echo 'selected'; ?>",
-        "trace": "$account_id   = isset($_REQUEST['wple_account_id']) ? sanitize_key($_REQUEST['wple_account_id']) : false;"
-      },
-      {
-        "line": 2008,
-        "code": "<?php if ( $account_id == $account->id ) echo 'selected'; ?>",
-        "trace": "$account_id   = isset($_REQUEST['wple_account_id']) ? sanitize_key($_REQUEST['wple_account_id']) : false;",
-        "function": "wple_render_orders_filter_nav"
-      }
-    ]
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/wp-security-utility.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\page\\ListingsPage.php": {
-    "XSS": [
-      {
-        "line": 109,
-        "code": "// WPLE()->logger->info('remove_from_ebay / products: '.print_r($products,1));",
-        "trace": "$products =  is_array( $_REQUEST['post'] ) ? wple_clean($_REQUEST['post']) : array( wple_clean($_REQUEST['post']) );"
-      },
-      {
-        "line": 820,
-        "code": "$archive_link = sprintf('<a class=\"archive button button-small\" href=\"?page=%s&action=%s&auction=%s&_wpnonce=%s\">%s</a>',$page,'wple_archive',$listing->id, wp_create_nonce( 'bulk-auctions' ), __( 'Click to move to archive', 'wp-lister-for-ebay' ));",
-        "trace": "$page = sanitize_key($_REQUEST['page']);"
-      },
-      {
-        "line": 825,
-        "code": "$delete_link = sprintf('<a class=\"delete button button-small button-primary\" href=\"?page=%s&action=%s&auction=%s&_wpnonce=%s\">%s</a>',$page,'wple_delete_listing',$listing->id, wp_create_nonce( 'wplister_delete_auction' ), __( 'Click to remove this listing', 'wp-lister-for-ebay' ));",
-        "trace": "$page = sanitize_key($_REQUEST['page']);"
-      },
-      {
-        "line": 820,
-        "code": "$archive_link = sprintf('<a class=\"archive button button-small\" href=\"?page=%s&action=%s&auction=%s&_wpnonce=%s\">%s</a>',$page,'wple_archive',$listing->id, wp_create_nonce( 'bulk-auctions' ), __( 'Click to move to archive', 'wp-lister-for-ebay' ));",
-        "trace": "$page = sanitize_key($_REQUEST['page']);",
-        "function": "renderDupeTable"
-      }
-    ]
-  },
-  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\page\\ProfilesPage.php": {
-    "XSS": [
-      {
-        "line": 749,
-        "code": "$this->showMessage( sprintf( __( '%s prepared items updated.', 'wp-lister-for-ebay' ), count($items) ) );",
-        "trace": "$item = $profilesModel->getItem( wple_clean($_REQUEST['profile']) );"
-      },
-      {
-        "line": 756,
-        "code": "$this->showMessage( sprintf( __( '%s verified items updated.', 'wp-lister-for-ebay' ), count($items) ) );",
-        "trace": "$item = $profilesModel->getItem( wple_clean($_REQUEST['profile']) );"
-      },
-      {
-        "line": 763,
-        "code": "$this->showMessage( sprintf( __( '%s published items changed.', 'wp-lister-for-ebay' ), count($items) ) );",
-        "trace": "$item = $profilesModel->getItem( wple_clean($_REQUEST['profile']) );"
-      },
-      {
-        "line": 770,
-        "code": "$this->showMessage( sprintf( __( '%s ended items updated.', 'wp-lister-for-ebay' ), count($items) ) );",
-        "trace": "$item = $profilesModel->getItem( wple_clean($_REQUEST['profile']) );"
-      }
-    ]
-  },
-  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\page\\TemplatesPage.php": {
-    "XSS": [
-      {
-        "line": 45,
-        "code": "wple_show_message( sprintf( __( '<b>Warning:</b> The function <em>%s</em> is being used by %d templates (%s).', 'wp-lister-for-ebay' ), $fn, count( $templates ), join(', ', $template_names ) ), 'warn' );",
-        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );"
-      },
-      {
-        "line": 297,
-        "code": "// WPLE()->logger->info( print_r($templates_cache,1));",
-        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );"
-      },
-      {
-        "line": 692,
-        "code": "// echo \"<pre>\";print_r($templatesModel);echo\"</pre>\";die();",
-        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );"
-      },
-      {
-        "line": 692,
-        "code": "// echo \"<pre>\";print_r($templatesModel);echo\"</pre>\";die();",
-        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );"
-      },
-      {
-        "line": 728,
-        "code": "echo( \"Could not create template folder: \" . $tpl_dir );",
-        "trace": "$tpl = wple_clean($_REQUEST['tpl']);"
-      },
-      {
-        "line": 692,
-        "code": "// echo \"<pre>\";print_r($templatesModel);echo\"</pre>\";die();",
-        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );",
-        "function": "ajax_wpl_duplicate_template"
-      },
-      {
-        "line": 692,
-        "code": "// echo \"<pre>\";print_r($templatesModel);echo\"</pre>\";die();",
-        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );",
-        "function": "ajax_wpl_duplicate_template"
-      }
-    ],
-    "SSRF": [
-      {
-        "line": 602,
-        "code": "$zip->addFromString(str_replace($source . '/', '', $template_id . '/' . $file), file_get_contents($file));",
-        "trace": "$template \t\t\t\t= wple_clean( urldecode( $_REQUEST['template'] ) );"
-      },
-      {
-        "line": 602,
-        "code": "$zip->addFromString(str_replace($source . '/', '', $template_id . '/' . $file), file_get_contents($file));",
-        "trace": "$template_id \t\t\t= wple_clean( urldecode( @$_REQUEST['template_id'] ) );"
-      },
-      {
-        "line": 752,
-        "code": "$tpl_config\t \t\t\t\t= file_exists( $src_tpl_dir . '/config.json' ) ? file_get_contents( $src_tpl_dir . '/config.json') : false;",
-        "trace": "$tpl = wple_clean($_REQUEST['tpl']);"
-      }
-    ]
-  },
-  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\table\\ListingsTable.php": {
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/wp-security-user-login.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
     "CSRF": [
       {
-        "line": 666,
-        "code": "if ( isset($_POST['s']) && $_POST['s'] == $id ) $color = '#555';"
+        "line": 775,
+        "code": "$unlock_request_form .= '<form method=\"post\" action=\"\"><div style=\"padding-bottom:10px;\"><input type=\"hidden\" name=\"aiowps-unlock-string-info\" id=\"aiowps-unlock-string-info\" value=\"'.$enc_result.'\" />';",
+        "description": "POST form without CSRF protection"
       }
     ]
   },
-  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\table\\LogTable.php": {
-    "XSS": [
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/wp-security-general-init-tasks.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/wp-security-captcha.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/firewall/rule/rules/bruteforce/rule-cookie-prevent-bruteforce.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/commands/wp-security-log-commands.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/includes/simba-tfa/simba-tfa.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/includes/simba-tfa/providers/totp/loader.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/includes/simba-tfa/templates/admin-settings.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
       {
-        "line": 541,
-        "code": "<?php if ( $callname == $call ) echo 'selected'; ?>",
-        "trace": "$callname = esc_sql( wple_clean($_REQUEST['callname']) );"
+        "line": 47,
+        "code": "<form method=\"post\" action=\"options.php\" style=\"margin-top: 12px\">",
+        "description": "POST form without CSRF protection"
       },
       {
-        "line": 550,
-        "code": "<?php if ( $usertype == $type ) echo 'selected'; ?>",
-        "trace": "$usertype = esc_sql( wple_clean($_REQUEST['usertype']) );"
+        "line": 72,
+        "code": "<form method=\"post\" action=\"options.php\" style=\"margin-top: 12px\">",
+        "description": "POST form without CSRF protection"
       },
       {
-        "line": 541,
-        "code": "<?php if ( $callname == $call ) echo 'selected'; ?>",
-        "trace": "$callname = esc_sql( wple_clean($_REQUEST['callname']) );",
-        "function": "extra_tablenav"
+        "line": 86,
+        "code": "<form method=\"post\" action=\"options.php\" style=\"margin-top: 40px\">",
+        "description": "POST form without CSRF protection"
       },
       {
-        "line": 550,
-        "code": "<?php if ( $usertype == $type ) echo 'selected'; ?>",
-        "trace": "$usertype = esc_sql( wple_clean($_REQUEST['usertype']) );",
-        "function": "extra_tablenav"
+        "line": 133,
+        "code": "<form method=\"post\" action=\"options.php\" style=\"margin-top: 40px\">",
+        "description": "POST form without CSRF protection"
       }
     ]
   },
-  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\classes\\table\\StocksLogTable.php": {
-    "XSS": [
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-firewall-setup-notice.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-list-debug.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-admin-init.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-list-registered-users.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-database-menu.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-list-logged-in-users.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-admin-menu.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-list-permanent-blocked-ip.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-list-404.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-list-locked-ip.php": {
+    "SQLi": [
       {
-        "line": 220,
-        "code": "<?php if ( $usertype == $type ) echo 'selected'; ?>",
-        "trace": "$usertype = wple_clean($_REQUEST['usertype']);"
+        "line": 206,
+        "code": "$result = $wpdb->query(\"UPDATE $lockout_table SET `released` = UNIX_TIMESTAMP() WHERE `id` IN $id_list\");",
+        "variable": "result",
+        "source": "AIOWPSecurity_Utility_Permissions::check_nonce_and_user_cap($_REQUEST['_wpnonce'], 'bulk-items')",
+        "source_line": 171
       },
       {
-        "line": 220,
-        "code": "<?php if ( $usertype == $type ) echo 'selected'; ?>",
-        "trace": "$usertype = wple_clean($_REQUEST['usertype']);",
-        "function": "extra_tablenav"
+        "line": 206,
+        "code": "$result = $wpdb->query(\"UPDATE $lockout_table SET `released` = UNIX_TIMESTAMP() WHERE `id` IN $id_list\");",
+        "variable": "result",
+        "source": "AIOWPSecurity_Utility_Permissions::check_nonce_and_user_cap($_REQUEST['_wpnonce'], 'bulk-items')",
+        "source_line": 171
+      },
+      {
+        "line": 206,
+        "code": "$result = $wpdb->query(\"UPDATE $lockout_table SET `released` = UNIX_TIMESTAMP() WHERE `id` IN $id_list\");",
+        "variable": "result",
+        "source": "AIOWPSecurity_Utility_Permissions::check_nonce_and_user_cap($_REQUEST['_wpnonce'], 'bulk-items')",
+        "source_line": 171
+      },
+      {
+        "line": 228,
+        "code": "$result = $wpdb->query($delete_command);",
+        "variable": "result",
+        "source": "AIOWPSecurity_Utility_Permissions::check_nonce_and_user_cap($_REQUEST['_wpnonce'], 'bulk-items')",
+        "source_line": 171
+      },
+      {
+        "line": 239,
+        "code": "$result = $wpdb->query($delete_command);",
+        "variable": "result",
+        "source": "AIOWPSecurity_Utility_Permissions::check_nonce_and_user_cap($_REQUEST['_wpnonce'], 'bulk-items')",
+        "source_line": 171
+      },
+      {
+        "line": 291,
+        "code": "\"SELECT * FROM {$lockout_table} WHERE `released` > UNIX_TIMESTAMP() ORDER BY {$orderby} {$order}\",",
+        "variable": "orderby",
+        "source": "isset($_GET['orderby']) ? sanitize_text_field(wp_unslash($_GET['orderby'])) : ''",
+        "source_line": 273
+      },
+      {
+        "line": 291,
+        "code": "\"SELECT * FROM {$lockout_table} WHERE `released` > UNIX_TIMESTAMP() ORDER BY {$orderby} {$order}\",",
+        "variable": "order",
+        "source": "isset($_GET['order']) ? sanitize_text_field(wp_unslash($_GET['order'])) : ''",
+        "source_line": 274
+      },
+      {
+        "line": 296,
+        "code": "\"SELECT * FROM {$lockout_table} WHERE `released` > UNIX_TIMESTAMP() ORDER BY {$orderby} {$order} LIMIT {$per_page} OFFSET {$offset}\",",
+        "variable": "orderby",
+        "source": "isset($_GET['orderby']) ? sanitize_text_field(wp_unslash($_GET['orderby'])) : ''",
+        "source_line": 273
+      },
+      {
+        "line": 296,
+        "code": "\"SELECT * FROM {$lockout_table} WHERE `released` > UNIX_TIMESTAMP() ORDER BY {$orderby} {$order} LIMIT {$per_page} OFFSET {$offset}\",",
+        "variable": "order",
+        "source": "isset($_GET['order']) ? sanitize_text_field(wp_unslash($_GET['order'])) : ''",
+        "source_line": 274
+      }
+    ],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": []
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/general/wp-security-ajax-data-table.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/general/wp-security-list-table.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/other-includes/wp-security-rename-login-feature-pre-5-2.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/other-includes/wp-security-rename-login-feature-pre-5-7.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/other-includes/wp-security-rename-login-feature.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/other-includes/wp-security-rename-login-feature-pre-6-6.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/other-includes/wp-security-unlock-request.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/settings/general-settings.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 45,
+        "code": "<form method=\"post\" action=\"\" id=\"aiowpsec-disable-all-features-form\">",
+        "description": "POST form without CSRF protection"
+      },
+      {
+        "line": 60,
+        "code": "<form method=\"post\" action=\"\" id=\"aiowpsec-disable-all-firewall-rules-form\">",
+        "description": "POST form without CSRF protection"
+      },
+      {
+        "line": 75,
+        "code": "<form method=\"post\" action=\"\" id=\"aiowpsec-reset-settings-form\">",
+        "description": "POST form without CSRF protection"
+      },
+      {
+        "line": 97,
+        "code": "<form method=\"post\" action=\"\" id=\"aiowpsec-save-debug-settings-form\">",
+        "description": "POST form without CSRF protection"
       }
     ]
   },
-  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\views\\settings_tabs.php": {
-    "XSS": [
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/settings/htaccess-file-operations.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
       {
-        "line": 18,
-        "code": "<a href=\"<?php echo $wpl_settings_url; ?>&tab=settings\"   class=\"nav-tab <?php echo $active_tab == 'settings' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'General Settings', 'wp-lister-for-ebay' ) ?></a>",
-        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'settings';"
+        "line": 14,
+        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-save-htaccess-form\">",
+        "description": "POST form without CSRF protection"
       },
       {
-        "line": 21,
-        "code": "<a href=\"<?php echo $wpl_settings_url; ?>&tab=accounts\"  class=\"nav-tab <?php echo $active_tab == 'accounts' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Accounts', 'wp-lister-for-ebay' ) ?></a>",
-        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'settings';"
+        "line": 23,
+        "code": "<form id=\"aiowps_restore_htaccess_form\" action=\"\" method=\"POST\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/settings/wp-config-file-operations.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 14,
+        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-save-wp-config-form\">",
+        "description": "POST form without CSRF protection"
       },
+      {
+        "line": 23,
+        "code": "<form id=\"aiowps_restore_wp_config_form\" action=\"\" method=\"POST\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/settings/wp-version-info.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
       {
         "line": 24,
-        "code": "<a href=\"<?php echo $wpl_settings_url; ?>&tab=categories\" class=\"nav-tab <?php echo $active_tab == 'categories' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Categories', 'wp-lister-for-ebay' ) ?></a>",
-        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'settings';"
+        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-remove-wp-meta-info-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/settings/settings-file-operations.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 15,
+        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-export-settings-form\">",
+        "description": "POST form without CSRF protection"
       },
       {
-        "line": 27,
-        "code": "<a href=\"<?php echo $wpl_settings_url; ?>&tab=advanced\"   class=\"nav-tab <?php echo $active_tab == 'advanced' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Advanced', 'wp-lister-for-ebay' ) ?></a>",
-        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'settings';"
+        "line": 28,
+        "code": "<form id=\"aiowps_restore_settings_form\" action=\"\" method=\"POST\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/settings/advanced-settings.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 47,
+        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-ip-settings-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/brute-force/404-detection.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 84,
+        "code": "<form id=\"tables-filter\" method=\"post\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/brute-force/captcha-settings.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/salt.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 12,
+        "code": "<form action=\"\" method=\"POST\" id=\"aios-enable-salt-postfix-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/manual-approval.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 19,
+        "code": "<form action=\"\" method=\"POST\" id=\"aios-manually-approve-registrations-form\">",
+        "description": "POST form without CSRF protection"
       },
       {
-        "line": 30,
-        "code": "<a href=\"<?php echo $wpl_settings_url; ?>&tab=developer\"  class=\"nav-tab <?php echo $active_tab == 'developer' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Developer', 'wp-lister-for-ebay' ) ?></a>",
-        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'settings';"
+        "line": 37,
+        "code": "<form action=\"\" method=\"POST\" id=\"aios-refresh-manual-approval-list-form\">",
+        "description": "POST form without CSRF protection"
       },
       {
-        "line": 43,
-        "code": "<li><a href=\"?page=wplister-settings&tab=developer\" class=\"<?php echo ( $active_subtab == 'settings' ) ? 'current' : ''; ?>\"><?php _e( 'Developer Settings', 'wp-lister-for-ebay' ); ?></a> |",
-        "trace": "$active_subtab = empty( $_REQUEST['subtab'] ) ? 'settings' : $_REQUEST['subtab'];"
+        "line": 49,
+        "code": "<form id=\"tables-filter\" method=\"post\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/logged-in-users.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 5,
+        "code": "<form action=\"\" method=\"POST\" id=\"aios-refresh-logged-in-user-list-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/login-lockout.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 20,
+        "code": "<form action=\"\" method=\"POST\" id=\"aios-user-login-lockdown-form\">",
+        "description": "POST form without CSRF protection"
+      },
+      {
+        "line": 164,
+        "code": "<form action=\"\" method=\"POST\" id=\"aios-user-login-lockout-whitelist-settings-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/additional.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 11,
+        "code": "<form action=\"\" method=\"POST\" id=\"aios-disable-application-password-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/user-enumeration.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 11,
+        "code": "<form action=\"\" method=\"POST\" id=\"aios-users-enumeration-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/force-logout.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 18,
+        "code": "<form action=\"\" method=\"POST\" id=\"aios-force-user-logout-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/tools/whois-lookup.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 8,
+        "code": "<form method=\"post\" action=\"\" id=\"aiowpsec-whois-lookup-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/tools/custom-htaccess.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 3,
+        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-save-custom-rules-settings-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/firewall/php-firewall-rules.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/firewall/htaccess-firewall-rules.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/firewall/partials/allowlist.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 10,
+        "code": "<form action=\"\" method='post' id=\"aios-firewall-allowlist-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/firewall/partials/firewall-set-up-button.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 2,
+        "code": "<form method=\"POST\"  style=\"display: inline;\" id=\"aiowpsec-firewall-setup-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/firewall/partials/firewall-downgrade-button.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 2,
+        "code": "<form method=\"POST\" style=\"display: inline;\" id=\"aiowps-firewall-downgrade-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/filesystem-security/file-protection.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/filesystem-security/host-system-logs.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 14,
+        "code": "<form action=\"\" id=\"aios-host-system-logs-form\" method=\"POST\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/filesystem-security/frames.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 12,
+        "code": "<form action=\"\" id=\"aios-frame-display-settings-form\" method=\"POST\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/dashboard/audit-logs.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 6,
+        "code": "<form id=\"tables-filter\" method=\"post\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/dashboard/locked-ip.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 16,
+        "code": "<form id=\"tables-filter\" method=\"post\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/dashboard/debug-logs.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 6,
+        "code": "<form action=\"\" id=\"aios-clear-debug-logs\" method=\"POST\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/dashboard/permanent-block.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 14,
+        "code": "<form id=\"tables-filter\" method=\"post\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/spam-prevention/comment-spam.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 4,
+        "code": "<form action=\"\" id=\"aios-spam-prevention-form\" method=\"POST\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/spam-prevention/comment-spam-ip-monitoring.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 74,
+        "code": "<form action=\"\" id=\"aios-spam-ip-search-form\" method=\"POST\">",
+        "description": "POST form without CSRF protection"
+      },
+      {
+        "line": 108,
+        "code": "<form id=\"tables-filter\" method=\"post\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/scanner/file-change-detect.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 70,
+        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-scheduled-fcd-scan-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/vendor/team-updraft/common-libs/src/updraft-rpc/class-udrpc.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/vendor/team-updraft/common-libs/src/updraft-tasks/class-updraft-task-manager.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/inc/cleantalk-public-validate.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/inc/cleantalk-ajax.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/inc/cleantalk-public-integrations.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/inc/cleantalk-admin.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 140,
+        "code": "<form id='ct_refresh_form' method='POST' action='#ct_widget'>",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/inc/cleantalk-settings.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 1309,
+        "code": "echo '<form action=\"options.php\" method=\"post\" class=\"apbct_settings-page\">';",
+        "description": "POST form without CSRF protection"
+      },
+      {
+        "line": 1468,
+        "code": "echo '<form id=\"debug__cron_set\" method=\"POST\"></form>';",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/inc/cleantalk-common.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/IntegrationsByClass/Woocommerce.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/PaidMembershipPro.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/IndeedUltimateMembershipPro.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/CSCF.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/WPUserMeta.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/TourMasterRegister.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/MailChimp.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/Newsletter.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/MemberPress.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/ElementorUltimateAddonsRegister.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/Wpdiscuz.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/WpGeoDirectory.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/EasyDigitalDownloads.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/EaelLoginRegister.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/NewUserApprove.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/WPZOOMForms.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/FluentBookingPro.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/ChatyContactForm.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/OvaLogin.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/Tevolution.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/UserRegistrationPro.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/ThriveLeads.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/Forminator.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/SmartQuizBuilder.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/CleantalkWpDieOnComment.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/BackInStockNotifier.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/PaidMemberSubscription.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/ElementorPro.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/UlitmateFormBuilder.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/ApbctWP/CleantalkListTable.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/ApbctWP/GetFieldsAny.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-blaze/src/class-dashboard-rest-controller.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-admin-menu.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-wpcom-admin-menu.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-videopress/src/class-block-editor-content.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-classic-theme-helper/src/custom-post-types/class-nova-restaurant.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/legacy/class-jetpack-signature.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/src/class-connection-notice.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/src/class-manager.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/src/class-webhooks.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/src/sso/class-user-admin.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/src/sso/class-sso.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/src/sso/class-helpers.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-boost-core/src/lib/class-url.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-device-detection/src/class-user-agent-info.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-waf/src/class-waf-request.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-waf/src/class-brute-force-protection.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-waf/src/brute-force-protection/class-math-fallback.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-waf/src/brute-force-protection/class-blocked-login-page.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-search/src/class-helper.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-search/src/classic-search/class-classic-search.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-sync/src/modules/class-plugins.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-sync/src/modules/class-themes.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-account-protection/src/class-password-detection.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-account-protection/src/class-password-manager.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-account-protection/src/class-password-strength-meter.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-jitm/src/class-jitm.php": {
+    "SQLi": [],
+    "XSS": [
+      {
+        "line": 258,
+        "code": "data-query=\"<?php echo urlencode_deep( $query_string ); ?>\"",
+        "variable": "query_string",
+        "source": "_http_build_query( $_GET, '', ',' )",
+        "source_line": 251
+      },
+      {
+        "line": 259,
+        "code": "data-redirect=\"<?php echo urlencode_deep( $current_screen ); ?>\"",
+        "variable": "current_screen",
+        "source": "isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : ''",
+        "source_line": 252
+      }
+    ],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": []
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/woocommerce-analytics/src/class-woo-analytics-trait.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/woocommerce-analytics/src/class-universal.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-publicize/src/class-publicize.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-my-jetpack/src/class-initializer.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 138,
+        "code": "<form class=\"card jetpack-contact-form-shortcode-preview\" action='#' method='post' class='contact-form commentsblock' onsubmit=\"return false;\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/comments-plus/comments-plus/libs/factory/core/ajax/install-addons.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/comments-plus/comments-plus/libs/factory/templates/pages/class-page-license.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 399,
+        "code": "<form action=\"\" method=\"post\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/comments-plus/comments-plus/libs/factory/templates/pages/setup-parts/class-step-form.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 89,
+        "code": "<form method=\"post\" id=\"w-factory-templates-134__setup-form-<?php echo $this->get_id() ?>\" class=\"w-factory-templates-134__setup-form form-horizontal\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/comments-plus/comments-plus/libs/factory/templates/pages/setup-parts/class-step-custom.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 32,
+        "code": "<form method=\"post\" id=\"w-factory-templates-134__setup-form-<?php echo $this->get_id() ?>\" class=\"form-horizontal\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/comments-plus/comments-plus/libs/factory/templates/pages/templates/impressive/class-page-template-impressive.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 771,
+        "code": "<form method=\"post\" class=\"form-horizontal\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/comments-plus/comments-plus/libs/factory/pages/includes/page.class.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/super-socializer/super-socializer/super_socializer.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/super-socializer/super-socializer/helper.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/super-socializer/super-socializer/inc/shortcode.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/super-socializer/super-socializer/inc/social_login.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/super-socializer/super-socializer/inc/social_sharing.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/super-socializer/super-socializer/inc/widget.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/super-socializer/super-socializer/admin/general_options.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 11,
+        "code": "<form action=\"options.php\" method=\"post\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/super-socializer/super-socializer/admin/like_buttons.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 10,
+        "code": "<form action=\"options.php\" method=\"post\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/super-socializer/super-socializer/admin/social_login.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 9,
+        "code": "<form action=\"options.php\" method=\"post\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/super-socializer/super-socializer/admin/social_commenting.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 9,
+        "code": "<form action=\"options.php\" method=\"post\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/super-socializer/super-socializer/admin/social_sharing.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 9,
+        "code": "<form id=\"the_champ_form\" action=\"options.php\" method=\"post\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/relevanssi/relevanssi/lib/interface.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/relevanssi/relevanssi/lib/user-searches.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/relevanssi/relevanssi/lib/log.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/relevanssi/relevanssi/lib/utils.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/relevanssi/relevanssi/lib/admin-ajax.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/relevanssi/relevanssi/lib/compatibility/woocommerce.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/relevanssi/relevanssi/lib/tabs/debugging-tab.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/class.WpdiscuzCore.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/options/html-options.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/options/html-dashboard.php": {
+    "SQLi": [],
+    "XSS": [
+      {
+        "line": 214,
+        "code": "<div class=\"wpd-box-info\"<?php echo $showGraph ? \"\" : \" style='display: none;'\" ?>>",
+        "variable": "showGraph",
+        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
+        "source_line": 210
+      },
+      {
+        "line": 214,
+        "code": "<div class=\"wpd-box-info\"<?php echo $showGraph ? \"\" : \" style='display: none;'\" ?>>",
+        "variable": "showGraph",
+        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
+        "source_line": 210
+      },
+      {
+        "line": 222,
+        "code": "<span class=\"dashicons dashicons-admin-generic\"<?php echo $showGraph ? \"\" : \" style='display: none;'\" ?>></span>",
+        "variable": "showGraph",
+        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
+        "source_line": 210
+      },
+      {
+        "line": 222,
+        "code": "<span class=\"dashicons dashicons-admin-generic\"<?php echo $showGraph ? \"\" : \" style='display: none;'\" ?>></span>",
+        "variable": "showGraph",
+        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
+        "source_line": 210
+      },
+      {
+        "line": 223,
+        "code": "<span class=\"dashicons dashicons-arrow-<?php echo $showGraph ? \"up\" : \"down\" ?> wpd_not_clicked\"></span>",
+        "variable": "showGraph",
+        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
+        "source_line": 210
+      },
+      {
+        "line": 240,
+        "code": "<div class=\"wpd-box-body\"<?php echo $showGraph ? \"\" : \" style='display: none;'\"; ?>></div>",
+        "variable": "showGraph",
+        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
+        "source_line": 210
+      },
+      {
+        "line": 240,
+        "code": "<div class=\"wpd-box-body\"<?php echo $showGraph ? \"\" : \" style='display: none;'\"; ?>></div>",
+        "variable": "showGraph",
+        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
+        "source_line": 210
+      },
+      {
+        "line": 252,
+        "code": "style=\"visibility: hidden;<?php echo $showUser ? \"\" : \"display: none;\"; ?>\"></span>",
+        "variable": "showUser",
+        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
+        "source_line": 246
+      },
+      {
+        "line": 252,
+        "code": "style=\"visibility: hidden;<?php echo $showUser ? \"\" : \"display: none;\"; ?>\"></span>",
+        "variable": "showUser",
+        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
+        "source_line": 246
+      },
+      {
+        "line": 253,
+        "code": "<span class=\"dashicons dashicons-arrow-right\"<?php echo $showUser ? \"\" : \" style='display: none;'\"; ?>></span>",
+        "variable": "showUser",
+        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
+        "source_line": 246
+      },
+      {
+        "line": 253,
+        "code": "<span class=\"dashicons dashicons-arrow-right\"<?php echo $showUser ? \"\" : \" style='display: none;'\"; ?>></span>",
+        "variable": "showUser",
+        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
+        "source_line": 246
+      },
+      {
+        "line": 255,
+        "code": "<span class=\"dashicons dashicons-arrow-<?php echo $showUser ? \"up\" : \"down\" ?> wpd_not_clicked\"></span>",
+        "variable": "showUser",
+        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
+        "source_line": 246
+      },
+      {
+        "line": 258,
+        "code": "<div class=\"wpd-box-body\"<?php echo $showUser ? \"\" : \" style='display: none;'\"; ?>></div>",
+        "variable": "showUser",
+        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
+        "source_line": 246
+      },
+      {
+        "line": 258,
+        "code": "<div class=\"wpd-box-body\"<?php echo $showUser ? \"\" : \" style='display: none;'\"; ?>></div>",
+        "variable": "showUser",
+        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
+        "source_line": 246
+      },
+      {
+        "line": 269,
+        "code": "<span class=\"dashicons dashicons-arrow-<?php echo $showSubs ? \"up\" : \"down\"; ?> wpd_not_clicked\"></span>",
+        "variable": "showSubs",
+        "source": "isset($_COOKIE[\"wpd_stat_subs\"]) ? intval($_COOKIE[\"wpd_stat_subs\"]) : 1",
+        "source_line": 264
+      },
+      {
+        "line": 269,
+        "code": "<span class=\"dashicons dashicons-arrow-<?php echo $showSubs ? \"up\" : \"down\"; ?> wpd_not_clicked\"></span>",
+        "variable": "showSubs",
+        "source": "isset($_COOKIE[\"wpd_stat_subs\"]) ? intval($_COOKIE[\"wpd_stat_subs\"]) : 1",
+        "source_line": 264
+      },
+      {
+        "line": 272,
+        "code": "<div class=\"wpd-box-body\"<?php echo $showSubs ? \"\" : \" style='display: none;'\"; ?>></div>",
+        "variable": "showSubs",
+        "source": "isset($_COOKIE[\"wpd_stat_subs\"]) ? intval($_COOKIE[\"wpd_stat_subs\"]) : 1",
+        "source_line": 264
+      },
+      {
+        "line": 272,
+        "code": "<div class=\"wpd-box-body\"<?php echo $showSubs ? \"\" : \" style='display: none;'\"; ?>></div>",
+        "variable": "showSubs",
+        "source": "isset($_COOKIE[\"wpd_stat_subs\"]) ? intval($_COOKIE[\"wpd_stat_subs\"]) : 1",
+        "source_line": 264
+      }
+    ],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": []
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/options/class.WpdiscuzOptions.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/diff.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 11,
+        "code": "<form class=\"revisions-control-frame\" action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/conf.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 15,
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-main\"><?php",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/move.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 8,
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-main\"><?php",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/head.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 13,
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-main\"><?php",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/edit-po.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 11,
+        "code": "<form action=\"<?php $params->e('dlAction')?>\" method=\"post\" target=\"_blank\" id=\"loco-download\" class=\"aux wp-core-ui\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/delete.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 8,
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-del\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/config/settings.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 15,
+        "code": "<form action=\"#\" method=\"post\" enctype=\"application/x-www-form-urlencoded\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/config/apis.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 13,
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/config/prefs.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 11,
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/bundle/conf.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 8,
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-conf\"><?php",
+        "description": "POST form without CSRF protection"
+      },
+      {
+        "line": 157,
+        "code": "<form action=\"\" method=\"post\" id=\"loco-reset\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/bundle/setup/conf.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 11,
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" class=\"panel jsonly\" id=\"loco-remote\">",
+        "description": "POST form without CSRF protection"
       },
       {
         "line": 44,
-        "code": "</li><li><a href=\"?page=wplister-settings&tab=developer&subtab=stockslog\" class=\"<?php echo ( $active_subtab == 'stockslog' ) ? 'current' : ''; ?>\"><?php _e( 'Stocks Log', 'wp-lister-for-ebay' ); ?></a></li>",
-        "trace": "$active_subtab = empty( $_REQUEST['subtab'] ) ? 'settings' : $_REQUEST['subtab'];"
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" class=\"panel\">",
+        "description": "POST form without CSRF protection"
+      },
+      {
+        "line": 63,
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" class=\"panel\">",
+        "description": "POST form without CSRF protection"
       }
     ]
   },
-  "plugins-wp\\wp-lister-for-ebay\\wp-lister-for-ebay\\views\\tools_tabs.php": {
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/bundle/setup/saved.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 16,
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/src/mvc/AjaxRouter.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/loco-translate/loco-translate/src/mvc/AdminRouter.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/loco-translate/loco-translate/src/admin/file/BaseController.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/loco-translate/loco-translate/src/admin/bundle/BaseController.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/loco-translate/loco-translate/src/ajax/UploadController.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/subscriptions.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/copy-post.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/stats.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/infinite-scroll/infinity.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/comments/comments.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/videopress/class.videopress-edit-attachment.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/sharedaddy/sharing-service.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/sharedaddy/sharing.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/woocommerce-analytics/classes/class-jetpack-woocommerce-analytics-universal.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/related-posts/jetpack-related-posts.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/carousel/jetpack-carousel.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/subscriptions/jetpack-user-content-link-redirection.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/extensions/blocks/sharing-button/sharing-button.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/extensions/blocks/subscriptions/subscriptions.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/extensions/blocks/map/map.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/extensions/blocks/blogroll/blogroll.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 54,
+        "code": "<form method=\"post\" action=\"https://subscribe.wordpress.com\" accept-charset=\"utf-8\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/jetpack/jetpack/extensions/blocks/blogroll/blogroll-item/blogroll-item.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/_inc/blogging-prompts.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/_inc/lib/admin-pages/class.jetpack-react-page.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/forms/wpdFormAttr/Login/SocialLogin.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/includes/class.WpdiscuzRest.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/utils/deactivation-reason-modal.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 11,
+        "code": "<form method=\"post\" action=\"\" class=\"wpd-deactivation-reason-form\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/utils/class.WpdiscuzHelperAjax.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/utils/class.WpdiscuzHelper.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/utils/class.WpdiscuzHelperUpload.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/utils/class.WpdiscuzHelperEmail.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/utils/layouts/activity/activity-page.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/utils/layouts/subscriptions/subscriptions-page.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/utils/layouts/follows/follows-page.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wpdiscuz/wpdiscuz/themes/default/comment-form.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/comments-import-export-woocommerce/comments-import-export-woocommerce/includes/class-hf_cmt_impexpcsv-admin-screen.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/comments-import-export-woocommerce/comments-import-export-woocommerce/includes/class-wt-security-helper.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/comments-import-export-woocommerce/comments-import-export-woocommerce/includes/importer/class-hf_cmt_impexpcsv-import.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/comments-import-export-woocommerce/comments-import-export-woocommerce/includes/importer/views/html-hf-import-greeting.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 31,
+        "code": "<form enctype=\"multipart/form-data\" id=\"import-upload-form\" method=\"post\" action=\"<?php echo esc_attr(wp_nonce_url($action, 'import-upload')); ?>\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/comments-import-export-woocommerce/comments-import-export-woocommerce/includes/exporter/class-hf_cmt_impexpcsv-exporter.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/honeypot/honeypot/includes/integration/wpa_diviform.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/honeypot/honeypot/includes/views/wpa_main.php": {
+    "SQLi": [],
     "XSS": [
       {
-        "line": 13,
-        "code": "<a href=\"<?php echo $wpl_tools_url; ?>&tab=inventory\" class=\"nav-tab <?php echo $active_tab == 'inventory' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Inventory', 'wp-lister-for-ebay' ) ?></a>",
-        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'inventory';"
+        "line": 36,
+        "code": "<a href=\"<?php echo admin_url(); ?>admin.php?page=wp-armour&tab=<?php echo $tabKey; ?>\" class=\"nav-tab <?php echo $currentTab == $tabKey?'nav-tab-active':''; ?>\"><?php echo $tabData['name']; ?></a>",
+        "variable": "currentTab",
+        "source": "$_GET['tab']",
+        "source_line": 20
       },
       {
-        "line": 14,
-        "code": "<a href=\"<?php echo $wpl_tools_url; ?>&tab=stock_log\" class=\"nav-tab <?php echo $active_tab == 'stock_log' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Stock Log', 'wp-lister-for-ebay' ) ?></a>",
-        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'inventory';"
+        "line": 36,
+        "code": "<a href=\"<?php echo admin_url(); ?>admin.php?page=wp-armour&tab=<?php echo $tabKey; ?>\" class=\"nav-tab <?php echo $currentTab == $tabKey?'nav-tab-active':''; ?>\"><?php echo $tabData['name']; ?></a>",
+        "variable": "currentTab",
+        "source": "$_GET['tab']",
+        "source_line": 20
       },
       {
-        "line": 15,
-        "code": "<a href=\"<?php echo $wpl_tools_url; ?>&tab=developer\" class=\"nav-tab <?php echo $active_tab == 'developer' ? 'nav-tab-active' : ''; ?>\"><?php echo __( 'Developer', 'wp-lister-for-ebay' ) ?></a>",
-        "trace": "$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_key($_GET[ 'tab' ]) : 'inventory';"
+        "line": 44,
+        "code": "<?php include($wpa_tabs[$currentTab]['path']); ?>",
+        "variable": "currentTab",
+        "source": "$_GET['tab']",
+        "source_line": 20
+      }
+    ],
+    "LFI": [
+      {
+        "line": 44,
+        "code": "<?php include($wpa_tabs[$currentTab]['path']); ?>",
+        "variable": "currentTab",
+        "source": "$_GET['tab']",
+        "source_line": 20
+      }
+    ],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": []
+  },
+  "plugins-wp/comment-link-remove/comment-link-remove/qc-clr-settings-pro.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 245,
+        "code": "<form action=\"options.php\" method=\"post\">",
+        "description": "POST form without CSRF protection"
       }
     ]
   },
-  "plugins-wp\\wp-migrate-db\\wp-migrate-db\\class\\Common\\Http\\Helper.php": {
-    "SSRF": [
+  "plugins-wp/comment-link-remove/comment-link-remove/qc-clr-settings.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
       {
-        "line": 97,
-        "code": "$_POST = $_REQUEST = json_decode(file_get_contents('php://input'), true);",
-        "trace": "$_POST = $_REQUEST = json_decode(file_get_contents('php://input'), true);"
+        "line": 165,
+        "code": "<form method=\"post\" action=\"options.php\">",
+        "description": "POST form without CSRF protection"
       }
     ]
   },
-  "plugins-wp\\wpematico\\wpematico\\app\\addons_page.php": {
-    "XSS": [
-      {
-        "line": 354,
-        "code": "echo '<a target=\"' . $target . '\" class=\"' . $class . '\" title=\"' . $title . '\" href=\"' . $url . '\" style=\"' . $style . '\">' . $caption . '</a>';",
-        "trace": "$s\t\t = isset($_REQUEST['s']) ? urlencode($_REQUEST['s']) : '';"
-      },
-      {
-        "line": 492,
-        "code": "//\techo('<pre>PLUGINS:' . print_r($plugins, 1) . '</pre>');",
-        "trace": "$plugin\t = isset($_REQUEST['plugin']) ? $_REQUEST['plugin'] : '';"
-      },
-      {
-        "line": 492,
-        "code": "//\techo('<pre>PLUGINS:' . print_r($plugins, 1) . '</pre>');",
-        "trace": "$plugins = isset($_REQUEST['checked']) ? (array) wp_unslash($_REQUEST['checked']) : array();"
-      },
-      {
-        "line": 492,
-        "code": "//\techo('<pre>PLUGINS:' . print_r($plugins, 1) . '</pre>');",
-        "trace": "$plugin\t = isset($_REQUEST['plugin']) ? $_REQUEST['plugin'] : '';"
-      },
-      {
-        "line": 492,
-        "code": "//\techo('<pre>PLUGINS:' . print_r($plugins, 1) . '</pre>');",
-        "trace": "$plugins = isset($_REQUEST['checked']) ? (array) wp_unslash($_REQUEST['checked']) : array();"
-      }
-    ]
+  "plugins-wp/comment-link-remove/comment-link-remove/qc-clr-email-subscription.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp\\wpematico\\wpematico\\app\\campaigns_list.php": {
-    "XSS": [
-      {
-        "line": 114,
-        "code": "WPeMatico::add_wp_notice(array('text' => sprintf(__('%s Campaigns activated', 'wpematico'), count($post_ids)), 'below-h2' => false));",
-        "trace": "$post_ids = ( isset($_POST['post_ids']) && !empty($_POST['post_ids']) ) ? $_POST['post_ids'] : NULL;"
-      },
-      {
-        "line": 121,
-        "code": "WPeMatico::add_wp_notice(array('text' => sprintf(__('%s Campaigns deactivated', 'wpematico'), count($post_ids)), 'below-h2' => false));",
-        "trace": "$post_ids = ( isset($_POST['post_ids']) && !empty($_POST['post_ids']) ) ? $_POST['post_ids'] : NULL;"
-      }
-    ]
+  "plugins-wp/comment-link-remove/comment-link-remove/qc-support-promo-page/class-qc-support-promo-page.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp\\wpematico\\wpematico\\app\\campaign_edit.php": {
-    "XSS": [
-      {
-        "line": 192,
-        "code": "echo substr( WPeMatico :: wpematico_dojob( $campaign_ID ) , 0, -1); // borro el ultimo caracter que es un 0",
-        "trace": "$campaign = apply_filters('wpematico_check_campaigndata', $_POST);"
-      },
-      {
-        "line": 350,
-        "code": "$err_message .= sprintf(__('There\\'s an error with the supplied RegEx expression in word: %s', 'wpematico'),'<span class=\"coderr\">'.$word.'</span>');",
-        "trace": "$err_message = apply_filters('wpematico_check_error_message',$err_message, $_POST);"
-      },
-      {
-        "line": 368,
-        "code": "$err_message .= sprintf(__('There\\'s an error with the supplied RegEx expression in ReWrite: %s', 'wpematico'),'<span class=\"coderr\">'.$origin.'</span>');",
-        "trace": "$err_message = apply_filters('wpematico_check_error_message',$err_message, $_POST);"
-      }
-    ]
+  "plugins-wp/jetpack/jetpack/class.jetpack.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp\\wpematico\\wpematico\\app\\campaign_preview_item.php": {
-    "XSS": [
-      {
-        "line": 314,
-        "code": "<input type=\"hidden\" id=\"feed\" name=\"feed\" value=\"<?php echo $feed; ?>\"/>",
-        "trace": "$feed = $_REQUEST['feed'];"
-      }
-    ]
+  "plugins-wp/jetpack/jetpack/class.jetpack-modules-list-table.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp\\wpematico\\wpematico\\app\\debug_page.php": {
-    "XSS": [
-      {
-        "line": 1857,
-        "code": "$return .= print_r($debug_constants, 1);",
-        "trace": "//\t$return = wp_strip_all_tags( $_POST['wpematico-sysinfo'] );"
-      },
-      {
-        "line": 1926,
-        "code": "//\techo $return;",
-        "trace": "//\t$return = wp_strip_all_tags( $_POST['wpematico-sysinfo'] );"
-      }
-    ]
+  "plugins-wp/jetpack/jetpack/class.jetpack-network.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp\\wpematico\\wpematico\\app\\settings_page.php": {
-    "XSS": [
+  "plugins-wp/jetpack/jetpack/unauth-file-upload.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/class.json-api-endpoints.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [
       {
-        "line": 271,
-        "code": "<label><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['disablecheckfeeds'], true); ?> name=\"disablecheckfeeds\" id=\"disablecheckfeeds\" /> <?php _e('Disable Check Feeds before Save', 'wpematico'); ?></label><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['disablecheckfeeds']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 273,
-        "code": "<label><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['enabledelhash'], true); ?> name=\"enabledelhash\" id=\"enabledelhash\" /><b>&nbsp;<?php _e('Enable \"Del Hash\"', 'wpematico'); ?></b></label> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['enabledelhash']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 275,
-        "code": "<label><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['enableseelog'], true); ?> name=\"enableseelog\" id=\"enableseelog\" /><b>&nbsp;<?php _e('Enable \"See last log\"', 'wpematico'); ?></b></label> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['enableseelog']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 277,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['enable_xml_upload'], true); ?> name=\"enable_xml_upload\" id=\"enable_xml_upload\" /><b>&nbsp;<?php _e('Enable \"Upload of XMLs\"', 'wpematico'); ?></b> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['enable_xml_upload']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 279,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['disable_credits'], true); ?> name=\"disable_credits\" id=\"disable_credits\" /><b>&nbsp;<?php _e('Disable \"WPeMatico Credits\"', 'wpematico'); ?></b> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['disable_credits']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 280,
-        "code": "<span id=\"discredits\" style=\"<?php echo ($cfg['disable_credits']) ? '' : 'display:none;' ?>\"><br /><?php",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 286,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['disable_categories_description'], true); ?> name=\"disable_categories_description\" id=\"disable_categories_description\" /><b>&nbsp;<?php _e('Disable \"Auto-Category description\"', 'wpematico'); ?></b> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['disable_categories_description']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 288,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['disable_extensions_feed_page'], true); echo $disable_extensions_feed ?> name=\"disable_extensions_feed_page\" id=\"disable_extensions_feed_page\" /><b>&nbsp;<?php _e('Disable Extensions feed Page', 'wpematico'); ?></b> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['disable_extensions_feed_page']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 290,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['entity_decode_html'], true); ?> name=\"entity_decode_html\" id=\"entity_decode_html\" /><b>&nbsp;<?php _e('HTML entity decode on publish.', 'wpematico'); ?></b> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['entity_decode_html']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 402,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['imgcache'], true); ?> name=\"imgcache\" id=\"imgcache\" />&nbsp;<b><label for=\"imgcache\"><?php _e('Store images locally.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['imgcache']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 403,
-        "code": "<div id=\"nolinkimg\" style=\"padding-left:20px; <?php if(!$cfg['imgcache']) echo 'display:none;'; ?>\">",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 404,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['imgattach'], true); ?> name=\"imgattach\" id=\"imgattach\" /><b>&nbsp;<label for=\"imgattach\"><?php _e('Attach Images to posts.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['imgattach']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 407,
-        "code": "<input class=\"checkbox\"  value=\"1\" type=\"checkbox\" <?php checked($cfg['save_attr_images'], true); ?> name=\"save_attr_images\" id=\"save_attr_images\" /><b>&nbsp;<label for=\"save_attr_images\"><?php _e('Save Image attributes on WP Media.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['save_attr_images']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 409,
-        "code": "<input name=\"gralnolinkimg\" id=\"gralnolinkimg\" class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['gralnolinkimg'], true); ?> />&nbsp;<label for=\"gralnolinkimg\"><?php _e('Remove link to source images', 'wpematico'); ?></label><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['gralnolinkimg']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 414,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['featuredimg'], true); ?> name=\"featuredimg\" id=\"featuredimg\" /><b>&nbsp;<label for=\"featuredimg\"><?php _e('Set first image in content as Featured Image.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['featuredimg']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 416,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['rmfeaturedimg'], true); ?> name=\"rmfeaturedimg\" id=\"rmfeaturedimg\" /><b>&nbsp;<label for=\"rmfeaturedimg\"><?php _e('Remove Featured Image from content.', 'wpematico'); ?></label></b> <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['rmfeaturedimg']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 418,
-        "code": "<div id=\"custom_uploads\" style=\"<?php if(!$cfg['imgcache'] && !$cfg['featuredimg']) echo 'display:none;'; ?>\">",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 419,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['customupload'], true); ?> name=\"customupload\" id=\"customupload\" /><b>&nbsp;<label for=\"customupload\"><?php _e('Use custom upload.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['customupload']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 434,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['enablemimetypes'], true); ?> name=\"enablemimetypes\" id=\"enablemimetypes\" /><b>&nbsp;<label for=\"enablemimetypes\"><?php _e('Enable add mime types.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['enablemimetypes']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 439,
-        "code": "<p><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['fifu'], (!$fifu_activated) ? ((!$cfg['fifu']) ? true : false ) : true ); ?> name=\"fifu\" id=\"fifu\"  <?php echo (!$fifu_activated ? 'disabled' : '') ?>/><b>&nbsp;<label for=\"fifu\"><?php _e('Use Featured Image from URL.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['fifu'].' '. __('See more info in Help tab above.','wpematico'); ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 449,
-        "code": "<div id=\"fifu_extra_options\" style=\"padding-left: 20px;<?php if(!$cfg['fifu']) echo 'display:none;'; ?>\"\"><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['fifu-video'], (!$fifu_activated) ? ((!$cfg['fifu-video']) ? true : false ) : true ); ?> name=\"fifu-video\" id=\"fifu-video\"/><b>&nbsp;<label for=\"fifu-video\"><?php _e('Use video link as featured if available.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['fifu'].' '. __('See more info in Help tab above.','wpematico'); ?>\"></span></div>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 462,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['video_cache'], true); ?> name=\"video_cache\" id=\"video_cache\" />&nbsp;<b><label for=\"video_cache\"><?php _e('Store videos locally.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['video_cache']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 463,
-        "code": "<div id=\"nolink_video\" style=\"padding-left:20px; <?php if(!$cfg['video_cache']) echo 'display:none;'; ?>\">",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 464,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['video_attach'], true); ?> name=\"video_attach\" id=\"video_attach\" /><b>&nbsp;<label for=\"video_attach\"><?php _e('Attach Videos to posts.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['video_attach']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 466,
-        "code": "<input name=\"gralnolink_video\" id=\"gralnolink_video\" class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['gralnolink_video'], true); ?> /><label for=\"gralnolink_video\"><?php _e('Remove link to source videos', 'wpematico'); ?></label><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['gralnolink_video']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 469,
-        "code": "<div id=\"custom_uploads_videos\" style=\"<?php if(!$cfg['video_cache']) echo 'display:none;'; ?>\">",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 470,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['customupload_videos'], true); ?> name=\"customupload_videos\" id=\"customupload_videos\" /><b>&nbsp;<label for=\"customupload_videos\"><?php _e('Use custom upload.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['customupload_videos']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 497,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['audio_cache'], true); ?> name=\"audio_cache\" id=\"audio_cache\" />&nbsp;<b><label for=\"audio_cache\"><?php _e('Store audios locally.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['audio_cache']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 498,
-        "code": "<div id=\"nolink_audio\" style=\"padding-left:20px; <?php if(!$cfg['audio_cache']) echo 'display:none;'; ?>\">",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 499,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['audio_attach'], true); ?> name=\"audio_attach\" id=\"audio_attach\" /><b>&nbsp;<label for=\"audio_attach\"><?php _e('Attach Audios to posts.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['audio_attach']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 501,
-        "code": "<input name=\"gralnolink_audio\" id=\"gralnolink_audio\" class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['gralnolink_audio'], true); ?> /><label for=\"gralnolink_audio\"><?php _e('Remove link to source audios', 'wpematico'); ?></label><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['gralnolink_audio']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 504,
-        "code": "<div id=\"custom_uploads_audios\" style=\"<?php if(!$cfg['audio_cache']) echo 'display:none;'; ?>\">",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 505,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['customupload_audios'], true); ?> name=\"customupload_audios\" id=\"customupload_audios\" /><b>&nbsp;<label for=\"customupload_audios\"><?php _e('Use custom upload.', 'wpematico'); ?></label></b><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['customupload_audios']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 593,
-        "code": "<label><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['set_stupidly_fast'], true); ?> name=\"set_stupidly_fast\" id=\"set_stupidly_fast\"  onclick=\"jQuery('#simpie').show();\"  /> <?php _e('Set Simplepie \"stupidly fast\"', 'wpematico'); ?></label>  <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['stupidly_fast']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 595,
-        "code": "<div id=\"simpie\" style=\"margin-left: 25px;<?php if($cfg['set_stupidly_fast']) echo 'display:none;'; ?>\">",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 599,
-        "code": "<textarea style=\"width:500px;\" <?php disabled($cfg['simplepie_strip_htmltags'], false, true); ?> name=\"strip_htmltags\" id=\"strip_htmltags\" ><?php echo esc_textarea($cfg['strip_htmltags']); ?></textarea>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 604,
-        "code": "<textarea style=\"width:500px;\" <?php disabled($cfg['simplepie_strip_attributes'], false, true); ?> name=\"strip_htmlattr\" id=\"strip_htmlattr\" ><?php echo esc_textarea($cfg['strip_htmlattr']); ?></textarea>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 619,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['woutfilter'], true); ?> name=\"woutfilter\" id=\"woutfilter\" /> <?php echo '<b><i>' . __('Allow option on campaign to skip the content filters', 'wpematico') . '</b></i>'; ?><br />",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 632,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['allowduplicates'], true); ?> name=\"allowduplicates\" id=\"allowduplicates\" /><b>&nbsp;<?php echo '<label for=\"allowduplicates\">' . __('Deactivate duplicate controls.', 'wpematico') . '</label>'; ?></b>  <span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['allowduplicates']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 634,
-        "code": "<div id=\"enadup\" style=\"padding-left:20px; <?php if(!$cfg['allowduplicates']) echo 'display:none;'; ?>\">",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
+        "line": 556,
+        "code": "* @param bool  $return_default_values Set default values from `$documentation` to process.",
+        "variable": "return",
+        "source": "array_merge( stripslashes_deep( $_POST ), $_FILES )",
+        "source_line": 502
       },
       {
         "line": 636,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['allowduptitle'], true); ?> name=\"allowduptitle\" id=\"allowduptitle\" /><b>&nbsp;<?php echo '<label for=\"allowduptitle\">' . __('Allow duplicates titles.', 'wpematico') . '</label>'; ?></b><br />",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 637,
-        "code": "<input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['allowduphash'], true); ?> name=\"allowduphash\" id=\"allowduphash\" /><b>&nbsp;<?php echo '<label for=\"allowduphash\">' . __('Allow duplicates hashes. (Not Recommended)', 'wpematico') . '</label>'; ?></b>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 639,
-        "code": "<div id=\"div_add_extra_duplicate_filter_meta_source\" <?php if($cfg['disableccf'] || $cfg['allowduptitle']) echo 'style=\"display:none;\"' ?>>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 735,
-        "code": "<span id=\"column_campaign_pos_field\" class=\"insidesec\" style=\"padding-left:20px; <?php if(!$cfg['campaign_in_postslist']) echo 'display:none;'; ?>\">",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 753,
-        "code": "<div id=\"hlptrash\" style=\"padding-left:20px; <?php if(!$cfg['emptytrashbutton']) echo 'display:none;'; ?>\">",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 783,
-        "code": "<label><input class=\"checkbox\" value=\"1\" type=\"checkbox\" <?php checked($cfg['disabledashboard'], true); ?> name=\"disabledashboard\" id=\"disabledashboard\" /> <?php _e('Disable \"WP Dashboard Widget\"', 'wpematico'); ?></label><span class=\"dashicons dashicons-warning help_tip\" title=\"<?php echo $helptip['disabledashboard']; ?>\"></span>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 785,
-        "code": "<label id=\"roleslabel\" <?php if($cfg['disabledashboard']) echo 'style=\"display:none;\"'; ?>><?php _e('User roles to show Dashboard widget:', 'wpematico'); ?></label>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      },
-      {
-        "line": 786,
-        "code": "<div id=\"roles\" <?php if($cfg['disabledashboard']) echo 'style=\"display:none;\"'; ?>>",
-        "trace": "$cfg\t\t\t\t = apply_filters('wpematico_check_options', $_POST);"
-      }
-    ]
-  },
-  "plugins-wp\\wpematico\\wpematico\\app\\wpematico_functions.php": {
-    "XSS": [
-      {
-        "line": 1289,
-        "code": "$response['message'] = sprintf(__('The feed %s has been parsed successfully.', 'wpematico'), $url);",
-        "trace": "//$url\t = wp_sanitize_redirect($_POST['url']);"
-      },
-      {
-        "line": 1309,
-        "code": "$response['message'] = sprintf(__('The feed %1$s cannot be parsed. Simplepie said: %2$s', 'wpematico'), $url, $errors) . '<br />' . $professional_notice;",
-        "trace": "//$url\t = wp_sanitize_redirect($_POST['url']);"
-      },
-      {
-        "line": 1316,
-        "code": "printf(__('The feed %s has been parsed successfully.', 'wpematico'), $url);",
-        "trace": "//$url\t = wp_sanitize_redirect($_POST['url']);"
-      },
-      {
-        "line": 1319,
-        "code": "printf(__('The feed %1$s cannot be parsed. Simplepie said: %2$s', 'wpematico'), $url, $errors) . '<br />' . $professional_notice;",
-        "trace": "//$url\t = wp_sanitize_redirect($_POST['url']);"
-      },
-      {
-        "line": 1685,
-        "code": "print $settings_data_json;",
-        "trace": "$settings = file_get_contents($_FILES['txtsettings']['tmp_name']);"
-      },
-      {
-        "line": 1685,
-        "code": "print $settings_data_json;",
-        "trace": "$settings = file_get_contents($_FILES['txtsettings']['tmp_name']);",
-        "function": "wpematico_export_settings"
+        "code": "* @param string|int   $key Key in `$return` to assign the value to.",
+        "variable": "return",
+        "source": "array_merge( stripslashes_deep( $_POST ), $_FILES )",
+        "source_line": 502
       }
     ],
-    "SSRF": [
+    "SSRF": [],
+    "CSRF": []
+  },
+  "plugins-wp/jetpack/jetpack/modules/widgets/contact-info.php": {
+    "SQLi": [],
+    "XSS": [
       {
-        "line": 1698,
-        "code": "$settings = file_get_contents($_FILES['txtsettings']['tmp_name']);",
-        "trace": "$settings = file_get_contents($_FILES['txtsettings']['tmp_name']);"
-      },
+        "line": 313,
+        "code": "echo $this->build_map( $instance['address'], $apikey ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped",
+        "variable": "apikey",
+        "source": "wp_kses( wp_unslash( $_POST['apikey'] ), array() )",
+        "source_line": 491
+      }
+    ],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": []
+  },
+  "plugins-wp/jetpack/jetpack/modules/widgets/simple-payments.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/widgets/class-jetpack-instagram-widget.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/jetpack/jetpack/modules/widgets/eu-cookie-law/widget.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
       {
-        "line": 1698,
-        "code": "$settings = file_get_contents($_FILES['txtsettings']['tmp_name']);",
-        "trace": "$settings = file_get_contents($_FILES['txtsettings']['tmp_name']);",
-        "function": "wpematico_import_settings"
+        "line": 19,
+        "code": "<form method=\"post\" id=\"jetpack-eu-cookie-law-form\">",
+        "description": "POST form without CSRF protection"
       }
     ]
   },
-  "plugins-wp\\wpematico\\wpematico\\app\\xml-importer.php": {
-    "XSS": [
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/init/upload.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
       {
-        "line": 425,
-        "code": "<?php do_action('wpematico_xml_input_nodes_print', $campaign_data); ?>",
-        "trace": "$campaign_data = apply_filters('wpematico_xml_campaign_data_ajax', $campaign_data, $_REQUEST);"
+        "line": 9,
+        "code": "<form action=\"\" method=\"post\" enctype=\"multipart/form-data\" id=\"loco-main\"><?php",
+        "description": "POST form without CSRF protection"
       }
     ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/init/init-pot.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 33,
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-potinit\"><?php",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/init/init-po.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 24,
+        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-poinit\"><?php",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/edit-pot.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 9,
+        "code": "<form action=\"<?php $params->e('dlAction')?>\" method=\"post\" target=\"_blank\" id=\"loco-download\" class=\"aux wp-core-ui\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/wordfence/wordfence/modules/login-security/classes/controller/ajax.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wordfence/wordfence/modules/login-security/classes/controller/wordfencels.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wordfence/wordfence/views/common/unsubscribe.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 114,
+        "code": "<form method=\"POST\" action=\"<?php echo esc_attr(wfUtils::getSiteBaseURL() . '?_wfsf=removeAlertEmail'); ?>\">",
+        "description": "POST form without CSRF protection"
+      },
+      {
+        "line": 121,
+        "code": "<form method=\"POST\" action=\"<?php echo esc_attr(wfUtils::getSiteBaseURL() . '?_wfsf=removeAlertEmail&jwt=' . $jwt); ?>\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/freemius/includes/fs-core-functions.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/freemius/includes/class-freemius.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/freemius/includes/fs-plugin-info-dialog.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/freemius/templates/debug.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 132,
+        "code": "<form action=\"\" method=\"POST\">",
+        "description": "POST form without CSRF protection"
+      },
+      {
+        "line": 157,
+        "code": "<form action=\"\" method=\"POST\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/freemius/templates/connect.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 375,
+        "code": "<form method=\"post\" action=\"<?php echo WP_FS__ADDRESS ?>/action/service/user/install/\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/wp-ajaxify-comments/wp-ajaxify-comments/functions.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wordfence/wordfence/vendor/wordfence/wf-waf/src/lib/waf.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wordfence/wordfence/vendor/wordfence/wf-waf/src/lib/utils.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/disable-comments/disable-comments/disable-comments.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/disable-comments/disable-comments/includes/class-plugin-usage-tracker.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/delete-all-comments-of-wordpress-website.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/5.8/delete-all-comments-of-wordpress-website.php": {
+    "SQLi": [
+      {
+        "line": 111,
+        "code": "// if($date_from_nav =  $_POST['nav_delete_commentfrom'] == \"\") { $date_from_nav = '2000-01-01';  } else { $date_from_nav =   $_POST['nav_delete_commentfrom']; }",
+        "variable": "date_from_nav",
+        "source": "$_POST['nav_delete_commentfrom'] == \"\") { $date_from_nav = '2000-01-01';  } else { $date_from_nav =   $_POST['nav_delete_commentfrom']",
+        "source_line": 111
+      }
+    ],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": []
+  },
+  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/5.8/freemius/includes/fs-core-functions.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/5.8/freemius/includes/class-freemius.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/5.8/freemius/includes/fs-plugin-info-dialog.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/5.8/freemius/templates/debug.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 132,
+        "code": "<form action=\"\" method=\"POST\">",
+        "description": "POST form without CSRF protection"
+      },
+      {
+        "line": 157,
+        "code": "<form action=\"\" method=\"POST\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/5.8/freemius/templates/connect.php": {
+    "SQLi": [],
+    "XSS": [],
+    "LFI": [],
+    "RCE": [],
+    "SSRF": [],
+    "CSRF": [
+      {
+        "line": 375,
+        "code": "<form method=\"post\" action=\"<?php echo WP_FS__ADDRESS ?>/action/service/user/install/\">",
+        "description": "POST form without CSRF protection"
+      }
+    ]
+  },
+  "plugins-wp/wordfence/wordfence/lib/wfUtils.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wordfence/wordfence/lib/wfAuditLog.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wordfence/wordfence/lib/wordfenceClass.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wordfence/wordfence/lib/wfOnboardingController.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wordfence/wordfence/lib/wfScan.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wordfence/wordfence/lib/wfScanEngine.php": {
+    "error": "dictionary changed size during iteration"
   }
 }

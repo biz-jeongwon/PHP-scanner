@@ -11,10 +11,18 @@ def group_by_plugin(data):
         grouped.setdefault(plugin, {})[filepath] = vulns
     return grouped
 
-def highlight_tainted_vars(code, tainted_vars):
-    for var in tainted_vars:
-        pattern = re.escape(var)
-        code = re.sub(pattern, f'<span class="tainted-var">{var}</span>', code)
+def highlight_code(code, variable=None):
+    """코드에서 변수와 중요 부분을 하이라이트"""
+    if not code:
+        return ""
+    
+    # HTML 이스케이프
+    code = code.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    
+    # 변수 하이라이트
+    if variable:
+        code = code.replace(f"${variable}", f'<span class="tainted-var">${variable}</span>')
+    
     return code
 
 def generate_html_report(data, output_file="report.html"):
@@ -77,15 +85,24 @@ def generate_html_report(data, output_file="report.html"):
         .tainted-var {{
             color: #1a73e8;
             font-weight: bold;
+            background-color: #e8f0fe;
+            padding: 2px 4px;
+            border-radius: 3px;
         }}
         pre {{
             margin: 0;
             white-space: pre-wrap;
+            font-family: 'Consolas', 'Monaco', monospace;
         }}
         .sub-detail {{
             background-color: #fafafa;
             font-size: 13px;
             border-top: 0;
+            color: #666;
+        }}
+        .source-info {{
+            color: #1967d2;
+            font-size: 13px;
         }}
     </style>
 </head>
@@ -100,38 +117,48 @@ def generate_html_report(data, output_file="report.html"):
         for plugin, files in grouped_data.items():
             html += f'<h2>📦 Plugin: {plugin}</h2>'
             for filepath, vulns in files.items():
+                if vulns.get("error"):
+                    continue
+                
                 html += f'<div class="file-block">'
                 html += f'<h3>📄 File: {filepath}</h3>'
+                
                 for vuln_type, issues in vulns.items():
                     if not issues:
                         continue
+                        
                     html += f'<h4 class="vuln-type">🛑 {vuln_type} ({len(issues)})</h4>'
                     html += "<table><tr><th>Line</th><th>Detail</th></tr>"
+                    
                     for issue in issues:
                         line_num = issue.get("line", "-")
                         code = issue.get("code", "")
-                        trace = issue.get("trace", [])
-                        function = issue.get("function", "")
+                        variable = issue.get("variable")
+                        source = issue.get("source", "")
+                        source_line = issue.get("source_line", "")
+                        description = issue.get("description", "")
 
-                        tainted_vars = [t for t in trace if isinstance(t, str) and t.startswith("$")]
-                        code_escaped = highlight_tainted_vars(
-                            code.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"),
-                            tainted_vars
-                        )
+                        code_highlighted = highlight_code(code, variable)
 
-                        html += f"<tr><td>{line_num}</td><td><pre>{code_escaped}</pre></td></tr>"
-
-                        if trace:
-                            html += f"<tr><td></td><td class='sub-detail'><strong>Trace:</strong> {trace}</td></tr>"
-                        if function:
-                            html += f"<tr><td></td><td class='sub-detail'><strong>Function:</strong> {function}</td></tr>"
+                        html += f"<tr><td>{line_num}</td><td><pre>{code_highlighted}</pre>"
+                        
+                        if variable:
+                            html += f'<div class="sub-detail">Variable: <span class="tainted-var">${variable}</span></div>'
+                        if source:
+                            html += f'<div class="sub-detail">Source: <span class="source-info">{source}</span></div>'
+                        if source_line:
+                            html += f'<div class="sub-detail">Source Line: {source_line}</div>'
+                        if description:
+                            html += f'<div class="sub-detail">Description: {description}</div>'
+                        
+                        html += "</td></tr>"
 
                     html += "</table>"
                 html += "</div>"
 
     html += f"""
     <div class="footer">
-        Vulnerability Scanner © {datetime.now().year}
+        PHP Vulnerability Scanner © {datetime.now().year}
     </div>
 </body>
 </html>
