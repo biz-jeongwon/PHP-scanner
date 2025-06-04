@@ -1,1726 +1,166 @@
 {
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/ApbctWP/FindSpam/UsersChecker.php": {
+  "plugins-wp/secure-encrypted-form/secure-encrypted-form/admin/class-secure-encrypted-form-admin.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/ApbctWP/FindSpam/CommentsChecker.php": {
+  "plugins-wp/secure-encrypted-form/secure-encrypted-form/admin/partials/secure-encrypted-form-admin-settings.php": {
+    "error": "'bool' object is not iterable"
+  },
+  "plugins-wp/secure-encrypted-form/secure-encrypted-form/public/class-secure-encrypted-form-public.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/mail-debug-for-woocommerce/mail-debug-for-woocommerce/includes/class.mdwc-post-type-admin.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/mail-debug-for-woocommerce/mail-debug-for-woocommerce/views/settings.php": {
+    "error": "'bool' object is not iterable"
+  },
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/includes/admin/licenses/modules/class-elm-admin-license-activations.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/includes/admin/licenses/modules/class-elm-admin-license-overview.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/includes/admin/licenses/modules/list-tables/class-elm-admin-licenses-list-table.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/includes/admin/licenses/modules/list-tables/class-elm-admin-license-activations-list-table.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/includes/functions/elm-core-functions.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/wp-revisions-control/wp-revisions-control/inc/class-wp-revisions-control.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/topbar-for-genesis/topbar-for-genesis/inc/admin.php": {
+    "error": "'bool' object is not iterable"
+  },
+  "plugins-wp/bportfolio/bportfolio/inc/codestar/classes/admin-options.class.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/bportfolio/bportfolio/inc/codestar/classes/nav-menu-options.class.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/bportfolio/bportfolio/inc/codestar/classes/metabox-options.class.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/bportfolio/bportfolio/inc/codestar/classes/taxonomy-options.class.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/bportfolio/bportfolio/inc/codestar/classes/shortcode-options.class.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/bportfolio/bportfolio/inc/codestar/functions/actions.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/bportfolio/bportfolio/inc/codestar/views/header.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/bportfolio/bportfolio/inc/codestar/views/welcome.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/aweos-admin-style/aweos-admin-style/admin-menu.php": {
+    "error": "'bool' object is not iterable"
+  },
+  "plugins-wp/altomatic/altomatic/admin/partials/settings-page.php": {
+    "error": "'bool' object is not iterable"
+  },
+  "plugins-wp/altomatic/altomatic/admin/partials/altomatic-admin-display.php": {
+    "error": "'bool' object is not iterable"
+  },
+  "plugins-wp/offermative-discount-pricing-related-products-upsell-funnels-for-woocommerce/offermative-discount-pricing-related-products-upsell-funnels-for-woocommerce/includes/class-om-tracking.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/offermative-discount-pricing-related-products-upsell-funnels-for-woocommerce/offermative-discount-pricing-related-products-upsell-funnels-for-woocommerce/includes/offermative-functions.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/offermative-discount-pricing-related-products-upsell-funnels-for-woocommerce/offermative-discount-pricing-related-products-upsell-funnels-for-woocommerce/includes/frontend/class-om-ajax-controller.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/offermative-discount-pricing-related-products-upsell-funnels-for-woocommerce/offermative-discount-pricing-related-products-upsell-funnels-for-woocommerce/includes/frontend/class-om-controller.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/offermative-discount-pricing-related-products-upsell-funnels-for-woocommerce/offermative-discount-pricing-related-products-upsell-funnels-for-woocommerce/includes/admin/deactivation-survey/class-sa-om-deactivation.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/includes/importer/class-elm-setting-importer.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/includes/admin/class-elm-admin-ajax.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/includes/admin/class-elm-admin-settings.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/includes/admin/class-elm-admin-generators.php": {
+    "error": "dictionary changed size during iteration"
+  },
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/includes/admin/class-elm-admin-page-actions.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/comments-like-dislike/comments-like-dislike/inc/classes/cld-ajax.php": {
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/includes/admin/class-elm-admin-setup-wizard.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/akismet/akismet/class.akismet-admin.php": {
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/includes/admin/licenses/class-elm-admin-licenses-list-table.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/comments-plus/comments-plus/libs/factory/core/includes/class-factory-requests.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [
-      {
-        "line": 51,
-        "code": "return ! empty( $sanitize ) ? call_user_func( $sanitize_function_name, $method[ $param ] ) : $method[ $param ];",
-        "variable": "method",
-        "source": "$_REQUEST",
-        "source_line": 39
-      }
-    ],
-    "SSRF": [],
-    "CSRF": []
+  "plugins-wp/enwikuna-license-manager/enwikuna-license-manager/templates/admin/pages/statuses/logs.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/wp-security-process-renamed-login-page.php": {
+  "plugins-wp/sprout-clients/sprout-clients/controllers/history/Client_History.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/wp-security-utility.php": {
+  "plugins-wp/sprout-clients/sprout-clients/controllers/history/Engagement_History.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/wp-security-user-login.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 775,
-        "code": "$unlock_request_form .= '<form method=\"post\" action=\"\"><div style=\"padding-bottom:10px;\"><input type=\"hidden\" name=\"aiowps-unlock-string-info\" id=\"aiowps-unlock-string-info\" value=\"'.$enc_result.'\" />';",
-        "description": "POST form without CSRF protection"
-      }
-    ]
+  "plugins-wp/sprout-clients/sprout-clients/views/admin/settings.php": {
+    "error": "'bool' object is not iterable"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/wp-security-general-init-tasks.php": {
+  "plugins-wp/cardanopress-governance/cardanopress-governance/class-tgm-plugin-activation.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/wp-security-captcha.php": {
+  "plugins-wp/cardanopress-governance/cardanopress-governance/dependencies/vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/firewall/rule/rules/bruteforce/rule-cookie-prevent-bruteforce.php": {
+  "plugins-wp/cardanopress-governance/cardanopress-governance/dependencies/vendor/cardanopress/framework/dependencies/GuzzleHttp/Psr7/ServerRequest.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/classes/commands/wp-security-log-commands.php": {
+  "plugins-wp/cardanopress-governance/cardanopress-governance/dependencies/vendor/cardanopress/framework/dependencies/ThemePlate/Page/BasePage.php": {
+    "error": "'bool' object is not iterable"
+  },
+  "plugins-wp/cardanopress-governance/cardanopress-governance/dependencies/vendor/cardanopress/framework/dependencies/ThemePlate/Core/Helper/AssetsHelper.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/includes/simba-tfa/simba-tfa.php": {
+  "plugins-wp/cardanopress-governance/cardanopress-governance/src/Actions.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/includes/simba-tfa/providers/totp/loader.php": {
+  "plugins-wp/gatewayapi/gatewayapi/inc/user_sync.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/includes/simba-tfa/templates/admin-settings.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 47,
-        "code": "<form method=\"post\" action=\"options.php\" style=\"margin-top: 12px\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 72,
-        "code": "<form method=\"post\" action=\"options.php\" style=\"margin-top: 12px\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 86,
-        "code": "<form method=\"post\" action=\"options.php\" style=\"margin-top: 40px\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 133,
-        "code": "<form method=\"post\" action=\"options.php\" style=\"margin-top: 40px\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-firewall-setup-notice.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-list-debug.php": {
-    "error": "dictionary changed size during iteration"
+  "plugins-wp/gatewayapi/gatewayapi/inc/cpt_notification.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-admin-init.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-list-registered-users.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-database-menu.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-list-logged-in-users.php": {
-    "error": "dictionary changed size during iteration"
+  "plugins-wp/gatewayapi/gatewayapi/inc/security_two_factor.php": {
+    "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-admin-menu.php": {
+  "plugins-wp/gatewayapi/gatewayapi/inc/cpt_sms.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-list-permanent-blocked-ip.php": {
+  "plugins-wp/gatewayapi/gatewayapi/inc/shortcode.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-list-404.php": {
+  "plugins-wp/gatewayapi/gatewayapi/inc/recipient_import.php": {
     "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/wp-security-list-locked-ip.php": {
-    "SQLi": [
-      {
-        "line": 206,
-        "code": "$result = $wpdb->query(\"UPDATE $lockout_table SET `released` = UNIX_TIMESTAMP() WHERE `id` IN $id_list\");",
-        "variable": "result",
-        "source": "AIOWPSecurity_Utility_Permissions::check_nonce_and_user_cap($_REQUEST['_wpnonce'], 'bulk-items')",
-        "source_line": 171
-      },
-      {
-        "line": 206,
-        "code": "$result = $wpdb->query(\"UPDATE $lockout_table SET `released` = UNIX_TIMESTAMP() WHERE `id` IN $id_list\");",
-        "variable": "result",
-        "source": "AIOWPSecurity_Utility_Permissions::check_nonce_and_user_cap($_REQUEST['_wpnonce'], 'bulk-items')",
-        "source_line": 171
-      },
-      {
-        "line": 206,
-        "code": "$result = $wpdb->query(\"UPDATE $lockout_table SET `released` = UNIX_TIMESTAMP() WHERE `id` IN $id_list\");",
-        "variable": "result",
-        "source": "AIOWPSecurity_Utility_Permissions::check_nonce_and_user_cap($_REQUEST['_wpnonce'], 'bulk-items')",
-        "source_line": 171
-      },
-      {
-        "line": 228,
-        "code": "$result = $wpdb->query($delete_command);",
-        "variable": "result",
-        "source": "AIOWPSecurity_Utility_Permissions::check_nonce_and_user_cap($_REQUEST['_wpnonce'], 'bulk-items')",
-        "source_line": 171
-      },
-      {
-        "line": 239,
-        "code": "$result = $wpdb->query($delete_command);",
-        "variable": "result",
-        "source": "AIOWPSecurity_Utility_Permissions::check_nonce_and_user_cap($_REQUEST['_wpnonce'], 'bulk-items')",
-        "source_line": 171
-      },
-      {
-        "line": 291,
-        "code": "\"SELECT * FROM {$lockout_table} WHERE `released` > UNIX_TIMESTAMP() ORDER BY {$orderby} {$order}\",",
-        "variable": "orderby",
-        "source": "isset($_GET['orderby']) ? sanitize_text_field(wp_unslash($_GET['orderby'])) : ''",
-        "source_line": 273
-      },
-      {
-        "line": 291,
-        "code": "\"SELECT * FROM {$lockout_table} WHERE `released` > UNIX_TIMESTAMP() ORDER BY {$orderby} {$order}\",",
-        "variable": "order",
-        "source": "isset($_GET['order']) ? sanitize_text_field(wp_unslash($_GET['order'])) : ''",
-        "source_line": 274
-      },
-      {
-        "line": 296,
-        "code": "\"SELECT * FROM {$lockout_table} WHERE `released` > UNIX_TIMESTAMP() ORDER BY {$orderby} {$order} LIMIT {$per_page} OFFSET {$offset}\",",
-        "variable": "orderby",
-        "source": "isset($_GET['orderby']) ? sanitize_text_field(wp_unslash($_GET['orderby'])) : ''",
-        "source_line": 273
-      },
-      {
-        "line": 296,
-        "code": "\"SELECT * FROM {$lockout_table} WHERE `released` > UNIX_TIMESTAMP() ORDER BY {$orderby} {$order} LIMIT {$per_page} OFFSET {$offset}\",",
-        "variable": "order",
-        "source": "isset($_GET['order']) ? sanitize_text_field(wp_unslash($_GET['order'])) : ''",
-        "source_line": 274
-      }
-    ],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": []
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/general/wp-security-ajax-data-table.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/admin/general/wp-security-list-table.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/other-includes/wp-security-rename-login-feature-pre-5-2.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/other-includes/wp-security-rename-login-feature-pre-5-7.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/other-includes/wp-security-rename-login-feature.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/other-includes/wp-security-rename-login-feature-pre-6-6.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/other-includes/wp-security-unlock-request.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/settings/general-settings.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 45,
-        "code": "<form method=\"post\" action=\"\" id=\"aiowpsec-disable-all-features-form\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 60,
-        "code": "<form method=\"post\" action=\"\" id=\"aiowpsec-disable-all-firewall-rules-form\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 75,
-        "code": "<form method=\"post\" action=\"\" id=\"aiowpsec-reset-settings-form\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 97,
-        "code": "<form method=\"post\" action=\"\" id=\"aiowpsec-save-debug-settings-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/settings/htaccess-file-operations.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 14,
-        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-save-htaccess-form\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 23,
-        "code": "<form id=\"aiowps_restore_htaccess_form\" action=\"\" method=\"POST\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/settings/wp-config-file-operations.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 14,
-        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-save-wp-config-form\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 23,
-        "code": "<form id=\"aiowps_restore_wp_config_form\" action=\"\" method=\"POST\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/settings/wp-version-info.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 24,
-        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-remove-wp-meta-info-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/settings/settings-file-operations.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 15,
-        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-export-settings-form\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 28,
-        "code": "<form id=\"aiowps_restore_settings_form\" action=\"\" method=\"POST\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/settings/advanced-settings.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 47,
-        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-ip-settings-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/brute-force/404-detection.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 84,
-        "code": "<form id=\"tables-filter\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/brute-force/captcha-settings.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/salt.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 12,
-        "code": "<form action=\"\" method=\"POST\" id=\"aios-enable-salt-postfix-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/manual-approval.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 19,
-        "code": "<form action=\"\" method=\"POST\" id=\"aios-manually-approve-registrations-form\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 37,
-        "code": "<form action=\"\" method=\"POST\" id=\"aios-refresh-manual-approval-list-form\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 49,
-        "code": "<form id=\"tables-filter\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/logged-in-users.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 5,
-        "code": "<form action=\"\" method=\"POST\" id=\"aios-refresh-logged-in-user-list-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/login-lockout.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 20,
-        "code": "<form action=\"\" method=\"POST\" id=\"aios-user-login-lockdown-form\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 164,
-        "code": "<form action=\"\" method=\"POST\" id=\"aios-user-login-lockout-whitelist-settings-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/additional.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 11,
-        "code": "<form action=\"\" method=\"POST\" id=\"aios-disable-application-password-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/user-enumeration.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 11,
-        "code": "<form action=\"\" method=\"POST\" id=\"aios-users-enumeration-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/user-security/force-logout.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 18,
-        "code": "<form action=\"\" method=\"POST\" id=\"aios-force-user-logout-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/tools/whois-lookup.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 8,
-        "code": "<form method=\"post\" action=\"\" id=\"aiowpsec-whois-lookup-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/tools/custom-htaccess.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 3,
-        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-save-custom-rules-settings-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/firewall/php-firewall-rules.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/firewall/htaccess-firewall-rules.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/firewall/partials/allowlist.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 10,
-        "code": "<form action=\"\" method='post' id=\"aios-firewall-allowlist-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/firewall/partials/firewall-set-up-button.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 2,
-        "code": "<form method=\"POST\"  style=\"display: inline;\" id=\"aiowpsec-firewall-setup-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/firewall/partials/firewall-downgrade-button.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 2,
-        "code": "<form method=\"POST\" style=\"display: inline;\" id=\"aiowps-firewall-downgrade-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/filesystem-security/file-protection.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/filesystem-security/host-system-logs.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 14,
-        "code": "<form action=\"\" id=\"aios-host-system-logs-form\" method=\"POST\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/filesystem-security/frames.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 12,
-        "code": "<form action=\"\" id=\"aios-frame-display-settings-form\" method=\"POST\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/dashboard/audit-logs.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 6,
-        "code": "<form id=\"tables-filter\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/dashboard/locked-ip.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 16,
-        "code": "<form id=\"tables-filter\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/dashboard/debug-logs.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 6,
-        "code": "<form action=\"\" id=\"aios-clear-debug-logs\" method=\"POST\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/dashboard/permanent-block.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 14,
-        "code": "<form id=\"tables-filter\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/spam-prevention/comment-spam.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 4,
-        "code": "<form action=\"\" id=\"aios-spam-prevention-form\" method=\"POST\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/spam-prevention/comment-spam-ip-monitoring.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 74,
-        "code": "<form action=\"\" id=\"aios-spam-ip-search-form\" method=\"POST\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 108,
-        "code": "<form id=\"tables-filter\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/templates/wp-admin/scanner/file-change-detect.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 70,
-        "code": "<form action=\"\" method=\"POST\" id=\"aiowpsec-scheduled-fcd-scan-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/vendor/team-updraft/common-libs/src/updraft-rpc/class-udrpc.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/all-in-one-wp-security-and-firewall/all-in-one-wp-security-and-firewall/vendor/team-updraft/common-libs/src/updraft-tasks/class-updraft-task-manager.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/inc/cleantalk-public-validate.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/inc/cleantalk-ajax.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/inc/cleantalk-public-integrations.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/inc/cleantalk-admin.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 140,
-        "code": "<form id='ct_refresh_form' method='POST' action='#ct_widget'>",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/inc/cleantalk-settings.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 1309,
-        "code": "echo '<form action=\"options.php\" method=\"post\" class=\"apbct_settings-page\">';",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 1468,
-        "code": "echo '<form id=\"debug__cron_set\" method=\"POST\"></form>';",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/inc/cleantalk-common.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/IntegrationsByClass/Woocommerce.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/PaidMembershipPro.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/IndeedUltimateMembershipPro.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/CSCF.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/WPUserMeta.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/TourMasterRegister.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/MailChimp.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/Newsletter.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/MemberPress.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/ElementorUltimateAddonsRegister.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/Wpdiscuz.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/WpGeoDirectory.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/EasyDigitalDownloads.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/EaelLoginRegister.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/NewUserApprove.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/WPZOOMForms.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/FluentBookingPro.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/ChatyContactForm.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/OvaLogin.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/Tevolution.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/UserRegistrationPro.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/ThriveLeads.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/Forminator.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/SmartQuizBuilder.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/CleantalkWpDieOnComment.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/BackInStockNotifier.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/PaidMemberSubscription.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/ElementorPro.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/Antispam/Integrations/UlitmateFormBuilder.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/ApbctWP/CleantalkListTable.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/cleantalk-spam-protect/cleantalk-spam-protect/lib/Cleantalk/ApbctWP/GetFieldsAny.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-blaze/src/class-dashboard-rest-controller.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-admin-menu.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-wpcom-admin-menu.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-videopress/src/class-block-editor-content.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-classic-theme-helper/src/custom-post-types/class-nova-restaurant.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/legacy/class-jetpack-signature.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/src/class-connection-notice.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/src/class-manager.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/src/class-webhooks.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/src/sso/class-user-admin.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/src/sso/class-sso.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-connection/src/sso/class-helpers.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-boost-core/src/lib/class-url.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-device-detection/src/class-user-agent-info.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-waf/src/class-waf-request.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-waf/src/class-brute-force-protection.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-waf/src/brute-force-protection/class-math-fallback.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-waf/src/brute-force-protection/class-blocked-login-page.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-search/src/class-helper.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-search/src/classic-search/class-classic-search.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-sync/src/modules/class-plugins.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-sync/src/modules/class-themes.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-account-protection/src/class-password-detection.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-account-protection/src/class-password-manager.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-account-protection/src/class-password-strength-meter.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-jitm/src/class-jitm.php": {
+  },
+  "plugins-wp/sprout-clients/sprout-clients/controllers/clients/Clients_Admin_Meta_Boxes.php": {
     "SQLi": [],
     "XSS": [
-      {
-        "line": 258,
-        "code": "data-query=\"<?php echo urlencode_deep( $query_string ); ?>\"",
-        "variable": "query_string",
-        "source": "_http_build_query( $_GET, '', ',' )",
-        "source_line": 251
-      },
-      {
-        "line": 259,
-        "code": "data-redirect=\"<?php echo urlencode_deep( $current_screen ); ?>\"",
-        "variable": "current_screen",
-        "source": "isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : ''",
-        "source_line": 252
-      }
-    ],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": []
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/woocommerce-analytics/src/class-woo-analytics-trait.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/woocommerce-analytics/src/class-universal.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-publicize/src/class-publicize.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-my-jetpack/src/class-initializer.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 138,
-        "code": "<form class=\"card jetpack-contact-form-shortcode-preview\" action='#' method='post' class='contact-form commentsblock' onsubmit=\"return false;\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/comments-plus/comments-plus/libs/factory/core/ajax/install-addons.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/comments-plus/comments-plus/libs/factory/templates/pages/class-page-license.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 399,
-        "code": "<form action=\"\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/comments-plus/comments-plus/libs/factory/templates/pages/setup-parts/class-step-form.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 89,
-        "code": "<form method=\"post\" id=\"w-factory-templates-134__setup-form-<?php echo $this->get_id() ?>\" class=\"w-factory-templates-134__setup-form form-horizontal\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/comments-plus/comments-plus/libs/factory/templates/pages/setup-parts/class-step-custom.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 32,
-        "code": "<form method=\"post\" id=\"w-factory-templates-134__setup-form-<?php echo $this->get_id() ?>\" class=\"form-horizontal\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/comments-plus/comments-plus/libs/factory/templates/pages/templates/impressive/class-page-template-impressive.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 771,
-        "code": "<form method=\"post\" class=\"form-horizontal\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/comments-plus/comments-plus/libs/factory/pages/includes/page.class.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/super-socializer/super-socializer/super_socializer.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/super-socializer/super-socializer/helper.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/super-socializer/super-socializer/inc/shortcode.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/super-socializer/super-socializer/inc/social_login.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/super-socializer/super-socializer/inc/social_sharing.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/super-socializer/super-socializer/inc/widget.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/super-socializer/super-socializer/admin/general_options.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 11,
-        "code": "<form action=\"options.php\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/super-socializer/super-socializer/admin/like_buttons.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 10,
-        "code": "<form action=\"options.php\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/super-socializer/super-socializer/admin/social_login.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 9,
-        "code": "<form action=\"options.php\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/super-socializer/super-socializer/admin/social_commenting.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 9,
-        "code": "<form action=\"options.php\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/super-socializer/super-socializer/admin/social_sharing.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 9,
-        "code": "<form id=\"the_champ_form\" action=\"options.php\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/relevanssi/relevanssi/lib/interface.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/relevanssi/relevanssi/lib/user-searches.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/relevanssi/relevanssi/lib/log.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/relevanssi/relevanssi/lib/utils.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/relevanssi/relevanssi/lib/admin-ajax.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/relevanssi/relevanssi/lib/compatibility/woocommerce.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/relevanssi/relevanssi/lib/tabs/debugging-tab.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/class.WpdiscuzCore.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/options/html-options.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/options/html-dashboard.php": {
-    "SQLi": [],
-    "XSS": [
-      {
-        "line": 214,
-        "code": "<div class=\"wpd-box-info\"<?php echo $showGraph ? \"\" : \" style='display: none;'\" ?>>",
-        "variable": "showGraph",
-        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
-        "source_line": 210
-      },
-      {
-        "line": 214,
-        "code": "<div class=\"wpd-box-info\"<?php echo $showGraph ? \"\" : \" style='display: none;'\" ?>>",
-        "variable": "showGraph",
-        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
-        "source_line": 210
-      },
-      {
-        "line": 222,
-        "code": "<span class=\"dashicons dashicons-admin-generic\"<?php echo $showGraph ? \"\" : \" style='display: none;'\" ?>></span>",
-        "variable": "showGraph",
-        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
-        "source_line": 210
-      },
-      {
-        "line": 222,
-        "code": "<span class=\"dashicons dashicons-admin-generic\"<?php echo $showGraph ? \"\" : \" style='display: none;'\" ?>></span>",
-        "variable": "showGraph",
-        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
-        "source_line": 210
-      },
-      {
-        "line": 223,
-        "code": "<span class=\"dashicons dashicons-arrow-<?php echo $showGraph ? \"up\" : \"down\" ?> wpd_not_clicked\"></span>",
-        "variable": "showGraph",
-        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
-        "source_line": 210
-      },
-      {
-        "line": 240,
-        "code": "<div class=\"wpd-box-body\"<?php echo $showGraph ? \"\" : \" style='display: none;'\"; ?>></div>",
-        "variable": "showGraph",
-        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
-        "source_line": 210
-      },
-      {
-        "line": 240,
-        "code": "<div class=\"wpd-box-body\"<?php echo $showGraph ? \"\" : \" style='display: none;'\"; ?>></div>",
-        "variable": "showGraph",
-        "source": "isset($_COOKIE[\"wpd_stat_graph\"]) ? intval($_COOKIE[\"wpd_stat_graph\"]) : 1",
-        "source_line": 210
-      },
-      {
-        "line": 252,
-        "code": "style=\"visibility: hidden;<?php echo $showUser ? \"\" : \"display: none;\"; ?>\"></span>",
-        "variable": "showUser",
-        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
-        "source_line": 246
-      },
-      {
-        "line": 252,
-        "code": "style=\"visibility: hidden;<?php echo $showUser ? \"\" : \"display: none;\"; ?>\"></span>",
-        "variable": "showUser",
-        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
-        "source_line": 246
-      },
-      {
-        "line": 253,
-        "code": "<span class=\"dashicons dashicons-arrow-right\"<?php echo $showUser ? \"\" : \" style='display: none;'\"; ?>></span>",
-        "variable": "showUser",
-        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
-        "source_line": 246
-      },
-      {
-        "line": 253,
-        "code": "<span class=\"dashicons dashicons-arrow-right\"<?php echo $showUser ? \"\" : \" style='display: none;'\"; ?>></span>",
-        "variable": "showUser",
-        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
-        "source_line": 246
-      },
-      {
-        "line": 255,
-        "code": "<span class=\"dashicons dashicons-arrow-<?php echo $showUser ? \"up\" : \"down\" ?> wpd_not_clicked\"></span>",
-        "variable": "showUser",
-        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
-        "source_line": 246
-      },
-      {
-        "line": 258,
-        "code": "<div class=\"wpd-box-body\"<?php echo $showUser ? \"\" : \" style='display: none;'\"; ?>></div>",
-        "variable": "showUser",
-        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
-        "source_line": 246
-      },
-      {
-        "line": 258,
-        "code": "<div class=\"wpd-box-body\"<?php echo $showUser ? \"\" : \" style='display: none;'\"; ?>></div>",
-        "variable": "showUser",
-        "source": "isset($_COOKIE[\"wpd_stat_user\"]) ? intval($_COOKIE[\"wpd_stat_user\"]) : 1",
-        "source_line": 246
-      },
-      {
-        "line": 269,
-        "code": "<span class=\"dashicons dashicons-arrow-<?php echo $showSubs ? \"up\" : \"down\"; ?> wpd_not_clicked\"></span>",
-        "variable": "showSubs",
-        "source": "isset($_COOKIE[\"wpd_stat_subs\"]) ? intval($_COOKIE[\"wpd_stat_subs\"]) : 1",
-        "source_line": 264
-      },
-      {
-        "line": 269,
-        "code": "<span class=\"dashicons dashicons-arrow-<?php echo $showSubs ? \"up\" : \"down\"; ?> wpd_not_clicked\"></span>",
-        "variable": "showSubs",
-        "source": "isset($_COOKIE[\"wpd_stat_subs\"]) ? intval($_COOKIE[\"wpd_stat_subs\"]) : 1",
-        "source_line": 264
-      },
-      {
-        "line": 272,
-        "code": "<div class=\"wpd-box-body\"<?php echo $showSubs ? \"\" : \" style='display: none;'\"; ?>></div>",
-        "variable": "showSubs",
-        "source": "isset($_COOKIE[\"wpd_stat_subs\"]) ? intval($_COOKIE[\"wpd_stat_subs\"]) : 1",
-        "source_line": 264
-      },
-      {
-        "line": 272,
-        "code": "<div class=\"wpd-box-body\"<?php echo $showSubs ? \"\" : \" style='display: none;'\"; ?>></div>",
-        "variable": "showSubs",
-        "source": "isset($_COOKIE[\"wpd_stat_subs\"]) ? intval($_COOKIE[\"wpd_stat_subs\"]) : 1",
-        "source_line": 264
-      }
-    ],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": []
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/options/class.WpdiscuzOptions.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/diff.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 11,
-        "code": "<form class=\"revisions-control-frame\" action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/conf.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 15,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-main\"><?php",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/move.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 8,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-main\"><?php",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/head.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 13,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-main\"><?php",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/edit-po.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 11,
-        "code": "<form action=\"<?php $params->e('dlAction')?>\" method=\"post\" target=\"_blank\" id=\"loco-download\" class=\"aux wp-core-ui\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/delete.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 8,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-del\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/config/settings.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 15,
-        "code": "<form action=\"#\" method=\"post\" enctype=\"application/x-www-form-urlencoded\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/config/apis.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 13,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/config/prefs.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 11,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/bundle/conf.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 8,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-conf\"><?php",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 157,
-        "code": "<form action=\"\" method=\"post\" id=\"loco-reset\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/bundle/setup/conf.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 11,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" class=\"panel jsonly\" id=\"loco-remote\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 44,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" class=\"panel\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 63,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" class=\"panel\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/bundle/setup/saved.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 16,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/src/mvc/AjaxRouter.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/loco-translate/loco-translate/src/mvc/AdminRouter.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/loco-translate/loco-translate/src/admin/file/BaseController.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/loco-translate/loco-translate/src/admin/bundle/BaseController.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/loco-translate/loco-translate/src/ajax/UploadController.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/modules/subscriptions.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/modules/copy-post.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/modules/stats.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/modules/infinite-scroll/infinity.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/modules/comments/comments.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/modules/videopress/class.videopress-edit-attachment.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/modules/sharedaddy/sharing-service.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/modules/sharedaddy/sharing.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/modules/woocommerce-analytics/classes/class-jetpack-woocommerce-analytics-universal.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/modules/related-posts/jetpack-related-posts.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/modules/carousel/jetpack-carousel.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/modules/subscriptions/jetpack-user-content-link-redirection.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/extensions/blocks/sharing-button/sharing-button.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/extensions/blocks/subscriptions/subscriptions.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/extensions/blocks/map/map.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/extensions/blocks/blogroll/blogroll.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 54,
-        "code": "<form method=\"post\" action=\"https://subscribe.wordpress.com\" accept-charset=\"utf-8\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/jetpack/jetpack/extensions/blocks/blogroll/blogroll-item/blogroll-item.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/_inc/blogging-prompts.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/_inc/lib/admin-pages/class.jetpack-react-page.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/forms/wpdFormAttr/Login/SocialLogin.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/includes/class.WpdiscuzRest.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/utils/deactivation-reason-modal.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 11,
-        "code": "<form method=\"post\" action=\"\" class=\"wpd-deactivation-reason-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/utils/class.WpdiscuzHelperAjax.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/utils/class.WpdiscuzHelper.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/utils/class.WpdiscuzHelperUpload.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/utils/class.WpdiscuzHelperEmail.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/utils/layouts/activity/activity-page.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/utils/layouts/subscriptions/subscriptions-page.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/utils/layouts/follows/follows-page.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wpdiscuz/wpdiscuz/themes/default/comment-form.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/comments-import-export-woocommerce/comments-import-export-woocommerce/includes/class-hf_cmt_impexpcsv-admin-screen.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/comments-import-export-woocommerce/comments-import-export-woocommerce/includes/class-wt-security-helper.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/comments-import-export-woocommerce/comments-import-export-woocommerce/includes/importer/class-hf_cmt_impexpcsv-import.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/comments-import-export-woocommerce/comments-import-export-woocommerce/includes/importer/views/html-hf-import-greeting.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 31,
-        "code": "<form enctype=\"multipart/form-data\" id=\"import-upload-form\" method=\"post\" action=\"<?php echo esc_attr(wp_nonce_url($action, 'import-upload')); ?>\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/comments-import-export-woocommerce/comments-import-export-woocommerce/includes/exporter/class-hf_cmt_impexpcsv-exporter.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/honeypot/honeypot/includes/integration/wpa_diviform.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/honeypot/honeypot/includes/views/wpa_main.php": {
-    "SQLi": [],
-    "XSS": [
-      {
-        "line": 36,
-        "code": "<a href=\"<?php echo admin_url(); ?>admin.php?page=wp-armour&tab=<?php echo $tabKey; ?>\" class=\"nav-tab <?php echo $currentTab == $tabKey?'nav-tab-active':''; ?>\"><?php echo $tabData['name']; ?></a>",
-        "variable": "currentTab",
-        "source": "$_GET['tab']",
-        "source_line": 20
-      },
-      {
-        "line": 36,
-        "code": "<a href=\"<?php echo admin_url(); ?>admin.php?page=wp-armour&tab=<?php echo $tabKey; ?>\" class=\"nav-tab <?php echo $currentTab == $tabKey?'nav-tab-active':''; ?>\"><?php echo $tabData['name']; ?></a>",
-        "variable": "currentTab",
-        "source": "$_GET['tab']",
-        "source_line": 20
-      },
-      {
-        "line": 44,
-        "code": "<?php include($wpa_tabs[$currentTab]['path']); ?>",
-        "variable": "currentTab",
-        "source": "$_GET['tab']",
-        "source_line": 20
-      }
-    ],
-    "LFI": [
-      {
-        "line": 44,
-        "code": "<?php include($wpa_tabs[$currentTab]['path']); ?>",
-        "variable": "currentTab",
-        "source": "$_GET['tab']",
-        "source_line": 20
-      }
-    ],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": []
-  },
-  "plugins-wp/comment-link-remove/comment-link-remove/qc-clr-settings-pro.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
       {
         "line": 245,
-        "code": "<form action=\"options.php\" method=\"post\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/comment-link-remove/comment-link-remove/qc-clr-settings.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 165,
-        "code": "<form method=\"post\" action=\"options.php\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/comment-link-remove/comment-link-remove/qc-clr-email-subscription.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/comment-link-remove/comment-link-remove/qc-support-promo-page/class-qc-support-promo-page.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/class.jetpack.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/class.jetpack-modules-list-table.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/class.jetpack-network.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/unauth-file-upload.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/jetpack/jetpack/class.json-api-endpoints.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [
-      {
-        "line": 556,
-        "code": "* @param bool  $return_default_values Set default values from `$documentation` to process.",
-        "variable": "return",
-        "source": "array_merge( stripslashes_deep( $_POST ), $_FILES )",
-        "source_line": 502
-      },
-      {
-        "line": 636,
-        "code": "* @param string|int   $key Key in `$return` to assign the value to.",
-        "variable": "return",
-        "source": "array_merge( stripslashes_deep( $_POST ), $_FILES )",
-        "source_line": 502
-      }
-    ],
-    "SSRF": [],
-    "CSRF": []
-  },
-  "plugins-wp/jetpack/jetpack/modules/widgets/contact-info.php": {
-    "SQLi": [],
-    "XSS": [
-      {
-        "line": 313,
-        "code": "echo $this->build_map( $instance['address'], $apikey ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped",
-        "variable": "apikey",
-        "source": "wp_kses( wp_unslash( $_POST['apikey'] ), array() )",
-        "source_line": 491
+        "code": "$website = self::esc__( $website );",
+        "variable": "website",
+        "source": "( isset( $_POST['sa_metabox_website'] ) && '' !== $_POST['sa_metabox_website'] ) ? $_POST['sa_metabox_website'] : '' ",
+        "source_line": 230
       }
     ],
     "LFI": [],
@@ -1728,241 +168,67 @@
     "SSRF": [],
     "CSRF": []
   },
-  "plugins-wp/jetpack/jetpack/modules/widgets/simple-payments.php": {
+  "plugins-wp/sprout-clients/sprout-clients/controllers/clients/Clients_Admin_Table.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/jetpack/jetpack/modules/widgets/class-jetpack-instagram-widget.php": {
+  "plugins-wp/sprout-clients/sprout-clients/controllers/records/Internal_Records.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/jetpack/jetpack/modules/widgets/eu-cookie-law/widget.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 19,
-        "code": "<form method=\"post\" id=\"jetpack-eu-cookie-law-form\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/init/upload.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 9,
-        "code": "<form action=\"\" method=\"post\" enctype=\"multipart/form-data\" id=\"loco-main\"><?php",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/init/init-pot.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 33,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-potinit\"><?php",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/init/init-po.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 24,
-        "code": "<form action=\"\" method=\"post\" enctype=\"application/x-www-form-urlencoded\" id=\"loco-poinit\"><?php",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/loco-translate/loco-translate/tpl/admin/file/edit-pot.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 9,
-        "code": "<form action=\"<?php $params->e('dlAction')?>\" method=\"post\" target=\"_blank\" id=\"loco-download\" class=\"aux wp-core-ui\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/wordfence/wordfence/modules/login-security/classes/controller/ajax.php": {
+  "plugins-wp/sprout-clients/sprout-clients/controllers/records/Records_Admin_Table.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/wordfence/wordfence/modules/login-security/classes/controller/wordfencels.php": {
+  "plugins-wp/sprout-clients/sprout-clients/controllers/admin/_Settings.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/wordfence/wordfence/views/common/unsubscribe.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 114,
-        "code": "<form method=\"POST\" action=\"<?php echo esc_attr(wfUtils::getSiteBaseURL() . '?_wfsf=removeAlertEmail'); ?>\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 121,
-        "code": "<form method=\"POST\" action=\"<?php echo esc_attr(wfUtils::getSiteBaseURL() . '?_wfsf=removeAlertEmail&jwt=' . $jwt); ?>\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/freemius/includes/fs-core-functions.php": {
+  "plugins-wp/sprout-clients/sprout-clients/controllers/updates/freemius-sdk/includes/fs-core-functions.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/freemius/includes/class-freemius.php": {
+  "plugins-wp/sprout-clients/sprout-clients/controllers/updates/freemius-sdk/includes/class-freemius.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/freemius/includes/fs-plugin-info-dialog.php": {
+  "plugins-wp/sprout-clients/sprout-clients/controllers/updates/freemius-sdk/includes/fs-plugin-info-dialog.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/freemius/templates/debug.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 132,
-        "code": "<form action=\"\" method=\"POST\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 157,
-        "code": "<form action=\"\" method=\"POST\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
+  "plugins-wp/sprout-clients/sprout-clients/controllers/updates/freemius-sdk/templates/pricing.php": {
+    "error": "'bool' object is not iterable"
   },
-  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/freemius/templates/connect.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 375,
-        "code": "<form method=\"post\" action=\"<?php echo WP_FS__ADDRESS ?>/action/service/user/install/\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
+  "plugins-wp/sprout-clients/sprout-clients/controllers/updates/freemius-sdk/templates/debug.php": {
+    "error": "'bool' object is not iterable"
   },
-  "plugins-wp/wp-ajaxify-comments/wp-ajaxify-comments/functions.php": {
+  "plugins-wp/sprout-clients/sprout-clients/controllers/updates/freemius-sdk/templates/connect.php": {
+    "error": "'bool' object is not iterable"
+  },
+  "plugins-wp/gatewayapi/gatewayapi/inc/integration_contact_form_7.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/wordfence/wordfence/vendor/wordfence/wf-waf/src/lib/waf.php": {
+  "plugins-wp/gatewayapi/gatewayapi/inc/cpt_sms_editor_ui.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/wordfence/wordfence/vendor/wordfence/wf-waf/src/lib/utils.php": {
+  "plugins-wp/gatewayapi/gatewayapi/tpl/import.php": {
+    "error": "'bool' object is not iterable"
+  },
+  "plugins-wp/gatewayapi/gatewayapi/tpl/settings_page.php": {
+    "error": "'bool' object is not iterable"
+  },
+  "plugins-wp/gatewayapi/gatewayapi/tpl/wp-login-confirm-phone.php": {
+    "error": "'bool' object is not iterable"
+  },
+  "plugins-wp/gatewayapi/gatewayapi/tpl/import-analysis.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/disable-comments/disable-comments/disable-comments.php": {
+  "plugins-wp/gatewayapi/gatewayapi/tpl/wp-login-add-phone.php": {
+    "error": "'bool' object is not iterable"
+  },
+  "plugins-wp/automatic-order-tasks-for-woocommerce/automatic-order-tasks-for-woocommerce/inc/settings/class-settings-ajax.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/disable-comments/disable-comments/includes/class-plugin-usage-tracker.php": {
+  "plugins-wp/archive-control/archive-control/class-archive-control.php": {
     "error": "dictionary changed size during iteration"
   },
-  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/delete-all-comments-of-wordpress-website.php": {
-    "error": "dictionary changed size during iteration"
+  "plugins-wp/lenix-scss-compiler/lenix-scss-compiler/options.php": {
+    "error": "'bool' object is not iterable"
   },
-  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/5.8/delete-all-comments-of-wordpress-website.php": {
-    "SQLi": [
-      {
-        "line": 111,
-        "code": "// if($date_from_nav =  $_POST['nav_delete_commentfrom'] == \"\") { $date_from_nav = '2000-01-01';  } else { $date_from_nav =   $_POST['nav_delete_commentfrom']; }",
-        "variable": "date_from_nav",
-        "source": "$_POST['nav_delete_commentfrom'] == \"\") { $date_from_nav = '2000-01-01';  } else { $date_from_nav =   $_POST['nav_delete_commentfrom']",
-        "source_line": 111
-      }
-    ],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": []
-  },
-  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/5.8/freemius/includes/fs-core-functions.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/5.8/freemius/includes/class-freemius.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/5.8/freemius/includes/fs-plugin-info-dialog.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/5.8/freemius/templates/debug.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 132,
-        "code": "<form action=\"\" method=\"POST\">",
-        "description": "POST form without CSRF protection"
-      },
-      {
-        "line": 157,
-        "code": "<form action=\"\" method=\"POST\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/delete-all-comments-of-website/delete-all-comments-of-website/5.8/freemius/templates/connect.php": {
-    "SQLi": [],
-    "XSS": [],
-    "LFI": [],
-    "RCE": [],
-    "SSRF": [],
-    "CSRF": [
-      {
-        "line": 375,
-        "code": "<form method=\"post\" action=\"<?php echo WP_FS__ADDRESS ?>/action/service/user/install/\">",
-        "description": "POST form without CSRF protection"
-      }
-    ]
-  },
-  "plugins-wp/wordfence/wordfence/lib/wfUtils.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wordfence/wordfence/lib/wfAuditLog.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wordfence/wordfence/lib/wordfenceClass.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wordfence/wordfence/lib/wfOnboardingController.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wordfence/wordfence/lib/wfScan.php": {
-    "error": "dictionary changed size during iteration"
-  },
-  "plugins-wp/wordfence/wordfence/lib/wfScanEngine.php": {
+  "plugins-wp/slider-video/slider-video/Rich-Web-Video-Slider-Ajax.php": {
     "error": "dictionary changed size during iteration"
   }
 }
